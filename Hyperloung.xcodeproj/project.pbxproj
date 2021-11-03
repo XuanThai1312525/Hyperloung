@@ -63,6 +63,9 @@
 		94E5F403273202FF0081FD86 /* aos_mb_pie_02.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */; };
 		94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */; };
 		94E5F407273207200081FD86 /* CircleDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */; };
+		FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460332732B00B00084D14 /* aos_ma_line_03.swift */; };
+		FD7460372732B00B00084D14 /* aos_ma_line_04.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD7460342732B00B00084D14 /* aos_ma_line_04.xib */; };
+		FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460352732B00B00084D14 /* aos_ma_line_04.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +154,9 @@
 		BE54D3A6ED270F8A166304B6 /* Pods-HyperloungTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.release.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.release.xcconfig"; sourceTree = "<group>"; };
 		C996A623659E2D5933C696E8 /* Pods-HyperloungTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.debug.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1134F5868672CE3EEF85559 /* Pods_Hyperloung.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD7460332732B00B00084D14 /* aos_ma_line_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_03.swift; sourceTree = "<group>"; };
+		FD7460342732B00B00084D14 /* aos_ma_line_04.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_ma_line_04.xib; sourceTree = "<group>"; };
+		FD7460352732B00B00084D14 /* aos_ma_line_04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_04.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +451,9 @@
 		94E5F3FB27316DD90081FD86 /* DetailChart */ = {
 			isa = PBXGroup;
 			children = (
+				FD7460332732B00B00084D14 /* aos_ma_line_03.swift */,
+				FD7460352732B00B00084D14 /* aos_ma_line_04.swift */,
+				FD7460342732B00B00084D14 /* aos_ma_line_04.xib */,
 				94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */,
 				94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */,
 				94E5F400273202D30081FD86 /* aos_mb_pie_02.swift */,
@@ -576,6 +585,7 @@
 				94BC75C52726A07B00018C26 /* Main.storyboard in Resources */,
 				9464C20B2727C2CC0048CB98 /* ReportCardView.xib in Resources */,
 				94BC76112726C27A00018C26 /* Spoqa Han Sans Neo Thin.otf in Resources */,
+				FD7460372732B00B00084D14 /* aos_ma_line_04.xib in Resources */,
 				9464C1FB2727A2E70048CB98 /* BottomBar.xib in Resources */,
 				94BC76132726C27A00018C26 /* Spoqa Han Sans Neo Medium.otf in Resources */,
 				9464C2172728003D0048CB98 /* ReportPanelView.xib in Resources */,
@@ -707,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				944CC8F8272ACA390016398D /* LinkedChartView.swift in Sources */,
+				FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */,
 				9464C2032727B2A00048CB98 /* HeaderFooterClass.swift in Sources */,
 				944CC8EB2728471D0016398D /* ReportChartViewController.swift in Sources */,
 				94E5F401273202D30081FD86 /* aos_mb_pie_02.swift in Sources */,
@@ -738,6 +749,7 @@
 				94BC75FA2726B76800018C26 /* UIViewController_Ext.swift in Sources */,
 				94BC75EF2726B41A00018C26 /* AppManager.swift in Sources */,
 				9464C1F62726FD7C0048CB98 /* SummaryReportView.swift in Sources */,
+				FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */,
 				94E5F3FA2731648F0081FD86 /* Tooltip.swift in Sources */,
 				9464C2122727F8760048CB98 /* ProgessBar.swift in Sources */,
 				94E5F3FF273189080081FD86 /* aos_mb_pie_01.swift in Sources */,
