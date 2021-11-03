@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hse-oM-kAk" customClass="HyperCircleChartView" customModule="Hyperloung" customModuleProvider="target">
-                    <rect key="frame" x="20" y="151.5" width="140" height="140"/>
+                    <rect key="frame" x="20" y="146.5" width="140" height="140"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="BGx-aH-Q6p"/>
@@ -29,7 +28,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UdJ-Rk-edL">
-                    <rect key="frame" x="190" y="151.5" width="276" height="140"/>
+                    <rect key="frame" x="190" y="146.5" width="276" height="140"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="140" id="NKi-uq-T2N"/>
@@ -41,21 +40,78 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zn-Ej-NI5">
+                    <rect key="frame" x="0.0" y="0.0" width="466" height="46"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="New-09-KwU">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
+                            <attributedString key="attributedText">
+                                <fragment content="부문별 분기 매출 구성 ">
+                                    <attributes>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.93333333333333335" green="0.19607843137254902" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="2분기 마감">
+                                    <attributes>
+                                        <color key="NSColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="16" name="SpoqaHanSansNeo-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHS-sq-WNs">
+                            <rect key="frame" x="374" y="0.0" width="46" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="rKC-Rz-lW5"/>
+                            </constraints>
+                            <state key="normal" image="ic_bookmark"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1v-7B-AQy">
+                            <rect key="frame" x="420" y="0.0" width="46" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="OQn-tY-YrD"/>
+                            </constraints>
+                            <state key="normal" image="ic_add_more"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="AHS-sq-WNs" firstAttribute="width" secondItem="AHS-sq-WNs" secondAttribute="height" id="0cH-rP-N2M"/>
+                        <constraint firstItem="v1v-7B-AQy" firstAttribute="width" secondItem="v1v-7B-AQy" secondAttribute="height" id="eOb-dv-kVr"/>
+                    </constraints>
+                </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UdJ-Rk-edL" secondAttribute="trailing" id="AmI-2X-Dhg"/>
-                <constraint firstItem="UdJ-Rk-edL" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="GfL-HM-rxi"/>
-                <constraint firstItem="hse-oM-kAk" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="RIC-uA-9di"/>
-                <constraint firstItem="hse-oM-kAk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="cg8-aU-iMk"/>
+                <constraint firstItem="3zn-Ej-NI5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2t2-Gz-HuH"/>
+                <constraint firstAttribute="trailing" secondItem="UdJ-Rk-edL" secondAttribute="trailing" id="AmI-2X-Dhg"/>
+                <constraint firstItem="UdJ-Rk-edL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GfL-HM-rxi"/>
+                <constraint firstAttribute="trailing" secondItem="3zn-Ej-NI5" secondAttribute="trailing" id="Kj9-8f-6kO"/>
+                <constraint firstItem="hse-oM-kAk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RIC-uA-9di"/>
+                <constraint firstItem="hse-oM-kAk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cg8-aU-iMk"/>
                 <constraint firstItem="UdJ-Rk-edL" firstAttribute="leading" secondItem="hse-oM-kAk" secondAttribute="trailing" constant="30" id="rnH-dp-b2s"/>
+                <constraint firstItem="3zn-Ej-NI5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yDw-12-yo3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-46.376811594202906" y="-53.236607142857139"/>
         </view>
     </objects>
     <resources>
+        <image name="ic_add_more" width="32" height="32"/>
+        <image name="ic_bookmark" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,9 +9,9 @@ import UIKit
 
 class ReportChartViewController: BaseViewController {
 
-    @IBOutlet weak var monthChartView: HyperBarChartView!
+    @IBOutlet weak var monthChartView: aos_mb_bar_01!
     @IBOutlet weak var planChartView: HyperBarChartView!
-    @IBOutlet weak var circleChartView: HyperCircleChartView!
+    @IBOutlet weak var circleChartView: aos_mb_pie_01!
     @IBOutlet weak var linkedChartView: LinkedChartView!
     
     override func viewDidLoad() {
@@ -20,77 +20,23 @@ class ReportChartViewController: BaseViewController {
     }
     
     private func setupView() {
-        monthChartView.datasource = self
-        monthChartView.internalDraw()
         let dataSource = HyperHandleBarChartData()
         planChartView.datasource = dataSource
         planChartView.internalDraw()
-        let circleDatasource = HyperHandleCircleChart()
-        circleChartView.datasource = circleDatasource
-        circleChartView.drawChart()
+
         let linkedChartDataSourceHandler = LinkedChartDataSourceHandler()
         linkedChartView.datasource = linkedChartDataSourceHandler
         linkedChartView.drawChart()
     }
 }
 
-extension ReportChartViewController: HyperChartDataSource {
-    func dataSet() -> [HyperBarChartData] {
-        return [
-            HyperBarChartData(focus: true, value: 40),
-            HyperBarChartData(focus: false, value: 70),
-            HyperBarChartData(focus: true, value: -100),
-            HyperBarChartData(focus: true, value: 100),
-            HyperBarChartData(focus: false, value: 80),
-            HyperBarChartData(focus: true, value: -20),
-        ]
-    }
-    
-    var spaceBetweenRow: CGFloat {
-        return 20
-    }
-    
-    func description(of data: HyperBarChartData) -> String {
-        return "예상매출"
-    }
-    
-    var hightlightColor: UIColor {
-        return .red
-    }
-    
-    var anchorPoint: HyperBarChartData {
-        return HyperBarChartData(focus: false, value: 100)
-    }
-    
-}
-
-class HyperHandleCircleChart {}
-extension HyperHandleCircleChart: HyperCircleDataSource {
-    var internalDescription: (String, UIColor)? {
-        return ("36%", .black)
-    }
-    
-    var dataSet: [HyperCircleData] {
-        return [HyperCircleData(percent: 0.3)]
-    }
-    
-    func color(of data: HyperCircleData) -> UIColor {
-        return .red
-    }
-    
-    func description(of data: HyperCircleData) -> String {
-        return "12억"
-    }
-    
-    var lineWidth: CGFloat {
-        return 20
-    }
-    
-}
-
 class HyperHandleBarChartData {}
 
 extension HyperHandleBarChartData: HyperChartDataSource {
+    var appearance: HyperBarChartView.Appearance {
+        HyperBarChartView.Appearance()
+    }
+    
     func dataSet() -> [HyperBarChartData] {
         return [
             HyperBarChartData(focus: false, value: 70),

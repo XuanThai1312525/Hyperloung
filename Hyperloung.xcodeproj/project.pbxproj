@@ -56,6 +56,13 @@
 		94BC76112726C27A00018C26 /* Spoqa Han Sans Neo Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 94BC760C2726C27800018C26 /* Spoqa Han Sans Neo Thin.otf */; };
 		94BC76122726C27A00018C26 /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 94BC760D2726C27900018C26 /* Spoqa Han Sans Neo Bold.otf */; };
 		94BC76132726C27A00018C26 /* Spoqa Han Sans Neo Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 94BC760E2726C27A00018C26 /* Spoqa Han Sans Neo Medium.otf */; };
+		94E5F3FA2731648F0081FD86 /* Tooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F3F92731648F0081FD86 /* Tooltip.swift */; };
+		94E5F3FD27316E090081FD86 /* aos_mb_bar_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */; };
+		94E5F3FF273189080081FD86 /* aos_mb_pie_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */; };
+		94E5F401273202D30081FD86 /* aos_mb_pie_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F400273202D30081FD86 /* aos_mb_pie_02.swift */; };
+		94E5F403273202FF0081FD86 /* aos_mb_pie_02.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */; };
+		94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */; };
+		94E5F407273207200081FD86 /* CircleDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +140,13 @@
 		94BC760C2726C27800018C26 /* Spoqa Han Sans Neo Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Thin.otf"; sourceTree = "<group>"; };
 		94BC760D2726C27900018C26 /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
 		94BC760E2726C27A00018C26 /* Spoqa Han Sans Neo Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Medium.otf"; sourceTree = "<group>"; };
+		94E5F3F92731648F0081FD86 /* Tooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tooltip.swift; sourceTree = "<group>"; };
+		94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_mb_bar_01.swift; sourceTree = "<group>"; };
+		94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_mb_pie_01.swift; sourceTree = "<group>"; };
+		94E5F400273202D30081FD86 /* aos_mb_pie_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_mb_pie_02.swift; sourceTree = "<group>"; };
+		94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aos_mb_pie_02.xib; sourceTree = "<group>"; };
+		94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8D3466DC7CA7BB0E1A0203A /* Pods_Hyperloung_HyperloungUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung_HyperloungUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE54D3A6ED270F8A166304B6 /* Pods-HyperloungTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.release.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.release.xcconfig"; sourceTree = "<group>"; };
 		C996A623659E2D5933C696E8 /* Pods-HyperloungTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.debug.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +215,7 @@
 		944CC8E9272846D80016398D /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				94E5F3FB27316DD90081FD86 /* DetailChart */,
 				944CC8EC27284BC90016398D /* BarCharts */,
 				944CC8EA2728471D0016398D /* ReportChartViewController.swift */,
 			);
@@ -216,6 +231,7 @@
 				944CC8F7272ACA390016398D /* LinkedChartView.swift */,
 				944CC8F527291CB60016398D /* HyperHorizontalLineChartView.swift */,
 				944CC8F327291AA00016398D /* HyperHorizontalLineChartView.xib */,
+				94E5F3F92731648F0081FD86 /* Tooltip.swift */,
 			);
 			path = BarCharts;
 			sourceTree = "<group>";
@@ -426,6 +442,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		94E5F3FB27316DD90081FD86 /* DetailChart */ = {
+			isa = PBXGroup;
+			children = (
+				94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */,
+				94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */,
+				94E5F400273202D30081FD86 /* aos_mb_pie_02.swift */,
+				94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */,
+				94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */,
+				94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */,
+			);
+			path = DetailChart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,7 +568,9 @@
 				94BC75CA2726A07E00018C26 /* LaunchScreen.storyboard in Resources */,
 				9464C1F42726EFF40048CB98 /* SummaryReportView.xib in Resources */,
 				94BC76122726C27A00018C26 /* Spoqa Han Sans Neo Bold.otf in Resources */,
+				94E5F407273207200081FD86 /* CircleDescriptionCollectionViewCell.xib in Resources */,
 				94BC76102726C27A00018C26 /* Spoqa Han Sans Neo Regular.otf in Resources */,
+				94E5F403273202FF0081FD86 /* aos_mb_pie_02.xib in Resources */,
 				94BC760F2726C27A00018C26 /* Spoqa Han Sans Neo Light.otf in Resources */,
 				94BC75C72726A07E00018C26 /* Assets.xcassets in Resources */,
 				94BC75C52726A07B00018C26 /* Main.storyboard in Resources */,
@@ -678,6 +709,7 @@
 				944CC8F8272ACA390016398D /* LinkedChartView.swift in Sources */,
 				9464C2032727B2A00048CB98 /* HeaderFooterClass.swift in Sources */,
 				944CC8EB2728471D0016398D /* ReportChartViewController.swift in Sources */,
+				94E5F401273202D30081FD86 /* aos_mb_pie_02.swift in Sources */,
 				94BC75F52726B65600018C26 /* AppProperties.swift in Sources */,
 				944CC8E8272835740016398D /* UserInfoBasViewController.swift in Sources */,
 				94BC75F22726B58100018C26 /* AppMainNavigator.swift in Sources */,
@@ -694,6 +726,8 @@
 				9464C2052727B33E0048CB98 /* MainReportViewController.swift in Sources */,
 				94BC76062726BD0200018C26 /* HomeViewController.swift in Sources */,
 				9464C219272803A00048CB98 /* ReportPanelView.swift in Sources */,
+				94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */,
+				94E5F3FD27316E090081FD86 /* aos_mb_bar_01.swift in Sources */,
 				944CC8F02728F9170016398D /* HyperCircleChartView.swift in Sources */,
 				9464C20D2727C31D0048CB98 /* ReportCardView.swift in Sources */,
 				944CC8F627291CB60016398D /* HyperHorizontalLineChartView.swift in Sources */,
@@ -704,7 +738,9 @@
 				94BC75FA2726B76800018C26 /* UIViewController_Ext.swift in Sources */,
 				94BC75EF2726B41A00018C26 /* AppManager.swift in Sources */,
 				9464C1F62726FD7C0048CB98 /* SummaryReportView.swift in Sources */,
+				94E5F3FA2731648F0081FD86 /* Tooltip.swift in Sources */,
 				9464C2122727F8760048CB98 /* ProgessBar.swift in Sources */,
+				94E5F3FF273189080081FD86 /* aos_mb_pie_01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

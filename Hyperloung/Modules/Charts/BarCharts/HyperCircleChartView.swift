@@ -10,24 +10,24 @@ import UIKit
 
 struct HyperCircleData {
     var percent: Double
+    var color: UIColor
+    var description: String?
 }
 protocol HyperCircleDataSource: AnyObject {
     var dataSet: [HyperCircleData] {get}
-    func color(of data: HyperCircleData) -> UIColor
     func description(of data: HyperCircleData) -> String
     var lineWidth: CGFloat {get}
     var internalDescription: (String, UIColor)? {get}
 }
 
 class HyperCircleChartView: UIView {
-    weak var datasource: HyperCircleDataSource!
+    var datasource: HyperCircleDataSource!
     private var backgroundLayer = CAShapeLayer()
     
     func drawChart() {
         let radius = min(frame.height, frame.width) / 2
         backgroundLayer.sublayers?.removeAll()
         backgroundLayer.removeFromSuperlayer()
-        backgroundLayer.frame = frame
         backgroundLayer.lineWidth = datasource.lineWidth
         backgroundLayer.strokeColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1).cgColor
         backgroundLayer.fillColor = UIColor.clear.cgColor
@@ -51,27 +51,29 @@ class HyperCircleChartView: UIView {
         textLayer.frame = CGRect(x: center.x - numberSize.width / 2, y: center.y - numberSize.height / 2, width: numberSize.width, height: numberSize.height)
         parentLayer.addSublayer(textLayer)
     }
-    
     private func drawChart(in rect: CGRect, centerPoint: CGPoint, radius: CGFloat, to parentLayer: CALayer) {
-        let startPoint: CGFloat = -.pi / 2
-        datasource.dataSet.forEach { (data) in
+        var startPoint: CGFloat = -.pi
+        var width = datasource.lineWidth
+
+//        datasource.dataSet.forEach { (data) in
+        let data = datasource.dataSet.first!
             let sharpLayer = CAShapeLayer()
-            sharpLayer.frame = rect
-            sharpLayer.lineWidth = datasource.lineWidth
-            sharpLayer.strokeColor = datasource.color(of: data).cgColor
-            let endPoint: CGFloat =  .pi * CGFloat(data.percent)
+            sharpLayer.lineWidth = width
+            sharpLayer.strokeColor = data.color.cgColor
+            let endPoint: CGFloat =  .pi
             let path = UIBezierPath()
             path.addArc(withCenter: centerPoint, radius: radius, startAngle: startPoint, endAngle: endPoint, clockwise: true)
             sharpLayer.lineCap = .square
             sharpLayer.fillColor = UIColor.clear.cgColor
             sharpLayer.path = path.cgPath
             parentLayer.addSublayer(sharpLayer)
-            
+            width -= 3
         
             let cy = centerPoint.y + (radius) * sin(startPoint + endPoint)
             let cx = centerPoint.x + (radius) * cos(startPoint + endPoint)
-            drawDescriptionText(of: data, at: CGPoint(x: cx , y: cy), to: sharpLayer)
-        }
+          //  drawDescriptionText(of: data, at: CGPoint(x: cx , y: cy), to: sharpLayer)
+            startPoint += endPoint
+//        }
     }
     
     func drawDescriptionText(of data: HyperCircleData, at center: CGPoint, to parentLayer: CALayer) {
@@ -81,8 +83,8 @@ class HyperCircleChartView: UIView {
         let textSize = attributeString.size()
         
         let textLayer = CATextLayer()
-        textLayer.string = textDescription
-        textLayer.frame = CGRect(x: 0 , y: 0, width: textSize.width, height: textSize.height)
+        textLayer.string = attributeString
+        textLayer.frame = CGRect(origin: CGPoint(x: center.x + 10, y: center.y + 5), size: CGSize(width: textSize.width + 20, height: textSize.height + 10))
         let path = UIBezierPath(roundedRect: CGRect(origin: center, size: CGSize(width: textSize.width + 20, height: textSize.height + 10)), byRoundingCorners: UIRectCorner.allCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
         containerLayer.path = path.cgPath
         containerLayer.fillColor = UIColor.white.cgColor

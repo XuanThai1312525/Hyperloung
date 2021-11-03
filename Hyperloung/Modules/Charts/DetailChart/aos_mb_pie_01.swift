@@ -8,13 +8,34 @@
 import UIKit
 
 class aos_mb_pie_01: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    private var circleChart: HyperCircleChartView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        circleChart = HyperCircleChartView(frame: bounds)
+        addSubview(circleChart)
+        circleChart.fullscreen()
+        circleChart.datasource = self
+        layoutIfNeeded()
+        DispatchQueue.main.async {
+            self.circleChart.drawChart()
+        }
     }
-    */
+}
 
+extension aos_mb_pie_01: HyperCircleDataSource {
+    var internalDescription: (String, UIColor)? {
+        return ("36%", .black)
+    }
+    
+    var lineWidth: CGFloat {
+        return 8
+    }
+    
+    var dataSet: [HyperCircleData] {
+        return [HyperCircleData(percent: 0.3, color: .red)]
+    }
+    
+    func description(of data: HyperCircleData) -> String {
+        return "12억"
+    }
 }
