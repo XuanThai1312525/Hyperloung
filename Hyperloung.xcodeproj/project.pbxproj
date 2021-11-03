@@ -64,8 +64,8 @@
 		94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */; };
 		94E5F407273207200081FD86 /* CircleDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */; };
 		FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460332732B00B00084D14 /* aos_ma_line_03.swift */; };
-		FD7460372732B00B00084D14 /* aos_ma_line_04.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD7460342732B00B00084D14 /* aos_ma_line_04.xib */; };
 		FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460352732B00B00084D14 /* aos_ma_line_04.swift */; };
+		FD74603A2732BADC00084D14 /* aos_ma_line_04.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD7460392732BADB00084D14 /* aos_ma_line_04.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,8 +155,8 @@
 		C996A623659E2D5933C696E8 /* Pods-HyperloungTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.debug.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1134F5868672CE3EEF85559 /* Pods_Hyperloung.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7460332732B00B00084D14 /* aos_ma_line_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_03.swift; sourceTree = "<group>"; };
-		FD7460342732B00B00084D14 /* aos_ma_line_04.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_ma_line_04.xib; sourceTree = "<group>"; };
 		FD7460352732B00B00084D14 /* aos_ma_line_04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_04.swift; sourceTree = "<group>"; };
+		FD7460392732BADB00084D14 /* aos_ma_line_04.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_ma_line_04.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,13 +453,13 @@
 			children = (
 				FD7460332732B00B00084D14 /* aos_ma_line_03.swift */,
 				FD7460352732B00B00084D14 /* aos_ma_line_04.swift */,
-				FD7460342732B00B00084D14 /* aos_ma_line_04.xib */,
 				94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */,
 				94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */,
 				94E5F400273202D30081FD86 /* aos_mb_pie_02.swift */,
 				94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */,
 				94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */,
 				94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */,
+				FD7460392732BADB00084D14 /* aos_ma_line_04.xib */,
 			);
 			path = DetailChart;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 				94BC75C52726A07B00018C26 /* Main.storyboard in Resources */,
 				9464C20B2727C2CC0048CB98 /* ReportCardView.xib in Resources */,
 				94BC76112726C27A00018C26 /* Spoqa Han Sans Neo Thin.otf in Resources */,
-				FD7460372732B00B00084D14 /* aos_ma_line_04.xib in Resources */,
+				FD74603A2732BADC00084D14 /* aos_ma_line_04.xib in Resources */,
 				9464C1FB2727A2E70048CB98 /* BottomBar.xib in Resources */,
 				94BC76132726C27A00018C26 /* Spoqa Han Sans Neo Medium.otf in Resources */,
 				9464C2172728003D0048CB98 /* ReportPanelView.xib in Resources */,

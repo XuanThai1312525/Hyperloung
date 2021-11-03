@@ -11,7 +11,7 @@ import UIKit
 import Charts // You need this line to be able to use Charts Library
 import class Charts.LineChartData
 class aos_ma_line_04: UIView , ChartViewDelegate{
-    
+    @IBOutlet var view: UIView!
     @IBOutlet weak var chartContainer: UIView!
     var chartView: LineChartView!
     var chartViewDataSet: LineChartDataSet!
@@ -29,14 +29,22 @@ class aos_ma_line_04: UIView , ChartViewDelegate{
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        Bundle.main.loadNibNamed("aos_ma_line_04", owner: self, options: nil)
+        addSubview(chartContainer)
+        chartContainer.translatesAutoresizingMaskIntoConstraints = false
+        chartContainer.fullscreen()
+        layoutIfNeeded()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setupChartView()
+        }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setupLine1ChartView()
+
     }
     
-    func setupLine1ChartView(){
+    func setupChartView(){
     
         chartView = LineChartView()
         chartContainer.addSubview(chartView)

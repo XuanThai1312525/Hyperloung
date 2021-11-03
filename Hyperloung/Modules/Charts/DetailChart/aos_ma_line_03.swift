@@ -20,19 +20,11 @@ class aos_ma_line_03: UIView , ChartViewDelegate{
     var selectedValueColor = "#222222".color
     var selectedRoundColor = "#DDDDDD".color.cgColor
     var defaultFont = UIFont.systemFont(ofSize: 11)
-    var defaultValueBottomSpacing: CGFloat = 10
+    var defaultValueBottomSpacing: CGFloat = 0//10 temp to fix 0 , Open when using folk
     var defaultValueLabel = "A"
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupLine1ChartView()
-    }
     
     
-    func setupLine1ChartView(){
+    func setupChartView(){
     
         chartView = LineChartView()
         self.addSubview(chartView)
