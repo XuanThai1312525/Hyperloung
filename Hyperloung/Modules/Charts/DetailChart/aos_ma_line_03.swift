@@ -37,7 +37,7 @@ class aos_ma_line_03: UIView {
         let xAxisData = ["1A","2B","3C","4D"]
         let defaultFont = UIFont.systemFont(ofSize: 11)
 
-        let appearence = HyperLineAppearance(font: defaultFont,  selectedValueColor: "#222222".color, xAxisValueColor: "#DDDDDD".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10 , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
+        let appearence = HyperLineAppearance(font: defaultFont,  selectedValueColor: "#222222".color, selectedValueRoundColor:  "#111111".color, xAxisValueColor: "#DDDDDD".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15 , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), isShowValue: true, leftAxisConfig: HyperLineLeftAxisConfig(isShowAxis: false))
 
         let defaultConfig = HyperLineChartConfig(
             data: lineData,

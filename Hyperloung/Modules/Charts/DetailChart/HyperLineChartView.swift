@@ -29,9 +29,20 @@ struct HyperLineChartConfig {
     var appearance: HyperLineAppearance
 }
 
+struct HyperLineLeftAxisConfig {
+    var isShowAxis: Bool
+    var labelCount: Int!
+    var minValue: Double!
+    var maxValue: Double!
+    var xOffset: Double!
+    var labels: [String]!
+    var valueFormatter: IAxisValueFormatter!
+    var labelColor: UIColor?
+}
 struct HyperLineAppearance {
     var font: UIFont
     var selectedValueColor: UIColor
+    var selectedValueRoundColor: UIColor
     var xAxisValueColor: UIColor
     var circleHoleColor: UIColor
     var circleRadius: CGFloat
@@ -42,12 +53,17 @@ struct HyperLineAppearance {
     var lineMode: LineChartDataSet.Mode
     var getValueFormatter: ([HyperLineData]) -> IValueFormatter
     var xAxisFormatter: IAxisValueFormatter
+    var isShowValue: Bool
+    var leftAxisConfig: HyperLineLeftAxisConfig
+    var descriptionContainerHeight: Double?
+//    var leftAxisFormmater:
 }
 
 class HyperLineChartView: UIView , ChartViewDelegate{
     @IBOutlet weak var chartContainer: UIView!
     @IBOutlet weak var descriptionContainerView: UIStackView!
     @IBOutlet weak var bottomContainerView: UIView!
+    @IBOutlet weak var descriptionContainerHeightConstraint: NSLayoutConstraint!
     
     var config: HyperLineChartConfig!
     
@@ -72,6 +88,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
             circleInfoView.bindingUI(data: cirlceInfoData)
             self.descriptionContainerView.addArrangedSubview(circleInfoView)
         }
+        self.descriptionContainerHeightConstraint.constant = config.appearance.descriptionContainerHeight ?? 50
     }
     
     private func setupChartView(){
@@ -81,15 +98,16 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         
         let lineChartData = Charts.LineChartData()
         
+        chartView = LineChartView()
+        chartContainer.addSubview(chartView)
+        chartView.translatesAutoresizingMaskIntoConstraints = false
+        chartView.leftAnchor.constraint(equalTo: chartContainer.leftAnchor).isActive = true
+        chartView.rightAnchor.constraint(equalTo: chartContainer.rightAnchor).isActive = true
+        chartView.topAnchor.constraint(equalTo: chartContainer.topAnchor).isActive = true
+        chartView.bottomAnchor.constraint(equalTo: chartContainer.bottomAnchor).isActive = true
+        
         for i in 0..<datas.count {
             let data = datas[i]
-            chartView = LineChartView()
-            chartContainer.addSubview(chartView)
-            chartView.translatesAutoresizingMaskIntoConstraints = false
-            chartView.leftAnchor.constraint(equalTo: chartContainer.leftAnchor).isActive = true
-            chartView.rightAnchor.constraint(equalTo: chartContainer.rightAnchor).isActive = true
-            chartView.topAnchor.constraint(equalTo: chartContainer.topAnchor).isActive = true
-            chartView.bottomAnchor.constraint(equalTo: chartContainer.bottomAnchor).isActive = true
             
             var lineChartEntry  = [ChartDataEntry]() //this is the Array that will eventually be displayed on the graph.
             
@@ -105,6 +123,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
                     cirlces.append(x)
                 }
             }
+            
             let chartViewDataSet = LineChartDataSet(entries: lineChartEntry, label: "")
             chartViewDataSet.circleHoleColor = appearance.circleHoleColor
             chartViewDataSet.circleColors = data.map{$0.appearance.circleColor}
@@ -119,7 +138,6 @@ class HyperLineChartView: UIView , ChartViewDelegate{
             chartViewDataSet.lineWidth = appearance.lineWidth
             chartViewDataSet.highlightLineWidth = 0
             chartViewDataSet.valueBottomSpacing = appearance.bottomValueToCircle
-            
             lineChartData.addDataSet(chartViewDataSet)
         }
         
@@ -131,7 +149,8 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         chartView.legend.enabled = false
         chartView.clipDataToContentEnabled = false
         chartView.clipValuesToContentEnabled = false
-        chartView.setExtraOffsets(left: 30, top: 30, right: 30, bottom: 30)
+        chartView.setExtraOffsets(left: 30, top: 40, right: 30, bottom: 0)
+
         
         chartView.xAxis.valueFormatter = appearance.xAxisFormatter
         chartView.xAxis.labelPosition = .bottom
@@ -142,40 +161,64 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         chartView.xAxis.drawAxisLineEnabled = false
         chartView.xAxis.labelTextColor = appearance.xAxisValueColor
         chartView.xAxis.setLabelCount(xAxisData.count, force: true)
-        
         chartView.rightAxis.drawAxisLineEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
-        
-        chartView.leftAxis.drawAxisLineEnabled = false
-        chartView.leftAxis.drawLabelsEnabled = false
-        chartView.leftAxis.enabled = false
         chartView.rightAxis.enabled = false
+        
+        if(appearance.leftAxisConfig.isShowAxis) {
+            chartView.leftAxis.drawAxisLineEnabled = false
+            chartView.leftAxis.drawLabelsEnabled = true
+            chartView.leftAxis.labelXOffset = -appearance.leftAxisConfig.xOffset
+            chartView.leftAxis.valueFormatter = appearance.leftAxisConfig.valueFormatter
+            chartView.leftAxis.labelTextColor = appearance.leftAxisConfig.labelColor ?? UIColor.black
+            chartView.leftAxis.setLabelCount(appearance.leftAxisConfig.labels.count, force: true)
+            chartView.leftAxis.axisMinimum = appearance.leftAxisConfig.minValue
+            chartView.leftAxis.axisMaximum = appearance.leftAxisConfig.maxValue
+            chartView.leftAxis.enabled = true
+            
+        } else {
+            chartView.leftAxis.enabled = false
+        }
+        
+        
+        chartView.rightAxis.valueFormatter = appearance.xAxisFormatter
         chartView.delegate = self
         chartView.noDataText = ""
+        chartView.noDataTextColor = UIColor.clear
         
         
         chartView.drawMarkers = true
-        chartView.marker = HyperLineMarker(config:  HyperLineMarkerConfig(selectedRoundColor: appearance.selectedValueColor, font: appearance.font, bottomSpacing: appearance.bottomValueToCircle, padding: appearance.tooltipPadding))
+        chartView.marker = HyperLineMarker(config:  HyperLineMarkerConfig(selectedRoundColor: appearance.selectedValueColor, font: appearance.font, bottomSpacing: appearance.bottomValueToCircle, padding: appearance.tooltipPadding, isShowValue: appearance.isShowValue), data: config.data, chartView: chartView)
     }
     
     internal func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-//        let index: Int = chartView.data?.dataSets.firstIndex{$0.contains(entry)} ?? 0
-//        var selectedDataSet = chartView.data?.dataSets[index]
-//        let selectedData = config.data[index]
-//        chartView.drawMarkers = true
-//
-//        var colors = selectedData.map{$0.appearance.textColor}
-//        colors[index] = config.appearance.selectedValueColor
-//        selectedDataSet!.valueColors = colors
-//        hideSelectedValueTask?.cancel()
-//
-//        hideSelectedValueTask = DispatchWorkItem(block: {
-//            self.chartView.drawMarkers = false
-//            self.chartViewDataSet.valueColors = self.config.data.map{$0.appearance.textColor}
-//            self.chartView.setNeedsDisplay()
-//        })
+        chartView.drawMarkers = true
+        let dataSets = chartView.data!.dataSets
+        let index: Int = dataSets.firstIndex{$0.entryIndex(entry: entry) >= 0} ?? 0
+        let selectedDataSet = dataSets[index]
+        let selectedData = config.data[index]
+        
+        //Reset all chart color
+        for i in 0..<dataSets.count {
+            let data = config.data[i]
+            let dataSet = dataSets[i]
+            dataSet.valueColors = data.map{$0.appearance.textColor}
+        }
 
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: hideSelectedValueTask!)
+        let entryIndex = Int(entry.x);
+        var colors = selectedData.map{$0.appearance.textColor}
+        colors[entryIndex] = config.appearance.selectedValueColor
+        selectedDataSet.valueColors = colors
+        
+        hideSelectedValueTask?.cancel()
+
+        hideSelectedValueTask = DispatchWorkItem(block: {
+            chartView.drawMarkers = false
+            selectedDataSet.valueColors = selectedData.map{$0.appearance.textColor}
+            chartView.setNeedsDisplay()
+        })
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: hideSelectedValueTask!)
     }
     
     internal func chartViewDidEndPanning(_ chartView: ChartViewBase) {
@@ -216,15 +259,21 @@ struct HyperLineMarkerConfig {
     let font: UIFont
     let bottomSpacing: CGFloat
     let padding: CGFloat
+    let isShowValue: Bool
 }
 
 class HyperLineMarker: IMarker {
     var selectedEntry: ChartDataEntry?
     var config: HyperLineMarkerConfig
-    var labels: [String]!
+    var label: String?
+    var isShowMark: Bool = false
+    var data: [[HyperLineData]]?
+    weak var chartView: ChartViewBase?
     
-    init(config: HyperLineMarkerConfig) {
+    init(config: HyperLineMarkerConfig, data: [[HyperLineData]]?, chartView: ChartViewBase ) {
         self.config = config
+        self.data = data
+        self.chartView = chartView
     }
     
     
@@ -236,27 +285,34 @@ class HyperLineMarker: IMarker {
     
     func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
         selectedEntry = entry
+        let dataSets = chartView?.data!.dataSets
+        let index: Int = dataSets?.firstIndex{$0.entryIndex(entry: entry) >= 0} ?? 0
+        let selectedData = data?[index]
+        if let hyperLineData = selectedData?[Int(entry.x)] {
+            label = Formattor.getValueDescription(hyperLineData.value, hyperLineData.label)
+            isShowMark = hyperLineData.appearance.isShowCircle
+        }
+        
     }
     
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
-//        let index = Int(selectedEntry?.x ?? 0);
-//        if(index == 0 || index == labels.count - 1) {
-//            let selectedStringValue = labels[index]
-//            let selectedStringWidth = selectedStringValue.widthOfString(usingFont: config.font)
-//            let spacing: CGFloat = config.padding
-//            let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-//            let y: CGFloat = point.y - config.font.lineHeight*1.5 - config.bottomSpacing - spacing //5 is horizontal spacing
-//            let width: CGFloat = selectedStringWidth + spacing*2
-//            let height: CGFloat = config.font.lineHeight + spacing*2
-//            let rectFrame = CGRect(x: x, y: y, width: width, height: height)
-//            let clipPath = UIBezierPath(roundedRect: rectFrame, cornerRadius: 10).cgPath
-//            context.addPath(clipPath)
-//            context.setLineWidth(1)
-//            context.setStrokeColor(config.selectedRoundColor.cgColor)
-//        
-//            context.closePath()
-//            context.strokePath()
-//        }
+        if let label = label , isShowMark && config.isShowValue{
+            let selectedStringWidth = label.widthOfString(usingFont: config.font)
+            let spacing: CGFloat = config.padding
+            let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
+            let y: CGFloat = point.y - config.font.lineHeight*1.5 - config.bottomSpacing - spacing/2 //5 is horizontal spacing
+            let width: CGFloat = selectedStringWidth + spacing*2
+            let height: CGFloat = config.font.lineHeight + spacing
+            let rectFrame = CGRect(x: x, y: y, width: width, height: height)
+            let clipPath = UIBezierPath(roundedRect: rectFrame, cornerRadius: height/2).cgPath
+            context.addPath(clipPath)
+            context.setLineWidth(1)
+            context.setStrokeColor(config.selectedRoundColor.cgColor)
+        
+            context.closePath()
+            context.strokePath()
+        }
+        
     }
 }
