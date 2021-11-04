@@ -40,19 +40,19 @@ class HyperHorizontalLineChartView: UIView {
     }
 }
 
-struct LineChartData {
+struct HyperLineChartData {
     var title: String
     var data: HyperHorizontalData
 }
 
 class MultiLineChartView: UIView {
     private let stackView = UIStackView()
-    var data: [LineChartData] = [
-        LineChartData(title: "영업1", data: HyperHorizontalData(total: 543, current: 543, unit: "억")),
-        LineChartData(title: "영업2", data: HyperHorizontalData(total: 543, current: 234, unit: "억")),
-        LineChartData(title: "영업3", data: HyperHorizontalData(total: 543, current: 168, unit: "억")),
-        LineChartData(title: "AI", data: HyperHorizontalData(total: 543, current: 431, unit: "억")),
-        LineChartData(title: "보안", data: HyperHorizontalData(total: 543, current: 302, unit: "억"))
+    var data: [HyperLineChartData] = [
+        HyperLineChartData(title: "영업1", data: HyperHorizontalData(total: 543, current: 543, unit: "억")),
+        HyperLineChartData(title: "영업2", data: HyperHorizontalData(total: 543, current: 234, unit: "억")),
+        HyperLineChartData(title: "영업3", data: HyperHorizontalData(total: 543, current: 168, unit: "억")),
+        HyperLineChartData(title: "AI", data: HyperHorizontalData(total: 543, current: 431, unit: "억")),
+        HyperLineChartData(title: "보안", data: HyperHorizontalData(total: 543, current: 302, unit: "억"))
     ]
     required init?(coder: NSCoder) {
         super.init(coder: coder)

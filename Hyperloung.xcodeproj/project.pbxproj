@@ -35,6 +35,9 @@
 		9464C2172728003D0048CB98 /* ReportPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9464C2162728003D0048CB98 /* ReportPanelView.xib */; };
 		9464C219272803A00048CB98 /* ReportPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464C218272803A00048CB98 /* ReportPanelView.swift */; };
 		9464C21B27280A3F0048CB98 /* DetailReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464C21A27280A3F0048CB98 /* DetailReportTableViewCell.swift */; };
+		94A88A162732B81700801952 /* aos_d_bar_06.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A88A152732B81700801952 /* aos_d_bar_06.xib */; };
+		94A88A182732B82D00801952 /* aos_d_bar_06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A88A172732B82D00801952 /* aos_d_bar_06.swift */; };
+		94A88A1F2732C1A300801952 /* DayFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A88A1E2732C1A300801952 /* DayFormatter.swift */; };
 		94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75BD2726A07B00018C26 /* AppDelegate.swift */; };
 		94BC75C02726A07B00018C26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75BF2726A07B00018C26 /* SceneDelegate.swift */; };
 		94BC75C22726A07B00018C26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75C12726A07B00018C26 /* LoginViewController.swift */; };
@@ -112,6 +115,9 @@
 		9464C2162728003D0048CB98 /* ReportPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportPanelView.xib; sourceTree = "<group>"; };
 		9464C218272803A00048CB98 /* ReportPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPanelView.swift; sourceTree = "<group>"; };
 		9464C21A27280A3F0048CB98 /* DetailReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportTableViewCell.swift; sourceTree = "<group>"; };
+		94A88A152732B81700801952 /* aos_d_bar_06.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aos_d_bar_06.xib; sourceTree = "<group>"; };
+		94A88A172732B82D00801952 /* aos_d_bar_06.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_bar_06.swift; sourceTree = "<group>"; };
+		94A88A1E2732C1A300801952 /* DayFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFormatter.swift; sourceTree = "<group>"; };
 		94AC0B30F095358F710673B6 /* Pods-Hyperloung-HyperloungUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hyperloung-HyperloungUITests/Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94BC75BA2726A07B00018C26 /* Hyperloung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperloung.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BC75BD2726A07B00018C26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 		944CC8E9272846D80016398D /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				94A88A1D2732C18400801952 /* Formater */,
 				94E5F3FB27316DD90081FD86 /* DetailChart */,
 				944CC8EC27284BC90016398D /* BarCharts */,
 				944CC8EA2728471D0016398D /* ReportChartViewController.swift */,
@@ -278,6 +285,14 @@
 				9464C21A27280A3F0048CB98 /* DetailReportTableViewCell.swift */,
 			);
 			path = Subview;
+			sourceTree = "<group>";
+		};
+		94A88A1D2732C18400801952 /* Formater */ = {
+			isa = PBXGroup;
+			children = (
+				94A88A1E2732C1A300801952 /* DayFormatter.swift */,
+			);
+			path = Formater;
 			sourceTree = "<group>";
 		};
 		94BC75B12726A07B00018C26 = {
@@ -451,6 +466,8 @@
 				94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */,
 				94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */,
 				94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */,
+				94A88A152732B81700801952 /* aos_d_bar_06.xib */,
+				94A88A172732B82D00801952 /* aos_d_bar_06.swift */,
 			);
 			path = DetailChart;
 			sourceTree = "<group>";
@@ -578,6 +595,7 @@
 				94BC76112726C27A00018C26 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				9464C1FB2727A2E70048CB98 /* BottomBar.xib in Resources */,
 				94BC76132726C27A00018C26 /* Spoqa Han Sans Neo Medium.otf in Resources */,
+				94A88A162732B81700801952 /* aos_d_bar_06.xib in Resources */,
 				9464C2172728003D0048CB98 /* ReportPanelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,6 +732,7 @@
 				944CC8E8272835740016398D /* UserInfoBasViewController.swift in Sources */,
 				94BC75F22726B58100018C26 /* AppMainNavigator.swift in Sources */,
 				94BC75C22726A07B00018C26 /* LoginViewController.swift in Sources */,
+				94A88A182732B82D00801952 /* aos_d_bar_06.swift in Sources */,
 				9464C21B27280A3F0048CB98 /* DetailReportTableViewCell.swift in Sources */,
 				9464C1FF2727AAE50048CB98 /* LayoutExtension.swift in Sources */,
 				94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */,
@@ -735,6 +754,7 @@
 				94BC75FF2726BAAD00018C26 /* BaseNavigationViewController.swift in Sources */,
 				9464C1F82727A1900048CB98 /* UIViewExtension.swift in Sources */,
 				9464C20F2727F1B00048CB98 /* ReportCollectionViewCell.swift in Sources */,
+				94A88A1F2732C1A300801952 /* DayFormatter.swift in Sources */,
 				94BC75FA2726B76800018C26 /* UIViewController_Ext.swift in Sources */,
 				94BC75EF2726B41A00018C26 /* AppManager.swift in Sources */,
 				9464C1F62726FD7C0048CB98 /* SummaryReportView.swift in Sources */,

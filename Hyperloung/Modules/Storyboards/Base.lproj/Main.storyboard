@@ -883,12 +883,12 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Id-hvz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1696"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1880"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-e1-K8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1696"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1880"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-Cm-Vop" customClass="aos_mb_pie_02" customModule="Hyperloung" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-Cm-Vop" customClass="aos_d_bar_06" customModule="Hyperloung" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -1244,6 +1244,13 @@ Cg
                                                             <constraint firstItem="VCl-gv-xNM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AiZ-Xg-HPB" secondAttribute="trailing" constant="8" symbolic="YES" id="qhy-hy-4rd"/>
                                                             <constraint firstItem="AiZ-Xg-HPB" firstAttribute="leading" secondItem="giX-oc-9pn" secondAttribute="leading" constant="20" id="tah-Pe-ZBT"/>
                                                             <constraint firstItem="2HH-S6-jFB" firstAttribute="top" secondItem="AiZ-Xg-HPB" secondAttribute="bottom" constant="30" id="xCL-5v-Pz8"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UV0-4p-ytm" customClass="aos_ma_line_04" customModule="Hyperloung" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="1720" width="414" height="160"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="160" id="LGG-ou-SUP"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
