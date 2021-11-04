@@ -20,7 +20,7 @@ PODS:
     - RxSwiftExt/Core
 
 DEPENDENCIES:
-  - Charts
+  - Charts (from `https://github.com/trinhhcse/Charts.git`, branch `master_chart`)
   - EasyTipView
   - IQKeyboardManagerSwift
   - RxCocoa (~> 5)
@@ -29,13 +29,22 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Charts
     - EasyTipView
     - IQKeyboardManagerSwift
     - RxCocoa
     - RxRelay
     - RxSwift
     - RxSwiftExt
+
+EXTERNAL SOURCES:
+  Charts:
+    :branch: master_chart
+    :git: https://github.com/trinhhcse/Charts.git
+
+CHECKOUT OPTIONS:
+  Charts:
+    :commit: dc384643ecbd125bff789d46894c0ee9af8908fc
+    :git: https://github.com/trinhhcse/Charts.git
 
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
@@ -46,6 +55,6 @@ SPEC CHECKSUMS:
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
 
-PODFILE CHECKSUM: fdd2203d5396f98125dd85ab32ae14c8e87be435
+PODFILE CHECKSUM: ee2781b55b650861700f83a40aafdf4beb467e2f
 
 COCOAPODS: 1.11.2

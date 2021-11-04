@@ -1320,7 +1320,6 @@ Cg
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="aosMaLine03ChartView" destination="Iqg-bS-Y2b" id="UfV-bd-DCG"/>
                         <outlet property="circleChartView" destination="dRd-NO-Bbs" id="dvX-7q-tg5"/>
                         <outlet property="linkedChartView" destination="2HH-S6-jFB" id="pNE-aV-4fC"/>
                         <outlet property="monthChartView" destination="W77-cL-9bN" id="ORE-0a-Ii6"/>

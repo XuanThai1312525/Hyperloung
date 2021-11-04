@@ -13,7 +13,6 @@ class ReportChartViewController: BaseViewController {
     @IBOutlet weak var planChartView: HyperBarChartView!
     @IBOutlet weak var circleChartView: aos_mb_pie_01!
     @IBOutlet weak var linkedChartView: LinkedChartView!
-    @IBOutlet weak var aosMaLine03ChartView: aos_ma_line_03!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +27,6 @@ class ReportChartViewController: BaseViewController {
         let linkedChartDataSourceHandler = LinkedChartDataSourceHandler()
         linkedChartView.datasource = linkedChartDataSourceHandler
         linkedChartView.drawChart()
-        
-        aosMaLine03ChartView.setupChartView()
     }
 }
 

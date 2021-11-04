@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HyperLineChartView" customModule="Hyperloung" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ser-jT-5bo">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSN-Pn-GSh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlA-td-w6E">
+                            <rect key="frame" x="0.0" y="802" width="414" height="50"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-cZ-iq8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="DPM-cZ-iq8" firstAttribute="top" secondItem="vlA-td-w6E" secondAttribute="top" id="Ak8-P0-t6W"/>
+                                <constraint firstAttribute="bottom" secondItem="DPM-cZ-iq8" secondAttribute="bottom" id="UjH-00-CwK"/>
+                                <constraint firstItem="DPM-cZ-iq8" firstAttribute="centerX" secondItem="vlA-td-w6E" secondAttribute="centerX" id="XJs-jr-Gpm"/>
+                                <constraint firstAttribute="height" constant="50" id="bjG-6Z-Nnj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ser-jT-5bo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="3rb-k2-ZIo"/>
+                <constraint firstItem="ser-jT-5bo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5YD-BD-DuD"/>
+                <constraint firstAttribute="trailing" secondItem="ser-jT-5bo" secondAttribute="trailing" id="6a3-rm-ByE"/>
+                <constraint firstAttribute="bottom" secondItem="ser-jT-5bo" secondAttribute="bottom" id="bgz-20-Rjg"/>
+            </constraints>
+            <connections>
+                <outlet property="bottomContainerView" destination="vlA-td-w6E" id="tVb-5m-HD4"/>
+                <outlet property="chartContainer" destination="xSN-Pn-GSh" id="DyV-Jf-MGy"/>
+                <outlet property="descriptionContainerView" destination="DPM-cZ-iq8" id="NgJ-Hz-MYL"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
