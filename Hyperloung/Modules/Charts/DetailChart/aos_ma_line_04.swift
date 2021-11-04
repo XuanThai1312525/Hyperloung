@@ -29,7 +29,7 @@ class aos_ma_line_04: UIView {
             HyperLineData(value: 8, label: "A", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color,isShowCircle: false)),
             HyperLineData(value: 24, label: "B", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false)),
             HyperLineData(value: 16, label: "C", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false)),
-            HyperLineData(value: 36, label: "D", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true)),
+            HyperLineData(value: 36, label: "D", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true)),
         ]]
 
         let descriptions =  [
@@ -40,7 +40,7 @@ class aos_ma_line_04: UIView {
         let xAxisData = ["1A","2B","3C","4D"]
         let defaultFont = UIFont.systemFont(ofSize: 11)
 
-        let appearence = HyperLineAppearance(font: defaultFont,  selectedValueColor: "#222222".color, selectedValueRoundColor: "#111111".color, xAxisValueColor: "#DDDDDD".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10 , lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), isShowValue: true, leftAxisConfig: HyperLineLeftAxisConfig(isShowAxis: false))
+        let appearence = HyperLineAppearance(font: defaultFont,  selectedValueColor: "#222222".color, selectedValueRoundColor: "#111111".color, xAxisValueColor: "#DDDDDD".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10 , lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData),leftAxisConfig: HyperLineLeftAxisConfig(isShowAxis: false))
 
         let defaultConfig = HyperLineChartConfig(
             data:lineData,

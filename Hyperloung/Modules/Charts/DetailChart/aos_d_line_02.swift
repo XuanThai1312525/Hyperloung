@@ -56,7 +56,7 @@ class aos_d_line_02: UIView {
         let xAxisData = ["","1A","2B","3C","4D",""]
         let defaultFont = UIFont.systemFont(ofSize: 13)
 
-        let appearence = HyperLineAppearance(font: defaultFont,  selectedValueColor: "#222222".color, selectedValueRoundColor:  "#111111".color, xAxisValueColor: "#222222".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15 , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), isShowValue: false, leftAxisConfig: HyperLineLeftAxisConfig(isShowAxis: true, labelCount: 3, minValue: 0, maxValue: 100, xOffset: 25, labels: [
+        let appearence = HyperLineAppearance(font: defaultFont,  selectedValueColor: "#222222".color, selectedValueRoundColor:  "#111111".color, xAxisValueColor: "#222222".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15 , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig(isShowAxis: true, labelCount: 3, minValue: 0, maxValue: 100, xOffset: 25, labels: [
             "100%","50%","0"], valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color))
 
         let defaultConfig = HyperLineChartConfig(

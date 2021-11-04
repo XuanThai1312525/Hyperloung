@@ -20,6 +20,8 @@ struct HyperLineDataAppearance {
     var circleColor: UIColor
     var lineColor: UIColor
     var isShowCircle: Bool
+    var isShowValue: Bool! = false
+    var isShowMark: Bool?
 }
 
 struct HyperLineChartConfig {
@@ -53,10 +55,8 @@ struct HyperLineAppearance {
     var lineMode: LineChartDataSet.Mode
     var getValueFormatter: ([HyperLineData]) -> IValueFormatter
     var xAxisFormatter: IAxisValueFormatter
-    var isShowValue: Bool
     var leftAxisConfig: HyperLineLeftAxisConfig
     var descriptionContainerHeight: Double?
-//    var leftAxisFormmater:
 }
 
 class HyperLineChartView: UIView , ChartViewDelegate{
@@ -149,7 +149,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         chartView.legend.enabled = false
         chartView.clipDataToContentEnabled = false
         chartView.clipValuesToContentEnabled = false
-        chartView.setExtraOffsets(left: 30, top: 40, right: 30, bottom: 0)
+        chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
 
         
         chartView.xAxis.valueFormatter = appearance.xAxisFormatter
@@ -188,7 +188,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         
         
         chartView.drawMarkers = true
-        chartView.marker = HyperLineMarker(config:  HyperLineMarkerConfig(selectedRoundColor: appearance.selectedValueColor, font: appearance.font, bottomSpacing: appearance.bottomValueToCircle, padding: appearance.tooltipPadding, isShowValue: appearance.isShowValue), data: config.data, chartView: chartView)
+        chartView.marker = HyperLineMarker(config:  HyperLineMarkerConfig(selectedRoundColor: appearance.selectedValueColor, font: appearance.font, bottomSpacing: appearance.bottomValueToCircle, padding: appearance.tooltipPadding), data: config.data, chartView: chartView)
     }
     
     internal func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
@@ -259,7 +259,6 @@ struct HyperLineMarkerConfig {
     let font: UIFont
     let bottomSpacing: CGFloat
     let padding: CGFloat
-    let isShowValue: Bool
 }
 
 class HyperLineMarker: IMarker {
@@ -290,14 +289,14 @@ class HyperLineMarker: IMarker {
         let selectedData = data?[index]
         if let hyperLineData = selectedData?[Int(entry.x)] {
             label = Formattor.getValueDescription(hyperLineData.value, hyperLineData.label)
-            isShowMark = hyperLineData.appearance.isShowCircle
+            isShowMark = (hyperLineData.appearance.isShowMark ?? hyperLineData.appearance.isShowValue)  || isShowMark
         }
         
     }
     
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
-        if let label = label , isShowMark && config.isShowValue{
+        if let label = label , isShowMark {
             let selectedStringWidth = label.widthOfString(usingFont: config.font)
             let spacing: CGFloat = config.padding
             let x: CGFloat  = point.x - selectedStringWidth/2 - spacing

@@ -64,6 +64,7 @@
 		94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */; };
 		94E5F407273207200081FD86 /* CircleDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */; };
 		FD00F5582734637600181CC3 /* aos_d_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F5572734637600181CC3 /* aos_d_line_02.swift */; };
+		FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F55927348BD400181CC3 /* aos_d_line_01.swift */; };
 		FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460332732B00B00084D14 /* aos_ma_line_03.swift */; };
 		FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460352732B00B00084D14 /* aos_ma_line_04.swift */; };
 		FDB1410B2733076D00E5CF74 /* CircleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB141092733076C00E5CF74 /* CircleInfoView.xib */; };
@@ -159,6 +160,7 @@
 		C996A623659E2D5933C696E8 /* Pods-HyperloungTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.debug.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1134F5868672CE3EEF85559 /* Pods_Hyperloung.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD00F5572734637600181CC3 /* aos_d_line_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_line_02.swift; sourceTree = "<group>"; };
+		FD00F55927348BD400181CC3 /* aos_d_line_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_line_01.swift; sourceTree = "<group>"; };
 		FD7460332732B00B00084D14 /* aos_ma_line_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_03.swift; sourceTree = "<group>"; };
 		FD7460352732B00B00084D14 /* aos_ma_line_04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_04.swift; sourceTree = "<group>"; };
 		FDB141092733076C00E5CF74 /* CircleInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleInfoView.xib; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				FDB1410D27330B8A00E5CF74 /* HyperLineChartView.swift */,
 				FDB1410F27331A4500E5CF74 /* HyperLineChartView.xib */,
 				FD00F5572734637600181CC3 /* aos_d_line_02.swift */,
+				FD00F55927348BD400181CC3 /* aos_d_line_01.swift */,
 			);
 			path = DetailChart;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				94E5F3FA2731648F0081FD86 /* Tooltip.swift in Sources */,
 				9464C2122727F8760048CB98 /* ProgessBar.swift in Sources */,
 				94E5F3FF273189080081FD86 /* aos_mb_pie_01.swift in Sources */,
+				FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

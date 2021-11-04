@@ -884,10 +884,10 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Id-hvz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2492"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2774"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-e1-K8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2492"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2774"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-Cm-Vop" customClass="aos_mb_pie_02" customModule="Hyperloung" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
@@ -1302,6 +1302,25 @@ Cg
                                                             <constraint firstAttribute="bottom" secondItem="vF0-Xd-xI3" secondAttribute="bottom" constant="8" id="Gla-Tl-DOh"/>
                                                             <constraint firstItem="vF0-Xd-xI3" firstAttribute="top" secondItem="TQF-h5-FYc" secondAttribute="top" id="NFQ-8J-2iJ"/>
                                                             <constraint firstItem="vF0-Xd-xI3" firstAttribute="leading" secondItem="TQF-h5-FYc" secondAttribute="leading" constant="30" id="OHP-re-xgH"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwa-nT-Q2C">
+                                                        <rect key="frame" x="0.0" y="2516" width="414" height="258"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdf-gf-kpM" customClass="aos_d_line_01" customModule="Hyperloung" customModuleProvider="target">
+                                                                <rect key="frame" x="30" y="0.0" width="354" height="250"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="250" id="qsv-vh-wjW"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Xdf-gf-kpM" secondAttribute="bottom" constant="8" id="HJ5-B0-ZiH"/>
+                                                            <constraint firstItem="Xdf-gf-kpM" firstAttribute="top" secondItem="wwa-nT-Q2C" secondAttribute="top" id="IgS-Bz-ge4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Xdf-gf-kpM" secondAttribute="trailing" constant="30" id="eNa-PR-U2g"/>
+                                                            <constraint firstItem="Xdf-gf-kpM" firstAttribute="leading" secondItem="wwa-nT-Q2C" secondAttribute="leading" constant="30" id="xcL-EV-RMr"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
