@@ -41,11 +41,11 @@ class aos_d_bar_06: UIView {
             dataEntries1.append(dataEntry1)
         }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Unit sold")
+        var chartDataSet = BarChartDataSet(entries: dataEntries, label: "Unit sold")
         let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Unit Bought")
         
         let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet1]
-        chartDataSet = [#colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)]
+//        chartDataSet = [#colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)]
         barChartView.legend.enabled = false
         barChartView.xAxis.drawAxisLineEnabled = false
         
