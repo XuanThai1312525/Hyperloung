@@ -11,7 +11,7 @@ target 'Hyperloung' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'EasyTipView'
-  pod 'Charts'
+  pod 'Charts', :git => 'https://github.com/trinhhcse/Charts.git', :branch => "master_chart"
   target 'HyperloungTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4EK-Ww-B8K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="84e-Oe-ctY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -22,21 +22,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Hyperloung" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-346" y="78"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="0TE-sH-MiN">
             <objects>
@@ -1326,7 +1311,6 @@ Cg
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="aosMaLine03ChartView" destination="Iqg-bS-Y2b" id="UfV-bd-DCG"/>
                         <outlet property="circleChartView" destination="dRd-NO-Bbs" id="dvX-7q-tg5"/>
                         <outlet property="linkedChartView" destination="2HH-S6-jFB" id="pNE-aV-4fC"/>
                         <outlet property="monthChartView" destination="W77-cL-9bN" id="ORE-0a-Ii6"/>
@@ -1338,6 +1322,84 @@ Cg
             </objects>
             <point key="canvasLocation" x="3594.202898550725" y="-511.60714285714283"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="2gJ-9A-GeH">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="84e-Oe-ctY" customClass="LoginViewController" customModule="Hyperloung" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hIy-Kw-B2S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rb-ur-uh1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eak-0v-MNe">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="748"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nU0-6w-CjO">
+                                                <rect key="frame" x="107" y="300" width="200" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="1wh-Mm-GKD"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Nb5-Ii-qDy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="nU0-6w-CjO" firstAttribute="centerX" secondItem="eak-0v-MNe" secondAttribute="centerX" id="NT9-ZT-Q2f"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsv-Gm-HdM">
+                                        <rect key="frame" x="132" y="768" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="cWX-9H-AEc"/>
+                                            <constraint firstAttribute="height" constant="50" id="z1T-8o-OJ5"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eak-0v-MNe" secondAttribute="trailing" id="18c-It-KIW"/>
+                                    <constraint firstItem="bsv-Gm-HdM" firstAttribute="top" secondItem="eak-0v-MNe" secondAttribute="bottom" constant="20" id="3tk-zj-HSb"/>
+                                    <constraint firstItem="bsv-Gm-HdM" firstAttribute="centerX" secondItem="6rb-ur-uh1" secondAttribute="centerX" id="HbL-1f-K0H"/>
+                                    <constraint firstItem="eak-0v-MNe" firstAttribute="leading" secondItem="6rb-ur-uh1" secondAttribute="leading" id="ITb-Mw-AEo"/>
+                                    <constraint firstAttribute="bottom" secondItem="bsv-Gm-HdM" secondAttribute="bottom" constant="8" id="bj1-fv-seq"/>
+                                    <constraint firstAttribute="bottom" secondItem="eak-0v-MNe" secondAttribute="bottom" id="iDT-aX-NZE"/>
+                                    <constraint firstItem="eak-0v-MNe" firstAttribute="top" secondItem="6rb-ur-uh1" secondAttribute="top" id="kcs-Nx-PF9"/>
+                                </constraints>
+                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_big" translatesAutoresizingMaskIntoConstraints="NO" id="xw2-Bi-9NI">
+                                <rect key="frame" x="77" y="94" width="260" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="KVf-ZL-zlk"/>
+                                    <constraint firstAttribute="width" constant="260" id="Vwa-vF-teC"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IWC-Kt-295"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eak-0v-MNe" firstAttribute="width" secondItem="hIy-Kw-B2S" secondAttribute="width" id="2Fz-cC-iNa"/>
+                            <constraint firstItem="nU0-6w-CjO" firstAttribute="top" secondItem="xw2-Bi-9NI" secondAttribute="bottom" constant="100" id="95c-TY-VEM"/>
+                            <constraint firstItem="xw2-Bi-9NI" firstAttribute="top" secondItem="IWC-Kt-295" secondAttribute="top" constant="50" id="VAn-eE-g6h"/>
+                            <constraint firstItem="6rb-ur-uh1" firstAttribute="top" secondItem="IWC-Kt-295" secondAttribute="top" id="W19-iP-9qp"/>
+                            <constraint firstItem="xw2-Bi-9NI" firstAttribute="centerX" secondItem="eak-0v-MNe" secondAttribute="centerX" id="WS4-ez-Ezn"/>
+                            <constraint firstItem="eak-0v-MNe" firstAttribute="centerX" secondItem="IWC-Kt-295" secondAttribute="centerX" id="fs0-BN-JeP"/>
+                            <constraint firstItem="6rb-ur-uh1" firstAttribute="trailing" secondItem="IWC-Kt-295" secondAttribute="trailing" id="gpL-pU-Cxd"/>
+                            <constraint firstItem="bsv-Gm-HdM" firstAttribute="bottom" secondItem="IWC-Kt-295" secondAttribute="bottom" id="pCH-UX-m6V"/>
+                            <constraint firstItem="6rb-ur-uh1" firstAttribute="leading" secondItem="IWC-Kt-295" secondAttribute="leading" id="wtm-jU-HkT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="bsv-Gm-HdM" id="pyS-NU-mrc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dAb-4G-tQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410" y="27"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_add_more" width="32" height="32"/>
@@ -1345,6 +1407,7 @@ Cg
         <image name="ic_back_black" width="61.333332061767578" height="61.333332061767578"/>
         <image name="ic_color_chart" width="32" height="32"/>
         <image name="ic_logo" width="98.666664123535156" height="53.333332061767578"/>
+        <image name="ic_logo_big" width="346.66665649414062" height="200"/>
         <image name="ic_more" width="61.333332061767578" height="61.333332061767578"/>
         <image name="ic_next" width="8" height="32"/>
         <image name="ic_question" width="16" height="16"/>
