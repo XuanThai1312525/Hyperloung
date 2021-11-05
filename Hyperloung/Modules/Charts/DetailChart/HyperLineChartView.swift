@@ -289,7 +289,7 @@ class HyperLineMarker: IMarker {
         let selectedData = data?[index]
         if let hyperLineData = selectedData?[Int(entry.x)] {
             label = Formattor.getValueDescription(hyperLineData.value, hyperLineData.label)
-            isShowMark = (hyperLineData.appearance.isShowMark ?? hyperLineData.appearance.isShowValue)  || isShowMark
+            isShowMark = hyperLineData.appearance.isShowMark ?? hyperLineData.appearance.isShowValue ?? false
         }
         
     }
