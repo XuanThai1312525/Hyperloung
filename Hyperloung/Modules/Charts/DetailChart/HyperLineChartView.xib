@@ -25,7 +25,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlA-td-w6E">
                             <rect key="frame" x="0.0" y="802" width="414" height="50"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-cZ-iq8">
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-cZ-iq8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                 </stackView>
                             </subviews>
@@ -34,7 +34,7 @@
                                 <constraint firstItem="DPM-cZ-iq8" firstAttribute="top" secondItem="vlA-td-w6E" secondAttribute="top" id="Ak8-P0-t6W"/>
                                 <constraint firstAttribute="bottom" secondItem="DPM-cZ-iq8" secondAttribute="bottom" id="UjH-00-CwK"/>
                                 <constraint firstItem="DPM-cZ-iq8" firstAttribute="centerX" secondItem="vlA-td-w6E" secondAttribute="centerX" id="XJs-jr-Gpm"/>
-                                <constraint firstAttribute="height" constant="50" id="bjG-6Z-Nnj"/>
+                                <constraint firstAttribute="height" priority="900" constant="50" id="bjG-6Z-Nnj"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -51,6 +51,7 @@
             <connections>
                 <outlet property="bottomContainerView" destination="vlA-td-w6E" id="tVb-5m-HD4"/>
                 <outlet property="chartContainer" destination="xSN-Pn-GSh" id="DyV-Jf-MGy"/>
+                <outlet property="descriptionContainerHeightConstraint" destination="bjG-6Z-Nnj" id="Ib6-zf-9u8"/>
                 <outlet property="descriptionContainerView" destination="DPM-cZ-iq8" id="NgJ-Hz-MYL"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
