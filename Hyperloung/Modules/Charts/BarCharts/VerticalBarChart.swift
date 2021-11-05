@@ -58,6 +58,7 @@ class VeritalBarChartView: UIView {
         setup(barLineChartView: chartView)
         
         setDataCount(numOfBar, range: 50, highlight: 2)
+        
     }
     
     // MARK: Functions

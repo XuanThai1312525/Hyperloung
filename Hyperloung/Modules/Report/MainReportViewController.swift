@@ -7,38 +7,38 @@
 
 import UIKit
 
-class MainReportViewController: BaseViewController {
+class MainReportViewController: ReportBaseViewController {
     
     @IBOutlet weak var reportCollectionView: UICollectionView!
     private let itemPerRow: CGFloat = 2.0
     private let minimumSpace: CGFloat = 10.0
     private let collectionViewHeaderFooterReuseIdentifier = "HeaderFooterClass"
-    
+    let data = ReportSummary.default
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
     }
-
+    
     private func setupUI() {
         reportCollectionView.register(UINib(nibName: collectionViewHeaderFooterReuseIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:collectionViewHeaderFooterReuseIdentifier)
         reportCollectionView.register(ReportCollectionViewCell.self, forCellWithReuseIdentifier: ReportCollectionViewCell.identifier)
     }
-
+    
 }
 
 extension MainReportViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
-
+        
         case UICollectionView.elementKindSectionHeader:
-                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: collectionViewHeaderFooterReuseIdentifier, for: indexPath)
-
-                return headerView
-
-            default:
-                assert(false, "Unexpected element kind")
-            }
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: collectionViewHeaderFooterReuseIdentifier, for: indexPath)
+            headerView.backgroundColor = .clear
+            return headerView
+            
+        default:
+            assert(false, "Unexpected element kind")
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -46,13 +46,12 @@ extension MainReportViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReportCollectionViewCell.identifier, for: indexPath) as! ReportCollectionViewCell
-        
-        cell.reportCardView.iconImageView.isHidden = !(indexPath.item == 0)
+        cell.reportCardView.bindingUI(data: data[indexPath.row])
         return cell
     }
     
@@ -76,7 +75,7 @@ extension MainReportViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 250)
+        CGSize(width: collectionView.frame.width, height: 270)
     }
 }
 

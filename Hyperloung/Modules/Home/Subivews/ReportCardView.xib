@@ -93,7 +93,7 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1JY-bK-NpU">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_smile" translatesAutoresizingMaskIntoConstraints="NO" id="1JY-bK-NpU">
                     <rect key="frame" x="304" y="64" width="70" height="70"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="O1N-WJ-ew5"/>
@@ -114,13 +114,19 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="descriptionLabel" destination="R3y-w0-hVO" id="PCI-XW-zw5"/>
                 <outlet property="iconImageView" destination="1JY-bK-NpU" id="Idr-k2-tgS"/>
+                <outlet property="subDescriptionLabel" destination="EYz-H2-r1H" id="Jiv-K6-kYC"/>
+                <outlet property="titleButton" destination="hnQ-8L-AO9" id="f9f-8C-Kik"/>
+                <outlet property="unitLabel" destination="koU-2o-Vyj" id="qyz-L2-HJV"/>
+                <outlet property="valueLabel" destination="1aG-Do-xEn" id="JtQ-uD-MqV"/>
             </connections>
             <point key="canvasLocation" x="-62.318840579710148" y="-140.625"/>
         </view>
     </objects>
     <resources>
         <image name="ic_add_more" width="32" height="32"/>
+        <image name="ic_smile" width="90.666664123535156" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

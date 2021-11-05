@@ -43,8 +43,9 @@
 		94A88A27273387D200801952 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A88A26273387D200801952 /* Authentication.storyboard */; };
 		94A88A2A27338A9900801952 /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A88A2827338A9900801952 /* TextInputView.xib */; };
 		94A88A2B27338A9900801952 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A88A2927338A9900801952 /* TextInputView.swift */; };
+		94A88A2D2734242600801952 /* UIControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A88A2C2734242600801952 /* UIControlExtension.swift */; };
+		94A88A2F2734366900801952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A88A2E2734366900801952 /* SceneDelegate.swift */; };
 		94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75BD2726A07B00018C26 /* AppDelegate.swift */; };
-		94BC75C02726A07B00018C26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75BF2726A07B00018C26 /* SceneDelegate.swift */; };
 		94BC75C22726A07B00018C26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75C12726A07B00018C26 /* LoginViewController.swift */; };
 		94BC75C52726A07B00018C26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BC75C32726A07B00018C26 /* Main.storyboard */; };
 		94BC75C72726A07E00018C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BC75C62726A07E00018C26 /* Assets.xcassets */; };
@@ -134,10 +135,11 @@
 		94A88A26273387D200801952 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		94A88A2827338A9900801952 /* TextInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputView.xib; sourceTree = "<group>"; };
 		94A88A2927338A9900801952 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		94A88A2C2734242600801952 /* UIControlExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtension.swift; sourceTree = "<group>"; };
+		94A88A2E2734366900801952 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		94AC0B30F095358F710673B6 /* Pods-Hyperloung-HyperloungUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hyperloung-HyperloungUITests/Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94BC75BA2726A07B00018C26 /* Hyperloung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperloung.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BC75BD2726A07B00018C26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94BC75BF2726A07B00018C26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		94BC75C12726A07B00018C26 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		94BC75C42726A07B00018C26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94BC75C62726A07E00018C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -394,9 +396,9 @@
 		94BC75F32726B63000018C26 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				94A88A2E2734366900801952 /* SceneDelegate.swift */,
 				94BC75EE2726B41A00018C26 /* AppManager.swift */,
 				94BC75BD2726A07B00018C26 /* AppDelegate.swift */,
-				94BC75BF2726A07B00018C26 /* SceneDelegate.swift */,
 				94BC75F42726B65600018C26 /* AppProperties.swift */,
 			);
 			path = Application;
@@ -405,6 +407,7 @@
 		94BC75F62726B75800018C26 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				94A88A2C2734242600801952 /* UIControlExtension.swift */,
 				9464C1FE2727AAE50048CB98 /* LayoutExtension.swift */,
 				9464C1F72727A1900048CB98 /* UIViewExtension.swift */,
 				94BC75F92726B76800018C26 /* UIStoryboard_Ext.swift */,
@@ -781,7 +784,7 @@
 				9464C2142727FCE50048CB98 /* DetailReportViewController.swift in Sources */,
 				94BC75FC2726B76800018C26 /* UIStoryboard_Ext.swift in Sources */,
 				94BC76042726BCE400018C26 /* BaseViewController.swift in Sources */,
-				94BC75C02726A07B00018C26 /* SceneDelegate.swift in Sources */,
+				94A88A2F2734366900801952 /* SceneDelegate.swift in Sources */,
 				944CC8EE27284BF20016398D /* HyperBarChartView.swift in Sources */,
 				9464C2052727B33E0048CB98 /* MainReportViewController.swift in Sources */,
 				94BC76062726BD0200018C26 /* HomeViewController.swift in Sources */,
@@ -795,6 +798,7 @@
 				944CC8F22729125E0016398D /* HyperRowView.swift in Sources */,
 				94BC75FF2726BAAD00018C26 /* BaseNavigationViewController.swift in Sources */,
 				9464C1F82727A1900048CB98 /* UIViewExtension.swift in Sources */,
+				94A88A2D2734242600801952 /* UIControlExtension.swift in Sources */,
 				9464C20F2727F1B00048CB98 /* ReportCollectionViewCell.swift in Sources */,
 				94A88A1F2732C1A300801952 /* DayFormatter.swift in Sources */,
 				FDB1410E27330B8A00E5CF74 /* HyperLineChartView.swift in Sources */,

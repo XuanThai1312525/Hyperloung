@@ -17,7 +17,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomBar" customModule="Hyperloung" customModuleProvider="target">
             <connections>
+                <outlet property="centerButton" destination="Y6V-ai-XBc" id="1Nl-0Q-MFc"/>
+                <outlet property="leftButton" destination="6sb-Ih-Jmv" id="bOs-IU-cvR"/>
                 <outlet property="numberLabel" destination="4F5-ZI-tXC" id="eHx-il-KDr"/>
+                <outlet property="rightButton" destination="VoQ-5Q-5OQ" id="T5n-0S-b49"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Ehu-gH-tFP"/>
             </connections>
         </placeholder>
@@ -78,13 +81,34 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6V-ai-XBc">
+                    <rect key="frame" x="149.5" y="55.5" width="48" height="48"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sb-Ih-Jmv">
+                    <rect key="frame" x="63" y="58.5" width="66.5" height="42.5"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoQ-5Q-5OQ">
+                    <rect key="frame" x="217.5" y="58.5" width="66.5" height="42.5"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="6sb-Ih-Jmv" firstAttribute="bottom" secondItem="ZDJ-0G-Akz" secondAttribute="bottom" id="1DA-ym-mCs"/>
+                <constraint firstItem="QdE-cX-ayO" firstAttribute="leading" secondItem="VoQ-5Q-5OQ" secondAttribute="leading" id="2OD-8I-Kcd"/>
                 <constraint firstAttribute="bottom" secondItem="cug-0J-6Cm" secondAttribute="bottom" constant="10" id="9jW-xE-BrE"/>
                 <constraint firstItem="cug-0J-6Cm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="EAT-BX-rB3"/>
+                <constraint firstItem="Y6V-ai-XBc" firstAttribute="leading" secondItem="4F5-ZI-tXC" secondAttribute="leading" id="F6C-6X-cuJ"/>
+                <constraint firstItem="6sb-Ih-Jmv" firstAttribute="leading" secondItem="ZDJ-0G-Akz" secondAttribute="leading" id="Ma3-jD-6nR"/>
+                <constraint firstItem="QdE-cX-ayO" firstAttribute="trailing" secondItem="VoQ-5Q-5OQ" secondAttribute="trailing" id="W3G-SY-Cnv"/>
+                <constraint firstItem="6sb-Ih-Jmv" firstAttribute="trailing" secondItem="ZDJ-0G-Akz" secondAttribute="trailing" id="YC1-tV-r4I"/>
+                <constraint firstItem="Y6V-ai-XBc" firstAttribute="bottom" secondItem="4F5-ZI-tXC" secondAttribute="bottom" id="dhW-t3-XMd"/>
+                <constraint firstItem="Y6V-ai-XBc" firstAttribute="trailing" secondItem="4F5-ZI-tXC" secondAttribute="trailing" id="eYF-gP-llJ"/>
                 <constraint firstItem="cug-0J-6Cm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="hiG-Wy-aia"/>
+                <constraint firstItem="QdE-cX-ayO" firstAttribute="top" secondItem="VoQ-5Q-5OQ" secondAttribute="top" id="iJx-bN-Hcy"/>
+                <constraint firstItem="Y6V-ai-XBc" firstAttribute="top" secondItem="4F5-ZI-tXC" secondAttribute="top" id="nSp-DU-G7S"/>
+                <constraint firstItem="QdE-cX-ayO" firstAttribute="bottom" secondItem="VoQ-5Q-5OQ" secondAttribute="bottom" id="nkA-XB-hmi"/>
+                <constraint firstItem="6sb-Ih-Jmv" firstAttribute="top" secondItem="ZDJ-0G-Akz" secondAttribute="top" id="xxo-Ve-8Nj"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="6.5217391304347831" y="-140.29017857142856"/>

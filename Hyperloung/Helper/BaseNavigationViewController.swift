@@ -18,6 +18,8 @@ class BaseNavigationVC: UINavigationController {
         super.viewDidLoad()
         delegate = self
         interactivePopGestureRecognizer?.delegate = self
+        navigationBar.isTranslucent = true
+        setNavigationBarHidden(true, animated: false)
     }
     
     deinit {

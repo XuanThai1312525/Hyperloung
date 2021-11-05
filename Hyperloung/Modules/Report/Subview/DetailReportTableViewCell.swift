@@ -12,6 +12,9 @@ class DetailReportTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var highlightView: UIView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
     
     static let identifier = "DetailReportTableViewCell"
     
@@ -34,6 +37,14 @@ class DetailReportTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func bindingUI(data: DetailReport) {
+        categoryLabel.text = data.category
+        highlightView.isHidden = data.isRead
+        titleLabel.text = data.title
+        contentLabel.text = data.content
+        dateLabel.text = data.date
     }
 
 }

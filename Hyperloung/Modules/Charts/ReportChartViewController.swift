@@ -9,6 +9,7 @@ import UIKit
 
 class ReportChartViewController: BaseViewController {
 
+    @IBOutlet weak var verticalChartBarContainer: UIView!
     @IBOutlet weak var monthChartView: aos_mb_bar_01!
     @IBOutlet weak var planChartView: HyperBarChartView!
     @IBOutlet weak var circleChartView: aos_mb_pie_01!
@@ -27,6 +28,15 @@ class ReportChartViewController: BaseViewController {
         let linkedChartDataSourceHandler = LinkedChartDataSourceHandler()
         linkedChartView.datasource = linkedChartDataSourceHandler
         linkedChartView.drawChart()
+        addVerticalBarChar()
+    }
+    
+    func addVerticalBarChar() {
+        let verticalBarChar = VeritalBarChartView(frame: verticalChartBarContainer.bounds)
+        verticalBarChar.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+        verticalChartBarContainer.addSubview(verticalBarChar)
+        
+        verticalBarChar.fullscreen()
     }
 }
 
