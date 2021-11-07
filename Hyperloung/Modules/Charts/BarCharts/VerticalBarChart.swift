@@ -94,14 +94,20 @@ class VeritalBarChartView: UIView {
 
     }
     
-    func setChartItems(items: [BarChartItemData]) {
+    func setChartItems(items: [BarChartItemData], isNeedToHighLight: Bool = false) {
         numOfBar = items.count
         updateChartViewSize()
         var yVals: [BarChartDataEntry] = []
         var index:Double = 0
+        var highLight: Highlight?
         items.forEach { item in
             let data = BarChartDataEntry(x: index, y: item.value , data: item)
             yVals.append(data)
+            
+            if(item.isHighlight) {
+                highLight = Highlight(x: index, y: item.value, dataSetIndex: 0)
+            }
+            
             index += 1
         }
         
@@ -123,6 +129,14 @@ class VeritalBarChartView: UIView {
         data.barWidth = calculateBarWidth()
         
         chartView.data = data
+        
+        if isNeedToHighLight, let highLight = highLight{
+            //5 is value for display above or bellow
+            chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
+            chartView.marker = HyperMarker(config: IMarkerConfig(label: "test", selectedLabelFont: UIFont.boldSystemFont(ofSize: 13), bottomValueToCircle: 15 - 5, selectedValueRoundColor: "#DDDDDD".color))
+            dataSet.valueSpacing = 15
+            chartView.highlightValue(highLight)
+        }
     }
     
     func setStackCharItems() {
@@ -289,3 +303,78 @@ public class VerticalBarLeftAxisValueFormatter: NSObject, IAxisValueFormatter {
     }
     
 }
+
+
+
+struct IMarkerConfig {
+    var label: String
+    var selectedLabelFont: UIFont
+    var bottomValueToCircle: CGFloat
+    var selectedValueRoundColor: UIColor
+}
+class HyperMarker: IMarker {
+    var selectedEntry: ChartDataEntry?
+    var config: IMarkerConfig
+    
+    init(config: IMarkerConfig) {
+        self.config = config
+    }
+    
+    
+    var offset: CGPoint = .zero
+    
+    func offsetForDrawing(atPoint: CGPoint) -> CGPoint {
+        return .zero
+    }
+    
+    func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
+        
+    }
+    
+    func draw(context: CGContext, point: CGPoint) {
+        //Need to be draw arrow later on and config base on Device dimension
+        let selectedStringWidth = config.label.widthOfString(usingFont: UIFont.boldSystemFont(ofSize: 13))
+        let spacing: CGFloat = 10
+        let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
+        let y: CGFloat = point.y - config.selectedLabelFont.lineHeight*1.5 - config.bottomValueToCircle + spacing/4//5 is horizontal spacing
+        let roundWidth: CGFloat = selectedStringWidth + spacing*2
+        let roundHeight: CGFloat = config.selectedLabelFont.lineHeight + spacing/2
+        let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
+        
+        context.setShadow(offset: CGSize(width: 1, height: 0.5), blur: 1,color:#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor)
+        let roundPath = UIBezierPath(roundedRect: rectFrame, cornerRadius: roundHeight/2).cgPath
+        context.addPath(roundPath)
+        context.setLineWidth(0.5)
+        context.setStrokeColor(config.selectedValueRoundColor.cgColor)
+        
+        let rectangleRect = CGRect(x: x+roundWidth/3, y: y+roundHeight, width: roundWidth/3, height: roundHeight/4)
+        let rectanglePath = createRectanglePath(roundRect: rectangleRect).cgPath
+        context.addPath(rectanglePath)
+        context.setLineWidth(0.5)
+        context.setStrokeColor(config.selectedValueRoundColor.cgColor)
+        context.strokePath()
+        
+        let path = UIBezierPath()
+        path.move(to:  CGPoint(x: rectangleRect.maxX-1, y: rectangleRect.minY))
+        path.addLine(to: CGPoint(x: rectangleRect.minX+1, y: rectangleRect.minY))
+        context.addPath(path.cgPath)
+        context.setLineWidth(1)
+        context.setShadow(offset: CGSize(width: 1, height: 1), blur: 1,color: "#FFFFFF".color.cgColor)
+        context.setStrokeColor(UIColor.white.cgColor)
+        context.strokePath()
+        
+        context.closePath()
+
+    }
+    
+    func createRectanglePath(roundRect: CGRect) -> UIBezierPath{
+        let trianglePath = UIBezierPath()
+        trianglePath.move(to: CGPoint(x: roundRect.minX, y: roundRect.minY))
+        trianglePath.addLine(to: CGPoint(x: roundRect.midX, y: roundRect.maxY))
+        trianglePath.addLine(to: CGPoint(x: roundRect.maxX, y: roundRect.minY))
+    
+        trianglePath.close()
+        return trianglePath
+    }
+}
+

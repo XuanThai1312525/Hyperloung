@@ -70,6 +70,7 @@ class aos_d_line_02: UIView {
         let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color,  lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig( labelCount: 3, minValue: 0, maxValue: 100, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color))
         
         let defaultConfig = HyperLineChartConfig(
+            title: String(describing: type(of: self)),
             dataSets: lineData,
             xAxisData: xAxisData,
             descriptions: descriptions,

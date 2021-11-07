@@ -54,6 +54,7 @@ class aos_d_line_01: UIView {
         let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig(labelCount: 3, minValue: 0, maxValue: 82, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color, entries: [0,42,82]))
         
         let defaultConfig = HyperLineChartConfig(
+            title: String(describing: type(of: self)),
             dataSets: dataSets,
             xAxisData: xAxisData,
             descriptions: descriptions,

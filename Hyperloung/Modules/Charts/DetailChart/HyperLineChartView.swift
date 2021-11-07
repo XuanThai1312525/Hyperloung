@@ -47,6 +47,7 @@ struct HyperLineDataDashAppearance {
 }
 
 struct HyperLineChartConfig {
+    var title: String
     var dataSets: [HyperLineChartDataSet]
     var xAxisData: [String]
     var descriptions: [CircleInfoData]
@@ -78,6 +79,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
     @IBOutlet weak var chartContainer: UIView!
     @IBOutlet weak var descriptionContainerView: UIStackView!
     @IBOutlet weak var bottomContainerView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionContainerHeightConstraint: NSLayoutConstraint!
     
     var config: HyperLineChartConfig!
@@ -91,8 +93,13 @@ class HyperLineChartView: UIView , ChartViewDelegate{
     
     func setupUI(config: HyperLineChartConfig) {
         self.config = config
+        self.setupTitle()
         self.setupChartView()
         self.setupDescriptionView()
+    }
+    
+    private func setupTitle() {
+        titleLabel.text = config.title
     }
     
     private func setupDescriptionView() {
@@ -166,6 +173,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
                 chartViewDataSet.lineDashLengths = lineDashAppearance.lineDashLengths
             }
             
+            
             lineChartData.addDataSet(chartViewDataSet)
         }
         
@@ -174,6 +182,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         chartView.dragEnabled = false
         chartView.pinchZoomEnabled = false
         chartView.doubleTapToZoomEnabled = false
+        chartView.isUserInteractionEnabled = false
         chartView.legend.enabled = false
         chartView.clipDataToContentEnabled = false
         chartView.clipValuesToContentEnabled = false
@@ -340,9 +349,9 @@ class HyperLineMarker: IMarker {
             let selectedStringWidth = label.widthOfString(usingFont: appearance.font)
             let spacing: CGFloat = 10
             let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-            let y: CGFloat = point.y - appearance.font.lineHeight*1.5 - selectedDataSetAppearance.bottomValueToCircle - spacing/2 //5 is horizontal spacing
+            let y: CGFloat = point.y - appearance.font.lineHeight*1.5 - selectedDataSetAppearance.bottomValueToCircle - spacing/4 //5 is horizontal spacing
             let roundWidth: CGFloat = selectedStringWidth + spacing*2
-            let roundHeight: CGFloat = appearance.font.lineHeight + spacing
+            let roundHeight: CGFloat = appearance.font.lineHeight + spacing/2
             let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
             
             context.setShadow(offset: CGSize(width: 1, height: 0.5), blur: 1,color:#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor)
@@ -352,15 +361,15 @@ class HyperLineMarker: IMarker {
             context.setStrokeColor(selectedDataSetAppearance.selectedValueRoundColor.cgColor)
             
             let rectangleRect = CGRect(x: x+roundWidth/3, y: y+roundHeight, width: roundWidth/3, height: roundHeight/4)
-            let rectanglePath = createTipPath(roundRect: rectangleRect).cgPath
+            let rectanglePath = createRectanglePath(roundRect: rectangleRect).cgPath
             context.addPath(rectanglePath)
             context.setLineWidth(0.5)
             context.setStrokeColor(selectedDataSetAppearance.selectedValueRoundColor.cgColor)
             context.strokePath()
             
             let path = UIBezierPath()
-            path.move(to:  CGPoint(x: rectangleRect.maxX, y: rectangleRect.minY))
-            path.addLine(to: CGPoint(x: rectangleRect.minX, y: rectangleRect.minY))
+            path.move(to:  CGPoint(x: rectangleRect.maxX-1, y: rectangleRect.minY))
+            path.addLine(to: CGPoint(x: rectangleRect.minX+1, y: rectangleRect.minY))
             context.addPath(path.cgPath)
             context.setLineWidth(1)
             context.setShadow(offset: CGSize(width: 1, height: 1), blur: 1,color: "#FFFFFF".color.cgColor)
@@ -375,7 +384,7 @@ class HyperLineMarker: IMarker {
         
     }
     
-    func createTipPath(roundRect: CGRect) -> UIBezierPath{
+    func createRectanglePath(roundRect: CGRect) -> UIBezierPath{
         let trianglePath = UIBezierPath()
         trianglePath.move(to: CGPoint(x: roundRect.minX, y: roundRect.minY))
         trianglePath.addLine(to: CGPoint(x: roundRect.midX, y: roundRect.maxY))
