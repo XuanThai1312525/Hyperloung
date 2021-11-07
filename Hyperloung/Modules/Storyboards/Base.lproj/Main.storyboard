@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4EK-Ww-B8K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4EK-Ww-B8K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,7 +283,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailReportTableViewCell" rowHeight="120" id="yDY-Jg-mbB" customClass="DetailReportTableViewCell" customModule="Hyperloung" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="120"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDY-Jg-mbB" id="sb6-bH-XP2">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
@@ -884,10 +884,10 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Id-hvz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3276"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3558"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-e1-K8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3276"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3558"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-Cm-Vop" customClass="aos_mb_pie_02" customModule="Hyperloung" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
@@ -1340,6 +1340,25 @@ Cg
                                                             <constraint firstItem="Xdf-gf-kpM" firstAttribute="top" secondItem="wwa-nT-Q2C" secondAttribute="top" id="IgS-Bz-ge4"/>
                                                             <constraint firstAttribute="trailing" secondItem="Xdf-gf-kpM" secondAttribute="trailing" constant="30" id="eNa-PR-U2g"/>
                                                             <constraint firstItem="Xdf-gf-kpM" firstAttribute="leading" secondItem="wwa-nT-Q2C" secondAttribute="leading" constant="30" id="xcL-EV-RMr"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QA-3J-059">
+                                                        <rect key="frame" x="0.0" y="3300" width="414" height="258"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uda-ZA-mm1" customClass="aos_ma_line_01" customModule="Hyperloung" customModuleProvider="target">
+                                                                <rect key="frame" x="30" y="0.0" width="354" height="250"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="250" id="eSW-PZ-she"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Uda-ZA-mm1" firstAttribute="leading" secondItem="0QA-3J-059" secondAttribute="leading" constant="30" id="3mz-nQ-hxK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Uda-ZA-mm1" secondAttribute="bottom" constant="8" id="7LW-3y-RG3"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Uda-ZA-mm1" secondAttribute="trailing" constant="30" id="WqY-6f-8Lv"/>
+                                                            <constraint firstItem="Uda-ZA-mm1" firstAttribute="top" secondItem="0QA-3J-059" secondAttribute="top" id="eJq-cR-maw"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
