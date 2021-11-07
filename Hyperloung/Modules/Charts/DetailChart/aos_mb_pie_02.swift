@@ -11,7 +11,7 @@ import Charts
 class aos_mb_pie_02: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var chartDescriptionCollectionview: UICollectionView!
-    @IBOutlet weak var chartView: UIView!
+    @IBOutlet weak var circleChartView: HyperCircleChartView!
     
     var data = [
         HyperCircleData(percent: 0.38, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), description: "솔루션"),
@@ -36,8 +36,9 @@ class aos_mb_pie_02: UIView {
         chartDescriptionCollectionview.delegate = self
         chartDescriptionCollectionview.dataSource = self
         chartDescriptionCollectionview.register(UINib(nibName: CircleDescriptionCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CircleDescriptionCollectionViewCell.identifier)
+        circleChartView.datasource = self
+        circleChartView.drawChart()
     }
-    
 }
 
 extension aos_mb_pie_02: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -54,4 +55,24 @@ extension aos_mb_pie_02: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 20)
     }
+}
+
+extension aos_mb_pie_02: HyperCircleDataSource {
+    var dataSet: [HyperCircleData] {
+        data
+    }
+    
+    func description(of data: HyperCircleData) -> String {
+        data.description ?? "ABC"
+    }
+    
+    var lineWidth: CGFloat {
+        10
+    }
+    
+    var centerText: (String, UIColor)? {
+        ("39", .black)
+    }
+    
+    
 }
