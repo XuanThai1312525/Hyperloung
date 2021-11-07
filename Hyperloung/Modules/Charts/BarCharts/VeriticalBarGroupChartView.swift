@@ -163,10 +163,7 @@ class VeriticalBarGroupChartView: UIView {
         //chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
         chartView.notifyDataSetChanged()
 
-
         chartView.data = chartData
-
-                
     }
 }
 
@@ -185,9 +182,7 @@ class GroupBarXAxisLabelFormatter: NSObject, IAxisValueFormatter {
             return labels[index]
         }
         return ""
-
     }
-
 }
 
 class GroupBarValueFormatter: NSObject, IValueFormatter {

@@ -87,9 +87,9 @@ class VeritalBarChartView: UIView {
         limitLine = ChartLimitLine(limit: value, label: title)
         limitLine.lineColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
         limitLine.valueTextColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
-        limitLine.lineWidth = 1
+        limitLine.lineWidth = 0.5
         limitLine.labelPosition = .bottomLeft
-//        limitLine.lineDashLengths = [3.0]
+        limitLine.lineDashLengths = [3.0]
         chartView.rightAxis.addLimitLine(limitLine)
 
     }
@@ -105,7 +105,7 @@ class VeritalBarChartView: UIView {
             index += 1
         }
         
-        chartView.xAxis.valueFormatter = VerticalBarValueFormatter(barItems: items)
+        chartView.xAxis.valueFormatter = VerticalBarXAxisLabelFormatter(barItems: items)
         chartView.xAxis.setLabelCount(numOfBar, force: false)
 
         let dataSet: HyperChartBaseDataSet = HyperChartBaseDataSet(entries: yVals, label: "Hi Legend ")
@@ -172,7 +172,7 @@ class VeritalBarChartView: UIView {
         
         // set bottom item titles
         chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
-
+//        chartView.xAxis.valueFormatter = VerticalBarValueFormatter(barItems: chartItems)
 //        chartView.highlightValues([Highlight(x: 2, dataSetIndex: 1, stackIndex: 0)])
         
     }
@@ -213,6 +213,34 @@ class HyperChartBaseDataSet: BarChartDataSet {
     }
 }
 
+
+class VerticalBarXAxisLabelFormatter: NSObject, IAxisValueFormatter {
+    var barItems: [BarChartItemData] = []
+    
+    init(barItems: [BarChartItemData]) {
+        self.barItems = barItems
+    }
+
+    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        let index = Int(value)
+        if index < barItems.count {
+            return barItems[index].title
+        }
+        return ""
+    }
+
+    public func colorForValue(_ value: Double, axis: AxisBase?) -> UIColor? {
+        let index = Int(value)
+        if barItems.count > index {
+            let item = barItems[index]
+
+            return item.isHighlight ? item.barVisual.highlightTextColor : item.barVisual.normalTextColor
+        }
+        return nil
+    }
+}
+
+
 public class VerticalBarValueFormatter: NSObject, IValueFormatter, IAxisValueFormatter {
     var barItems: [BarChartItemData] = []
     
@@ -220,16 +248,12 @@ public class VerticalBarValueFormatter: NSObject, IValueFormatter, IAxisValueFor
         self.barItems = barItems
     }
     
-    fileprivate func format(value: Double) -> String {
+    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let index = Int(value)
         if index < barItems.count {
             return barItems[index].valueTitle
         }
         return ""
-    }
-    
-    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return format(value: value)
     }
     
     public func stringForValue(

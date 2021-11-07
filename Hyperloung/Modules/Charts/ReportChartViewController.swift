@@ -18,6 +18,13 @@ class ReportChartViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+
+        // These line of code auto insert to TOP
+        insertBarChart_aos_mb_bar_04()
+        insertBarChart_aos_mb_bar_03()
+        insertBarChart_aos_mb_bar_02()
+        insertBarChart_aos_mb_bar_01()
+        
         insertChartView_aos_d_bar_07()
         insertChartView_aos_d_bar_06()
         insertChartView_aos_d_bar_04()
