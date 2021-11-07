@@ -372,7 +372,7 @@ class HyperLineMarker: IMarker {
             path.addLine(to: CGPoint(x: rectangleRect.minX+1, y: rectangleRect.minY))
             context.addPath(path.cgPath)
             context.setLineWidth(1)
-            context.setShadow(offset: CGSize(width: 1, height: 1), blur: 1,color: "#FFFFFF".color.cgColor)
+            context.setShadow(offset: CGSize(width: 1, height: 1), blur: 1,color: UIColor.white.cgColor)
             context.setStrokeColor(UIColor.white.cgColor)
             context.strokePath()
             

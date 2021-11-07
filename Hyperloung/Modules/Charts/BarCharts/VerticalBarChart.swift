@@ -341,12 +341,24 @@ class HyperMarker: IMarker {
         let roundHeight: CGFloat = config.selectedLabelFont.lineHeight + spacing/2
         let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
         
+        //Dash line
+//        let lineDashPath = UIBezierPath()
+//        lineDashPath.move(to:  CGPoint(x: x, y: point.y+20))
+//        lineDashPath.addLine(to: CGPoint(x: x + roundWidth, y: point.y+20))
+//        context.addPath(lineDashPath.cgPath)
+//        context.setLineWidth(1)
+//        context.setStrokeColor(config.selectedValueRoundColor.cgColor)
+//        context.setLineDash(phase: 0, lengths: [2,3])
+//        context.strokePath()
+        
+        //Round
         context.setShadow(offset: CGSize(width: 1, height: 0.5), blur: 1,color:#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor)
         let roundPath = UIBezierPath(roundedRect: rectFrame, cornerRadius: roundHeight/2).cgPath
         context.addPath(roundPath)
         context.setLineWidth(0.5)
         context.setStrokeColor(config.selectedValueRoundColor.cgColor)
         
+        //Rectangle
         let rectangleRect = CGRect(x: x+roundWidth/3, y: y+roundHeight, width: roundWidth/3, height: roundHeight/4)
         let rectanglePath = createRectanglePath(roundRect: rectangleRect).cgPath
         context.addPath(rectanglePath)
@@ -354,18 +366,21 @@ class HyperMarker: IMarker {
         context.setStrokeColor(config.selectedValueRoundColor.cgColor)
         context.strokePath()
         
+        //Clear round color
         let path = UIBezierPath()
         path.move(to:  CGPoint(x: rectangleRect.maxX-1, y: rectangleRect.minY))
         path.addLine(to: CGPoint(x: rectangleRect.minX+1, y: rectangleRect.minY))
         context.addPath(path.cgPath)
         context.setLineWidth(1)
-        context.setShadow(offset: CGSize(width: 1, height: 1), blur: 1,color: "#FFFFFF".color.cgColor)
+        context.setShadow(offset: CGSize(width: 1, height: 1), blur: 1,color: UIColor.white.cgColor)
         context.setStrokeColor(UIColor.white.cgColor)
         context.strokePath()
         
         context.closePath()
 
     }
+    
+    
     
     func createRectanglePath(roundRect: CGRect) -> UIBezierPath{
         let trianglePath = UIBezierPath()
