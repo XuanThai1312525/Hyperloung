@@ -2,14 +2,11 @@
 //  Line2ChartView.swift
 //  Chart
 //
-//  Created by trinhhcse on 02/11/2021.
+//  Created by trinhhcse on 04/11/2041.
 //
 
 import UIKit
-
-import UIKit
 import Charts
-
 class aos_ma_line_04: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -23,48 +20,71 @@ class aos_ma_line_04: UIView {
         self.addSubview(chartView)
         chartView.fullscreen()
         
+        let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15)
+        
+        let lineDashHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15, lineDashAppearance: HyperLineDataDashAppearance(lineDashLengths: [2,3]))
+        
+        
         
         //fake data
-        let lineData = [[
-            HyperLineData(value: 8, label: "A", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color,isShowCircle: false)),
-            HyperLineData(value: 24, label: "B", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false)),
-            HyperLineData(value: 16, label: "C", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false)),
-            HyperLineData(value: 36, label: "D", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true)),
-        ]]
-
+        let lineData = [
+            HyperLineChartDataSet(data: [
+                HyperLineData(value: 8, label: "A", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color,isShowCircle: false, isShowValue: false)),
+                HyperLineData(value: 24, label: "B", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false, isShowValue: false)),
+                HyperLineData(value: 16, label: "C", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
+                HyperLineData(value: 36, label: "D", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true, isShowMark: true, isHightLight: true))
+                ], appearance: defaultHyperLineDataSetAppearance),
+            HyperLineChartDataSet(data: [
+                HyperLineData(value: 5, label: "A", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#1F92E4".color, lineColor: "#EEEEEE".color,isShowCircle: false)),
+                HyperLineData(value: 18, label: "B", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#1F92E4".color, lineColor: "#EEEEEE".color, isShowCircle: false)),
+                HyperLineData(value: 10, label: "C", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#1F92E4".color, lineColor: "#EEEEEE".color, isShowCircle: false)),
+                HyperLineData(value: 24, label: "D", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#1F92E4".color, lineColor: "#EEEEEE".color, isShowCircle: false)),
+            ], appearance: lineDashHyperLineDataSetAppearance)]
+        
+        
         let descriptions =  [
-            CircleInfoData(color: "#246FEE".color, description: "A"),
-            CircleInfoData(color: "#DDDDDD".color, description: "B")
+            CircleInfoData(color: "#3557C9".color, description: "A"),
+            CircleInfoData(color: "#1F92E4".color, description: "B")
         ]
-
-        let xAxisData = ["1A","2B","3C","4D"]
-        let defaultFont = UIFont.systemFont(ofSize: 11)
-
-        let appearence = HyperLineAppearance(font: defaultFont,  selectedValueColor: "#222222".color, selectedValueRoundColor: "#111111".color, xAxisValueColor: "#DDDDDD".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10 , lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData),leftAxisConfig: HyperLineLeftAxisConfig(isShowAxis: false))
-
+        
+        let xAxisData = ["1","10","20","30"]
+        let defaultFont = UIFont.systemFont(ofSize: 13)
+        
+        let appearence = HyperLineAppearance(font: defaultFont , xAxisValueColor: "#222222".color ,lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
+        
         let defaultConfig = HyperLineChartConfig(
-            data:lineData,
+            dataSets: lineData,
             xAxisData: xAxisData,
             descriptions: descriptions,
             appearance: appearence
-            
         )
         
         chartView.setupUI(config: defaultConfig)
     }
     
+    func getIAxisValueFormatter() -> IAxisValueFormatter{
+        return aos_d_line_04DataSetIAxisValueFormatter()
+    }
     
     func getValueFormatter(_ data: [HyperLineData]) -> IValueFormatter{
-        return aos_ma_line_04DataSetValueFormatter(data: data)
+        return aos_d_line_04DataSetValueFormatter(data: data)
+    }
+}
+
+class aos_d_line_04DataSetIAxisValueFormatter: IAxisValueFormatter {
+    
+    init() {
+    }
+    
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        let convertedValue = Int(value)
+        return convertedValue == 0 ? String(convertedValue) : "\(convertedValue)%"
     }
 }
 
 
-
-
-
-
-class aos_ma_line_04DataSetValueFormatter: IValueFormatter {
+class aos_d_line_04DataSetValueFormatter: IValueFormatter {
     let data: [HyperLineData]
     
     init(data: [HyperLineData]) {
@@ -75,7 +95,8 @@ class aos_ma_line_04DataSetValueFormatter: IValueFormatter {
         let index = Int(entry.x)
         let value = data[index].value
         let label = data[index].label
-        return index == (data.count - 1) ? Formattor.getValueDescription(value,label) : ""
+        let isShowValue = data[index].appearance.isShowValue ?? true
+        return isShowValue ? Formattor.getValueDescription(value,label) : ""
     }
 }
 
