@@ -49,8 +49,8 @@ class aos_ma_line_04: UIView {
         
         let xAxisData = ["1","10","20","30"]
         let defaultFont = UIFont.systemFont(ofSize: 13)
-        
-        let appearence = HyperLineAppearance(font: defaultFont , xAxisValueColor: "#222222".color ,lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
+        let highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
+        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color ,lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
         
         let defaultConfig = HyperLineChartConfig(
             dataSets: lineData,
@@ -63,15 +63,15 @@ class aos_ma_line_04: UIView {
     }
     
     func getIAxisValueFormatter() -> IAxisValueFormatter{
-        return aos_d_line_04DataSetIAxisValueFormatter()
+        return aos_ma_line_04DataSetIAxisValueFormatter()
     }
     
     func getValueFormatter(_ data: [HyperLineData]) -> IValueFormatter{
-        return aos_d_line_04DataSetValueFormatter(data: data)
+        return aos_ma_line_04DataSetValueFormatter(data: data)
     }
 }
 
-class aos_d_line_04DataSetIAxisValueFormatter: IAxisValueFormatter {
+class aos_ma_line_04DataSetIAxisValueFormatter: IAxisValueFormatter {
     
     init() {
     }
@@ -84,7 +84,7 @@ class aos_d_line_04DataSetIAxisValueFormatter: IAxisValueFormatter {
 }
 
 
-class aos_d_line_04DataSetValueFormatter: IValueFormatter {
+class aos_ma_line_04DataSetValueFormatter: IValueFormatter {
     let data: [HyperLineData]
     
     init(data: [HyperLineData]) {

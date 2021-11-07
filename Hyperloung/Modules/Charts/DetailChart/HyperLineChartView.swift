@@ -64,6 +64,7 @@ struct HyperLineLeftAxisConfig {
 }
 struct HyperLineAppearance {
     var font: UIFont
+    var highLightValueFont: UIFont
     var xAxisValueColor: UIColor
    
     var lineMode: LineChartDataSet.Mode
@@ -82,7 +83,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
     var config: HyperLineChartConfig!
     
     var chartView: LineChartView!
-    var selectedHightLight: Highlight?
+    var selectedHighLight: Highlight?
 //    var hideSelectedValueTask: DispatchWorkItem?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -154,6 +155,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
             chartViewDataSet.valueFormatter = appearance.getValueFormatter(data)
             chartViewDataSet.valueColors = data.map{$0.appearance.textColor}
             chartViewDataSet.valueFont = appearance.font
+            chartViewDataSet.highLightValueFont = appearance.highLightValueFont
             chartViewDataSet.circleRadius = dataSetAppearance.circleRadius
             chartViewDataSet.circles = cirlces
             chartViewDataSet.circleHoleRadius = dataSetAppearance.circleHoleRadius
@@ -226,10 +228,10 @@ class HyperLineChartView: UIView , ChartViewDelegate{
     
     internal func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         //Prevent duplicate
-        if selectedHightLight == highlight {
+        if selectedHighLight == highlight {
             return
         }
-        selectedHightLight = highlight
+        selectedHighLight = highlight
         
         chartView.drawMarkers = true
         let dataSets = chartView.data!.dataSets
@@ -268,7 +270,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
     
     internal func chartValueNothingSelected(_ chartView: ChartViewBase) {
         print("chartValueNothingSelected")
-        chartView.highlightValue(selectedHightLight)
+        chartView.highlightValue(selectedHighLight)
     }
     
     internal func chartView(_ chartView: ChartViewBase, animatorDidStop animator: Animator) {

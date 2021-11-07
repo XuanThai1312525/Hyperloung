@@ -75,6 +75,7 @@
 		FDB1411027331A4500E5CF74 /* HyperLineChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB1410F27331A4500E5CF74 /* HyperLineChartView.xib */; };
 		FDBDDB5A2736ABE900406543 /* aos_ma_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDDB592736ABE800406543 /* aos_ma_line_02.swift */; };
 		FDBDDB5C27370AC800406543 /* aos_mb_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDDB5B27370AC800406543 /* aos_mb_line_02.swift */; };
+		FDECE425273831F50008F57E /* aos_ma_line_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDECE424273831F50008F57E /* aos_ma_line_01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		FDB1410F27331A4500E5CF74 /* HyperLineChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HyperLineChartView.xib; sourceTree = "<group>"; };
 		FDBDDB592736ABE800406543 /* aos_ma_line_02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_02.swift; sourceTree = "<group>"; };
 		FDBDDB5B27370AC800406543 /* aos_mb_line_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_mb_line_02.swift; sourceTree = "<group>"; };
+		FDECE424273831F50008F57E /* aos_ma_line_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_ma_line_01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +474,7 @@
 				FDBDDB592736ABE800406543 /* aos_ma_line_02.swift */,
 				FD7460332732B00B00084D14 /* aos_ma_line_03.swift */,
 				FD7460352732B00B00084D14 /* aos_ma_line_04.swift */,
+				FDECE424273831F50008F57E /* aos_ma_line_01.swift */,
 				94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */,
 				94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */,
 				949EA6932737E76E009C75EE /* aos_mb_pie_01.xib */,
@@ -781,6 +784,7 @@
 				9464C20F2727F1B00048CB98 /* ReportCollectionViewCell.swift in Sources */,
 				FDB1410E27330B8A00E5CF74 /* HyperLineChartView.swift in Sources */,
 				94BC75FA2726B76800018C26 /* UIViewController_Ext.swift in Sources */,
+				FDECE425273831F50008F57E /* aos_ma_line_01.swift in Sources */,
 				94BC75EF2726B41A00018C26 /* AppManager.swift in Sources */,
 				9464C1F62726FD7C0048CB98 /* SummaryReportView.swift in Sources */,
 				FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */,

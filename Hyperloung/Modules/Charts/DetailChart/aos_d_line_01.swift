@@ -28,17 +28,18 @@ class aos_d_line_01: UIView {
         let dataSets = [
             HyperLineChartDataSet(data: [
                 HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
-                HyperLineData(value: 82, label: "A", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color,isShowCircle: true, isShowValue: true, isShowMark: false)),
-                HyperLineData(value: 70, label: "B", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
-                HyperLineData(value: 75, label: "C", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
-                HyperLineData(value: 69, label: "D", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
-                HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
-            ], appearance: defaultHyperLineDataSetAppearance), HyperLineChartDataSet(data: [
-                HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
                 HyperLineData(value: 72, label: "A", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color,isShowCircle: true)),
                 HyperLineData(value: 65, label: "B", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
                 HyperLineData(value: 70, label: "C", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
                 HyperLineData(value: 66, label: "D", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
+                HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
+            ], appearance: defaultHyperLineDataSetAppearance),
+            HyperLineChartDataSet(data: [
+                HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
+                HyperLineData(value: 82, label: "A", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color,isShowCircle: true, isShowValue: true, isShowMark: false)),
+                HyperLineData(value: 70, label: "B", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
+                HyperLineData(value: 75, label: "C", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
+                HyperLineData(value: 69, label: "D", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
                 HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
             ], appearance: defaultHyperLineDataSetAppearance)]
         
@@ -48,9 +49,9 @@ class aos_d_line_01: UIView {
         ]
         
         let xAxisData = ["","1A","2B","3C","4D",""]
-        let defaultFont = UIFont.systemFont(ofSize: 11)
-        
-        let appearence = HyperLineAppearance(font: defaultFont,  xAxisValueColor: "#222222".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig(labelCount: 3, minValue: 0, maxValue: 82, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color, entries: [0,42,82]))
+        let defaultFont = UIFont.systemFont(ofSize: 13)
+        let highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
+        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig(labelCount: 3, minValue: 0, maxValue: 82, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color, entries: [0,42,82]))
         
         let defaultConfig = HyperLineChartConfig(
             dataSets: dataSets,
