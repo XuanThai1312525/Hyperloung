@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1C2DE333E7F91136EACF0C17 /* Pods_Hyperloung.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1134F5868672CE3EEF85559 /* Pods_Hyperloung.framework */; };
 		2A20E4CC27C8DED91E3E7055 /* Pods_Hyperloung_HyperloungUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D3466DC7CA7BB0E1A0203A /* Pods_Hyperloung_HyperloungUITests.framework */; };
+		8533956F273838B2008470E6 /* VerticalStackBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533956C273838B2008470E6 /* VerticalStackBarChart.swift */; };
+		85339570273838B2008470E6 /* VeriticalBarGroupChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533956D273838B2008470E6 /* VeriticalBarGroupChartView.swift */; };
+		85339571273838B2008470E6 /* VerticalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533956E273838B2008470E6 /* VerticalBarChart.swift */; };
+		85339576273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85339575273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift */; };
 		86A7661BDC01330726EC2F6C /* Pods_HyperloungTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2DFE860281DB660B3CBA53 /* Pods_HyperloungTests.framework */; };
 		944CC8E8272835740016398D /* UserInfoBasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944CC8E7272835740016398D /* UserInfoBasViewController.swift */; };
 		944CC8EB2728471D0016398D /* ReportChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944CC8EA2728471D0016398D /* ReportChartViewController.swift */; };
@@ -99,6 +103,10 @@
 		3C40E486C8A484175C13BEC5 /* Pods-Hyperloung.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung.debug.xcconfig"; path = "Target Support Files/Pods-Hyperloung/Pods-Hyperloung.debug.xcconfig"; sourceTree = "<group>"; };
 		4A2DFE860281DB660B3CBA53 /* Pods_HyperloungTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperloungTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D508F558646A05EF84490C1 /* Pods-Hyperloung.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung.release.xcconfig"; path = "Target Support Files/Pods-Hyperloung/Pods-Hyperloung.release.xcconfig"; sourceTree = "<group>"; };
+		8533956C273838B2008470E6 /* VerticalStackBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackBarChart.swift; sourceTree = "<group>"; };
+		8533956D273838B2008470E6 /* VeriticalBarGroupChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeriticalBarGroupChartView.swift; sourceTree = "<group>"; };
+		8533956E273838B2008470E6 /* VerticalBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalBarChart.swift; sourceTree = "<group>"; };
+		85339575273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportChartViewController+AddDemoBarChart.swift"; sourceTree = "<group>"; };
 		944CC8E7272835740016398D /* UserInfoBasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBasViewController.swift; sourceTree = "<group>"; };
 		944CC8EA2728471D0016398D /* ReportChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportChartViewController.swift; sourceTree = "<group>"; };
 		944CC8ED27284BF20016398D /* HyperBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperBarChartView.swift; sourceTree = "<group>"; };
@@ -242,6 +250,7 @@
 				94E5F3FB27316DD90081FD86 /* DetailChart */,
 				944CC8EC27284BC90016398D /* BarCharts */,
 				944CC8EA2728471D0016398D /* ReportChartViewController.swift */,
+				85339575273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -249,6 +258,9 @@
 		944CC8EC27284BC90016398D /* BarCharts */ = {
 			isa = PBXGroup;
 			children = (
+				8533956D273838B2008470E6 /* VeriticalBarGroupChartView.swift */,
+				8533956E273838B2008470E6 /* VerticalBarChart.swift */,
+				8533956C273838B2008470E6 /* VerticalStackBarChart.swift */,
 				944CC8ED27284BF20016398D /* HyperBarChartView.swift */,
 				944CC8EF2728F9170016398D /* HyperCircleChartView.swift */,
 				944CC8F12729125E0016398D /* HyperRowView.swift */,
@@ -761,6 +773,7 @@
 				9464C1FF2727AAE50048CB98 /* LayoutExtension.swift in Sources */,
 				94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */,
 				9464C1FD2727A8850048CB98 /* BottomBar.swift in Sources */,
+				85339571273838B2008470E6 /* VerticalBarChart.swift in Sources */,
 				9464C2142727FCE50048CB98 /* DetailReportViewController.swift in Sources */,
 				94BC75FC2726B76800018C26 /* UIStoryboard_Ext.swift in Sources */,
 				94BC76042726BCE400018C26 /* BaseViewController.swift in Sources */,
@@ -783,11 +796,14 @@
 				94BC75FA2726B76800018C26 /* UIViewController_Ext.swift in Sources */,
 				94BC75EF2726B41A00018C26 /* AppManager.swift in Sources */,
 				9464C1F62726FD7C0048CB98 /* SummaryReportView.swift in Sources */,
+				85339576273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift in Sources */,
+				85339570273838B2008470E6 /* VeriticalBarGroupChartView.swift in Sources */,
 				FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */,
 				FD00F5582734637600181CC3 /* aos_d_line_02.swift in Sources */,
 				94E5F3FA2731648F0081FD86 /* Tooltip.swift in Sources */,
 				9464C2122727F8760048CB98 /* ProgessBar.swift in Sources */,
 				94E5F3FF273189080081FD86 /* aos_mb_pie_01.swift in Sources */,
+				8533956F273838B2008470E6 /* VerticalStackBarChart.swift in Sources */,
 				FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -968,6 +984,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DP6P68DW;
 				INFOPLIST_FILE = Hyperloung/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,6 +1005,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DP6P68DW;
 				INFOPLIST_FILE = Hyperloung/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

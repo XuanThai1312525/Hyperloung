@@ -194,7 +194,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         if let leftAxisConfig = appearance.leftAxisConfig  {
             chartView.leftAxis.drawAxisLineEnabled = false
             chartView.leftAxis.drawLabelsEnabled = true
-            chartView.leftAxis.labelXOffset = -leftAxisConfig.xOffset
+            chartView.leftAxis.labelXOffset = CGFloat(-leftAxisConfig.xOffset)
             chartView.leftAxis.valueFormatter = leftAxisConfig.valueFormatter
             chartView.leftAxis.labelTextColor = leftAxisConfig.labelColor
             chartView.leftAxis.setLabelCount(leftAxisConfig.labelCount, force: true)
