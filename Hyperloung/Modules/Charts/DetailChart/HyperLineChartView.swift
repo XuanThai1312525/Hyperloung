@@ -103,7 +103,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
             circleInfoView.bindingUI(data: cirlceInfoData)
             self.descriptionContainerView.addArrangedSubview(circleInfoView)
         }
-        self.descriptionContainerHeightConstraint.constant = config.appearance.descriptionContainerHeight ?? 50
+        self.descriptionContainerHeightConstraint.constant = CGFloat(config.appearance.descriptionContainerHeight ?? 50)
     }
     
     private func setupChartView(){
@@ -200,6 +200,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
             chartView.leftAxis.setLabelCount(leftAxisConfig.labelCount, force: true)
             chartView.leftAxis.axisMinimum = leftAxisConfig.minValue
             chartView.leftAxis.axisMaximum = leftAxisConfig.maxValue
+
             chartView.leftAxis.enabled = true
             if let entries = leftAxisConfig.entries {
                 chartView.leftAxis.entries = entries

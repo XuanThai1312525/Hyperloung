@@ -6,36 +6,58 @@
 //
 
 import UIKit
+import Charts
 
 class aos_mb_pie_01: UIView {
-    private var circleChart: HyperCircleChartView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        circleChart = HyperCircleChartView(frame: bounds)
-        addSubview(circleChart)
-        circleChart.fullscreen()
-        circleChart.datasource = self
+    var circleChartView: HyperCircleChartView!
+    @IBOutlet var view: UIView!
+    var data = [
+        HyperCircleData(percent: 0.5, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), description: "솔루션"),
+        HyperCircleData(percent: 0.5, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), description: "솔루션"),
+    ]
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        Bundle.main.loadNibNamed("aos_mb_pie_01", owner: self, options: nil)
+        addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.fullscreen()
         layoutIfNeeded()
-        DispatchQueue.main.async {
-            self.circleChart.drawChart()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setupView()
         }
+    }
+    
+    private func setupView() {
+        circleChartView = HyperCircleChartView(frame: bounds)
+        addSubview(circleChartView)
+        circleChartView.fullscreen()
+        circleChartView.datasource = self
+        circleChartView.drawChart()
     }
 }
 
 extension aos_mb_pie_01: HyperCircleDataSource {
-    var internalDescription: (String, UIColor)? {
-        return ("36%", .black)
-    }
-    
-    var lineWidth: CGFloat {
-        return 8
-    }
-    
     var dataSet: [HyperCircleData] {
-        return [HyperCircleData(percent: 0.3, color: .red)]
+        data
     }
     
     func description(of data: HyperCircleData) -> String {
-        return "12억"
+        data.description ?? ""
     }
+    
+    var lineWidth: CGFloat {
+        10
+    }
+    
+    var centerText: (String, UIColor)? {
+        ("346억", .black)
+    }
+    
+    
 }
