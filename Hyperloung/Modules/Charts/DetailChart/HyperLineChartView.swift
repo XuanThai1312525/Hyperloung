@@ -88,7 +88,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
             circleInfoView.bindingUI(data: cirlceInfoData)
             self.descriptionContainerView.addArrangedSubview(circleInfoView)
         }
-        self.descriptionContainerHeightConstraint.constant = config.appearance.descriptionContainerHeight ?? 50
+        self.descriptionContainerHeightConstraint.constant = CGFloat(config.appearance.descriptionContainerHeight ?? 50)
     }
     
     private func setupChartView(){
@@ -168,7 +168,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         if(appearance.leftAxisConfig.isShowAxis) {
             chartView.leftAxis.drawAxisLineEnabled = false
             chartView.leftAxis.drawLabelsEnabled = true
-            chartView.leftAxis.labelXOffset = -appearance.leftAxisConfig.xOffset
+            chartView.leftAxis.labelXOffset = CGFloat(-appearance.leftAxisConfig.xOffset)
             chartView.leftAxis.valueFormatter = appearance.leftAxisConfig.valueFormatter
             chartView.leftAxis.labelTextColor = appearance.leftAxisConfig.labelColor ?? UIColor.black
             chartView.leftAxis.setLabelCount(appearance.leftAxisConfig.labels.count, force: true)

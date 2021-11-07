@@ -63,6 +63,7 @@
 		94E5F403273202FF0081FD86 /* aos_mb_pie_02.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */; };
 		94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */; };
 		94E5F407273207200081FD86 /* CircleDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */; };
+		94FA5C3D2736B20E00AEF0AC /* aos_d_bar_08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */; };
 		FD00F5582734637600181CC3 /* aos_d_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F5572734637600181CC3 /* aos_d_line_02.swift */; };
 		FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F55927348BD400181CC3 /* aos_d_line_01.swift */; };
 		FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460332732B00B00084D14 /* aos_ma_line_03.swift */; };
@@ -155,6 +156,7 @@
 		94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aos_mb_pie_02.xib; sourceTree = "<group>"; };
 		94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_bar_08.swift; sourceTree = "<group>"; };
 		A8D3466DC7CA7BB0E1A0203A /* Pods_Hyperloung_HyperloungUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung_HyperloungUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE54D3A6ED270F8A166304B6 /* Pods-HyperloungTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.release.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.release.xcconfig"; sourceTree = "<group>"; };
 		C996A623659E2D5933C696E8 /* Pods-HyperloungTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.debug.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				FDB1410F27331A4500E5CF74 /* HyperLineChartView.xib */,
 				FD00F5572734637600181CC3 /* aos_d_line_02.swift */,
 				FD00F55927348BD400181CC3 /* aos_d_line_01.swift */,
+				94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */,
 			);
 			path = DetailChart;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */,
 				FDB1410C2733076D00E5CF74 /* CircleInfoView.swift in Sources */,
 				9464C2032727B2A00048CB98 /* HeaderFooterClass.swift in Sources */,
+				94FA5C3D2736B20E00AEF0AC /* aos_d_bar_08.swift in Sources */,
 				944CC8EB2728471D0016398D /* ReportChartViewController.swift in Sources */,
 				94E5F401273202D30081FD86 /* aos_mb_pie_02.swift in Sources */,
 				94BC75F52726B65600018C26 /* AppProperties.swift in Sources */,

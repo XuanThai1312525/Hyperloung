@@ -43,7 +43,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: dc384643ecbd125bff789d46894c0ee9af8908fc
+    :commit: 7aa6709325bd2af199e94d6d261294cb115e71f6
     :git: https://github.com/trinhhcse/Charts.git
 
 SPEC CHECKSUMS:
