@@ -134,7 +134,7 @@ class VeritalBarChartView: UIView {
             //5 is value for display above or bellow
             chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
             chartView.marker = HyperMarker(config: IMarkerConfig(label: "test", selectedLabelFont: UIFont.boldSystemFont(ofSize: 13), bottomValueToCircle: 15 - 5, selectedValueRoundColor: "#DDDDDD".color))
-//            dataSet.valueSpacing = 15
+            dataSet.valueSpacing = 15
             chartView.highlightValue(highLight)
         }
     }
