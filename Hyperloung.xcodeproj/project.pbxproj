@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1C2DE333E7F91136EACF0C17 /* Pods_Hyperloung.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1134F5868672CE3EEF85559 /* Pods_Hyperloung.framework */; };
 		2A20E4CC27C8DED91E3E7055 /* Pods_Hyperloung_HyperloungUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D3466DC7CA7BB0E1A0203A /* Pods_Hyperloung_HyperloungUITests.framework */; };
+		8533956F273838B2008470E6 /* VerticalStackBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533956C273838B2008470E6 /* VerticalStackBarChart.swift */; };
+		85339570273838B2008470E6 /* VeriticalBarGroupChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533956D273838B2008470E6 /* VeriticalBarGroupChartView.swift */; };
+		85339571273838B2008470E6 /* VerticalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533956E273838B2008470E6 /* VerticalBarChart.swift */; };
+		85339576273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85339575273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift */; };
 		86A7661BDC01330726EC2F6C /* Pods_HyperloungTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2DFE860281DB660B3CBA53 /* Pods_HyperloungTests.framework */; };
 		944CC8E8272835740016398D /* UserInfoBasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944CC8E7272835740016398D /* UserInfoBasViewController.swift */; };
 		944CC8EB2728471D0016398D /* ReportChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944CC8EA2728471D0016398D /* ReportChartViewController.swift */; };
@@ -74,6 +78,9 @@
 		FDB1410C2733076D00E5CF74 /* CircleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB1410A2733076D00E5CF74 /* CircleInfoView.swift */; };
 		FDB1410E27330B8A00E5CF74 /* HyperLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB1410D27330B8A00E5CF74 /* HyperLineChartView.swift */; };
 		FDB1411027331A4500E5CF74 /* HyperLineChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB1410F27331A4500E5CF74 /* HyperLineChartView.xib */; };
+		FDBDDB5A2736ABE900406543 /* aos_ma_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDDB592736ABE800406543 /* aos_ma_line_02.swift */; };
+		FDBDDB5C27370AC800406543 /* aos_mb_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDDB5B27370AC800406543 /* aos_mb_line_02.swift */; };
+		FDECE425273831F50008F57E /* aos_ma_line_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDECE424273831F50008F57E /* aos_ma_line_01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +105,10 @@
 		3C40E486C8A484175C13BEC5 /* Pods-Hyperloung.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung.debug.xcconfig"; path = "Target Support Files/Pods-Hyperloung/Pods-Hyperloung.debug.xcconfig"; sourceTree = "<group>"; };
 		4A2DFE860281DB660B3CBA53 /* Pods_HyperloungTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperloungTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D508F558646A05EF84490C1 /* Pods-Hyperloung.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung.release.xcconfig"; path = "Target Support Files/Pods-Hyperloung/Pods-Hyperloung.release.xcconfig"; sourceTree = "<group>"; };
+		8533956C273838B2008470E6 /* VerticalStackBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackBarChart.swift; sourceTree = "<group>"; };
+		8533956D273838B2008470E6 /* VeriticalBarGroupChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeriticalBarGroupChartView.swift; sourceTree = "<group>"; };
+		8533956E273838B2008470E6 /* VerticalBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalBarChart.swift; sourceTree = "<group>"; };
+		85339575273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportChartViewController+AddDemoBarChart.swift"; sourceTree = "<group>"; };
 		944CC8E7272835740016398D /* UserInfoBasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBasViewController.swift; sourceTree = "<group>"; };
 		944CC8EA2728471D0016398D /* ReportChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportChartViewController.swift; sourceTree = "<group>"; };
 		944CC8ED27284BF20016398D /* HyperBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperBarChartView.swift; sourceTree = "<group>"; };
@@ -173,6 +184,9 @@
 		FDB1410A2733076D00E5CF74 /* CircleInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleInfoView.swift; sourceTree = "<group>"; };
 		FDB1410D27330B8A00E5CF74 /* HyperLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperLineChartView.swift; sourceTree = "<group>"; };
 		FDB1410F27331A4500E5CF74 /* HyperLineChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HyperLineChartView.xib; sourceTree = "<group>"; };
+		FDBDDB592736ABE800406543 /* aos_ma_line_02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_02.swift; sourceTree = "<group>"; };
+		FDBDDB5B27370AC800406543 /* aos_mb_line_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_mb_line_02.swift; sourceTree = "<group>"; };
+		FDECE424273831F50008F57E /* aos_ma_line_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_ma_line_01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +254,7 @@
 				94E5F3FB27316DD90081FD86 /* DetailChart */,
 				944CC8EC27284BC90016398D /* BarCharts */,
 				944CC8EA2728471D0016398D /* ReportChartViewController.swift */,
+				85339575273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -247,6 +262,9 @@
 		944CC8EC27284BC90016398D /* BarCharts */ = {
 			isa = PBXGroup;
 			children = (
+				8533956D273838B2008470E6 /* VeriticalBarGroupChartView.swift */,
+				8533956E273838B2008470E6 /* VerticalBarChart.swift */,
+				8533956C273838B2008470E6 /* VerticalStackBarChart.swift */,
 				944CC8ED27284BF20016398D /* HyperBarChartView.swift */,
 				944CC8EF2728F9170016398D /* HyperCircleChartView.swift */,
 				944CC8F12729125E0016398D /* HyperRowView.swift */,
@@ -467,9 +485,11 @@
 		94E5F3FB27316DD90081FD86 /* DetailChart */ = {
 			isa = PBXGroup;
 			children = (
+				FDBDDB592736ABE800406543 /* aos_ma_line_02.swift */,
 				FD7460332732B00B00084D14 /* aos_ma_line_03.swift */,
 				FD7460352732B00B00084D14 /* aos_ma_line_04.swift */,
 				949EA69527381ED6009C75EE /* aos_d_bar_05.swift */,
+				FDECE424273831F50008F57E /* aos_ma_line_01.swift */,
 				94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */,
 				94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */,
 				949EA6932737E76E009C75EE /* aos_mb_pie_01.xib */,
@@ -483,6 +503,7 @@
 				FDB1410F27331A4500E5CF74 /* HyperLineChartView.xib */,
 				FD00F5572734637600181CC3 /* aos_d_line_02.swift */,
 				FD00F55927348BD400181CC3 /* aos_d_line_01.swift */,
+				FDBDDB5B27370AC800406543 /* aos_mb_line_02.swift */,
 				94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */,
 			);
 			path = DetailChart;
@@ -753,11 +774,13 @@
 				94BC75F52726B65600018C26 /* AppProperties.swift in Sources */,
 				944CC8E8272835740016398D /* UserInfoBasViewController.swift in Sources */,
 				94BC75F22726B58100018C26 /* AppMainNavigator.swift in Sources */,
+				FDBDDB5C27370AC800406543 /* aos_mb_line_02.swift in Sources */,
 				94BC75C22726A07B00018C26 /* LoginViewController.swift in Sources */,
 				9464C21B27280A3F0048CB98 /* DetailReportTableViewCell.swift in Sources */,
 				9464C1FF2727AAE50048CB98 /* LayoutExtension.swift in Sources */,
 				94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */,
 				9464C1FD2727A8850048CB98 /* BottomBar.swift in Sources */,
+				85339571273838B2008470E6 /* VerticalBarChart.swift in Sources */,
 				9464C2142727FCE50048CB98 /* DetailReportViewController.swift in Sources */,
 				94BC75FC2726B76800018C26 /* UIStoryboard_Ext.swift in Sources */,
 				94BC76042726BCE400018C26 /* BaseViewController.swift in Sources */,
@@ -773,17 +796,22 @@
 				944CC8F627291CB60016398D /* HyperHorizontalLineChartView.swift in Sources */,
 				944CC8F22729125E0016398D /* HyperRowView.swift in Sources */,
 				94BC75FF2726BAAD00018C26 /* BaseNavigationViewController.swift in Sources */,
+				FDBDDB5A2736ABE900406543 /* aos_ma_line_02.swift in Sources */,
 				9464C1F82727A1900048CB98 /* UIViewExtension.swift in Sources */,
 				9464C20F2727F1B00048CB98 /* ReportCollectionViewCell.swift in Sources */,
 				FDB1410E27330B8A00E5CF74 /* HyperLineChartView.swift in Sources */,
 				94BC75FA2726B76800018C26 /* UIViewController_Ext.swift in Sources */,
+				FDECE425273831F50008F57E /* aos_ma_line_01.swift in Sources */,
 				94BC75EF2726B41A00018C26 /* AppManager.swift in Sources */,
 				9464C1F62726FD7C0048CB98 /* SummaryReportView.swift in Sources */,
+				85339576273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift in Sources */,
+				85339570273838B2008470E6 /* VeriticalBarGroupChartView.swift in Sources */,
 				FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */,
 				FD00F5582734637600181CC3 /* aos_d_line_02.swift in Sources */,
 				94E5F3FA2731648F0081FD86 /* Tooltip.swift in Sources */,
 				9464C2122727F8760048CB98 /* ProgessBar.swift in Sources */,
 				94E5F3FF273189080081FD86 /* aos_mb_pie_01.swift in Sources */,
+				8533956F273838B2008470E6 /* VerticalStackBarChart.swift in Sources */,
 				FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -890,7 +918,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -945,7 +973,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -964,6 +992,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DP6P68DW;
 				INFOPLIST_FILE = Hyperloung/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -984,6 +1013,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DP6P68DW;
 				INFOPLIST_FILE = Hyperloung/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1004,7 +1034,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DP6P68DW;
 				INFOPLIST_FILE = HyperloungTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1027,7 +1057,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DP6P68DW;
 				INFOPLIST_FILE = HyperloungTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

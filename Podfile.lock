@@ -43,7 +43,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: 7aa6709325bd2af199e94d6d261294cb115e71f6
+    :commit: f27d1d12b1be920f1fab707fce0fc28799f14cfb
     :git: https://github.com/trinhhcse/Charts.git
 
 SPEC CHECKSUMS:
@@ -55,6 +55,6 @@ SPEC CHECKSUMS:
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
 
-PODFILE CHECKSUM: ee2781b55b650861700f83a40aafdf4beb467e2f
+PODFILE CHECKSUM: a22dcbaf90fe05ef85d0fe1f8941e4d021051d98
 
 COCOAPODS: 1.11.2

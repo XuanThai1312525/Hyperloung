@@ -8,7 +8,8 @@
 import UIKit
 
 class ReportChartViewController: BaseViewController {
-
+    
+    @IBOutlet weak var chartContainerStackView: UIStackView!
     @IBOutlet weak var monthChartView: aos_mb_bar_01!
     @IBOutlet weak var planChartView: HyperBarChartView!
     @IBOutlet weak var circleChartView: aos_mb_pie_01!
@@ -17,6 +18,20 @@ class ReportChartViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+
+        // These line of code auto insert to TOP
+        insertBarChart_aos_mb_bar_04()
+        insertBarChart_aos_mb_bar_03()
+        insertBarChart_aos_mb_bar_02()
+        insertBarChart_aos_mb_bar_01()
+        
+        insertChartView_aos_d_bar_07()
+        insertChartView_aos_d_bar_06()
+        insertChartView_aos_d_bar_04()
+        insertChartView_aos_d_bar_03()
+        insertChartView_aos_d_bar_02()
+        insertBarChart_aos_d_bar_01()
+        
     }
     
     private func setupView() {
