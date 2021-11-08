@@ -10,7 +10,8 @@ struct ChartVisual {
     var space: Int
     var width: Int
     var bottomTitleSpace: CGFloat = 0
-
+    var fontForValueLabel: UIFont = UIFont.bold(size: 12)
+    var fontForXaxisLabel: UIFont = UIFont.normal(size: 12)
     static var defaultVisual: ChartVisual {
         return ChartVisual(space: 24, width: 32)
     }
@@ -27,14 +28,17 @@ struct BarChartItemData {
 
 struct BarVisual {
     var radius: Double
-    var normalColor: UIColor
-    var highlightColor: UIColor
-    var normalTextColor: UIColor
-    var highlightTextColor: UIColor
+    var barNormalColor: UIColor
+    var barHighlightColor: UIColor
+    var valueNormalTextColor: UIColor
+    var valueHighlightTextColor: UIColor
+    var titleNormalTextColor: UIColor
+    var titleHighlightTextColor: UIColor
+
     var isHighlight: Bool = false
     
     static func defaultVisual() -> BarVisual {
-        return BarVisual(radius: 4.0, normalColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), highlightColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), normalTextColor: #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1), highlightTextColor: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1))
+        return BarVisual(radius: 4.0, barNormalColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), barHighlightColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), valueNormalTextColor: #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1), valueHighlightTextColor: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), titleNormalTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), titleHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
     }
 }
 
@@ -61,7 +65,9 @@ class VeritalBarChartView: UIView {
         let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1))
         chartView = BarChartView(frame: CGRect(x: 0, y: 0, width: width, height: 200))
         addSubview(chartView)
-        
+        chartView.centralize()
+        chartView.setBottom(0, relativeToView: self)
+        chartView.setWidth(width)
         setup(barLineChartView: chartView)
         
 //        setDataCount(numOfBar, range: 50, highlight: 2)
@@ -70,10 +76,12 @@ class VeritalBarChartView: UIView {
     }
     
     func updateChartViewSize() {
-        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1))
+        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1)) + 50 // 30 is additonal padding for xaxis label
         var frame = chartView.frame
         frame.size.width = width
-        chartView.frame = frame
+        chartView.setWidth(width)
+//        chartView.barData?.barWidth = Double(numOfBar * visual.width) / Double(width) - 0.3
+//        chartView.frame = frame
     }
     
     func setChartVisual(_ visual: ChartVisual) {
@@ -82,13 +90,20 @@ class VeritalBarChartView: UIView {
         updateChartViewSize()
     }
     
+    func setLeftAxisSuffix(_ string: String) {
+        leftAxisUnit = string
+        chartView.leftAxis.valueFormatter = VerticalBarLeftAxisValueFormatter(unit: leftAxisUnit)
+
+    }
+    
     func addLimitLine(value: Double, title: String) {
         var limitLine = ChartLimitLine()
         limitLine = ChartLimitLine(limit: value, label: title)
         limitLine.lineColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
         limitLine.valueTextColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
         limitLine.lineWidth = 0.5
-        limitLine.labelPosition = .bottomLeft
+        limitLine.labelPosition = .topLeft
+        limitLine.yOffset = 0
         limitLine.lineDashLengths = [3.0]
         chartView.rightAxis.addLimitLine(limitLine)
 
@@ -118,13 +133,12 @@ class VeritalBarChartView: UIView {
         dataSet.colors = [.black, .green, .gray] // array always have more than 1 item so "color(atIndex index: Int)" to be called
         dataSet.drawValuesEnabled = true
         dataSet.barCornerRadius = 4
-
         dataSet.valueFormatter = VerticalBarValueFormatter(barItems: items)
         dataSet.stackLabels = ["Births", "Divorces", "Marriages"]
 
                 
         let data = BarChartData(dataSet: dataSet)
-        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
+        data.setValueFont(visual.fontForValueLabel)
         data.setValueTextColor( .black)
         data.barWidth = calculateBarWidth()
         
@@ -138,11 +152,7 @@ class VeritalBarChartView: UIView {
             chartView.highlightValue(highLight)
         }
     }
-    
-    func setStackCharItems() {
         
-    }
-    
     // MARK: Functions
     /*
      Because BarChartView will calculate the with of bar by percentage,
@@ -183,6 +193,7 @@ class VeritalBarChartView: UIView {
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         xAxis.labelTextColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
+        xAxis.labelFont = visual.fontForXaxisLabel
         
         // set bottom item titles
         chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
@@ -192,7 +203,7 @@ class VeritalBarChartView: UIView {
     }
         
     func calculateBarWidth() -> Double {
-        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1))
+        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1)) + 50
         return Double(visual.width * numOfBar) / Double(width)
     }
     
@@ -211,7 +222,7 @@ class HyperChartBaseDataSet: BarChartDataSet {
     override func color(atIndex index: Int) -> NSUIColor {
         let entry = entries[index]
         if let data = entry.data as? BarChartItemData {
-            return data.isHighlight ? data.barVisual.highlightColor : data.barVisual.normalColor
+            return data.isHighlight ? data.barVisual.barHighlightColor : data.barVisual.barNormalColor
         }
         return UIColor.red
     }
@@ -220,7 +231,7 @@ class HyperChartBaseDataSet: BarChartDataSet {
     override func valueTextColorAt(_ index: Int) -> NSUIColor {
         let entry = entries[index]
         if let data = entry.data as? BarChartItemData {
-            return data.isHighlight ? data.barVisual.highlightTextColor : data.barVisual.normalTextColor
+            return data.isHighlight ? data.barVisual.valueHighlightTextColor : data.barVisual.valueNormalTextColor
         }
         
         return UIColor.red
@@ -248,7 +259,7 @@ class VerticalBarXAxisLabelFormatter: NSObject, IAxisValueFormatter {
         if barItems.count > index {
             let item = barItems[index]
 
-            return item.isHighlight ? item.barVisual.highlightTextColor : item.barVisual.normalTextColor
+            return item.isHighlight ? item.barVisual.valueHighlightTextColor : item.barVisual.valueNormalTextColor
         }
         return nil
     }
@@ -286,7 +297,7 @@ public class VerticalBarValueFormatter: NSObject, IValueFormatter, IAxisValueFor
         if barItems.count > index {
             let item = barItems[index]
 
-            return item.isHighlight ? item.barVisual.highlightTextColor : item.barVisual.normalTextColor
+            return item.isHighlight ? item.barVisual.valueHighlightTextColor : item.barVisual.valueNormalTextColor
         }
         return nil
     }

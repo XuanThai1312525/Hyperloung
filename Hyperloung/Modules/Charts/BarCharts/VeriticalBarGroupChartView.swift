@@ -18,7 +18,7 @@ struct GroupChartItem {
 class VeriticalBarGroupChartView: UIView {
     var chartView: BarChartView!
     var visual: StackBarChartVisual = StackBarChartVisual.defaultVisual
-    private var numOfBar: Int = 3
+    private var numOfBar: Int = 4
     var chartItems: [StackBarChartItemData] = []
     var leftAxisUnit: String = ""
 
@@ -37,7 +37,9 @@ class VeriticalBarGroupChartView: UIView {
         let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1))
         chartView = BarChartView(frame: CGRect(x: 0, y: 0, width: width, height: 200))
         addSubview(chartView)
-        
+        chartView.centralize()
+        chartView.setBottom(0, relativeToView: self)
+        chartView.setWidth(width)
         setup(barLineChartView: chartView)
     }
     
@@ -76,7 +78,7 @@ class VeriticalBarGroupChartView: UIView {
         let leftAxis = chartView.leftAxis
         leftAxis.labelFont = .systemFont(ofSize: 10)
         leftAxis.labelCount = 8
-        leftAxis.valueFormatter = VerticalBarLeftAxisValueFormatter(unit: "襲")
+        leftAxis.valueFormatter = VerticalBarLeftAxisValueFormatter(unit: "억")
         leftAxis.labelPosition = .outsideChart
         leftAxis.spaceTop = 0.15
         leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES

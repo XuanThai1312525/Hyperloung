@@ -20,17 +20,48 @@ class ReportChartViewController: BaseViewController {
         setupView()
 
         // These line of code auto insert to TOP
-        insertBarChart_aos_mb_bar_04()
-        insertBarChart_aos_mb_bar_03()
-        insertBarChart_aos_mb_bar_02()
-        insertBarChart_aos_mb_bar_01()
+        let bar_01: aos_d_bar_01 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(bar_01, at: 0)
+        bar_01.setHeight(292)
         
-        insertChartView_aos_d_bar_07()
-        insertChartView_aos_d_bar_06()
-        insertChartView_aos_d_bar_04()
-        insertChartView_aos_d_bar_03()
-        insertChartView_aos_d_bar_02()
-        insertBarChart_aos_d_bar_01()
+        let bar_02: aos_d_bar_02 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(bar_02, at: 1)
+        bar_02.setHeight(292)
+
+        
+        let bar_03: aos_d_bar_03 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(bar_03, at: 2)
+        bar_03.setHeight(292)
+
+        
+        let bar_04: aos_d_bar_04 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(bar_04, at: 3)
+        bar_04.setHeight(300)
+
+        let bar_06: aos_d_bar_06 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(bar_06, at: 4)
+        bar_06.setHeight(292)
+
+        
+        let bar_07: aos_d_bar_07 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(bar_07, at: 5)
+        bar_07.setHeight(292)
+        
+        let mb_bar_01: aos_mb_bar_01_ = .fromNib()
+        chartContainerStackView.insertArrangedSubview(mb_bar_01, at: 6)
+        mb_bar_01.setHeight(292)
+
+        let mb_bar_02: aos_mb_bar_02_ = .fromNib()
+        chartContainerStackView.insertArrangedSubview(mb_bar_02, at: 7)
+        mb_bar_02.setHeight(292)
+
+        let mb_bar_03: aos_mb_bar_03_ = .fromNib()
+        chartContainerStackView.insertArrangedSubview(mb_bar_03, at: 8)
+        mb_bar_03.setHeight(292)
+
+        let mb_bar_04: aos_mb_bar_04_ = .fromNib()
+        chartContainerStackView.insertArrangedSubview(mb_bar_04, at: 9)
+        mb_bar_04.setHeight(292)
         
     }
     

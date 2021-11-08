@@ -72,9 +72,12 @@ class VerticalStackBarChart: UIView {
     
     private func customInit() {
         let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1))
-        chartView = BarChartView(frame: CGRect(x: 0, y: 0, width: width, height: 250))
+        chartView = BarChartView(frame: CGRect(x: 0, y: 0, width: width, height: 350))
         addSubview(chartView)
-        
+        chartView.centralize()
+        chartView.setBottom(0, relativeToView: self)
+        chartView.setWidth(width)
+
         setup(barLineChartView: chartView)
     }
     
@@ -82,12 +85,12 @@ class VerticalStackBarChart: UIView {
         let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1))
         var frame = chartView.frame
         frame.size.width = width
-        chartView.frame = frame
+        chartView.setWidth(width)        
     }
     
     func setStackBarChartVisual(_ visual: StackBarChartVisual) {
         self.visual = visual
-//        chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
+        chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
         updateChartViewSize()
     }
     
@@ -160,7 +163,7 @@ class VerticalStackBarChart: UIView {
         set.barCornerRadius = 4
 
         set.valueFormatter = VerticalStackBarValueFormatter(barItems: items)
-        set.stackLabels = ["Births", "Divorces", "Marriages"]
+        set.stackLabels = ["범례1", "범례2", "범례3"]
 
 
         let data = BarChartData(dataSet: set)
@@ -254,7 +257,7 @@ public class VerticalStackBarValueFormatter: NSObject, IValueFormatter, IAxisVal
     fileprivate func format(value: Double) -> String {
         let index = Int(value)
         if index < barItems.count {
-            return barItems[index].valueTitle
+            return barItems[index].title
         }
         return ""
     }
@@ -271,7 +274,7 @@ public class VerticalStackBarValueFormatter: NSObject, IValueFormatter, IAxisVal
         if var data = entry.data as? StackBarChartItemData {
             if !data.isSetTitle {
                 data.setTitle()
-                return data.title
+                return data.valueTitle
             }
         }
         
