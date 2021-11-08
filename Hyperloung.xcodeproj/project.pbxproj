@@ -36,6 +36,7 @@
 		9464C219272803A00048CB98 /* ReportPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464C218272803A00048CB98 /* ReportPanelView.swift */; };
 		9464C21B27280A3F0048CB98 /* DetailReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464C21A27280A3F0048CB98 /* DetailReportTableViewCell.swift */; };
 		949EA6942737E76E009C75EE /* aos_mb_pie_01.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949EA6932737E76E009C75EE /* aos_mb_pie_01.xib */; };
+		949EA69627381ED6009C75EE /* aos_d_bar_05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949EA69527381ED6009C75EE /* aos_d_bar_05.swift */; };
 		94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75BD2726A07B00018C26 /* AppDelegate.swift */; };
 		94BC75C02726A07B00018C26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75BF2726A07B00018C26 /* SceneDelegate.swift */; };
 		94BC75C22726A07B00018C26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75C12726A07B00018C26 /* LoginViewController.swift */; };
@@ -123,6 +124,7 @@
 		9464C218272803A00048CB98 /* ReportPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPanelView.swift; sourceTree = "<group>"; };
 		9464C21A27280A3F0048CB98 /* DetailReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportTableViewCell.swift; sourceTree = "<group>"; };
 		949EA6932737E76E009C75EE /* aos_mb_pie_01.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aos_mb_pie_01.xib; sourceTree = "<group>"; };
+		949EA69527381ED6009C75EE /* aos_d_bar_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_bar_05.swift; sourceTree = "<group>"; };
 		94AC0B30F095358F710673B6 /* Pods-Hyperloung-HyperloungUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hyperloung-HyperloungUITests/Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94BC75BA2726A07B00018C26 /* Hyperloung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperloung.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BC75BD2726A07B00018C26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 			children = (
 				FD7460332732B00B00084D14 /* aos_ma_line_03.swift */,
 				FD7460352732B00B00084D14 /* aos_ma_line_04.swift */,
+				949EA69527381ED6009C75EE /* aos_d_bar_05.swift */,
 				94E5F3FC27316E090081FD86 /* aos_mb_bar_01.swift */,
 				94E5F3FE273189070081FD86 /* aos_mb_pie_01.swift */,
 				949EA6932737E76E009C75EE /* aos_mb_pie_01.xib */,
@@ -745,6 +748,7 @@
 				9464C2032727B2A00048CB98 /* HeaderFooterClass.swift in Sources */,
 				94FA5C3D2736B20E00AEF0AC /* aos_d_bar_08.swift in Sources */,
 				944CC8EB2728471D0016398D /* ReportChartViewController.swift in Sources */,
+				949EA69627381ED6009C75EE /* aos_d_bar_05.swift in Sources */,
 				94E5F401273202D30081FD86 /* aos_mb_pie_02.swift in Sources */,
 				94BC75F52726B65600018C26 /* AppProperties.swift in Sources */,
 				944CC8E8272835740016398D /* UserInfoBasViewController.swift in Sources */,
