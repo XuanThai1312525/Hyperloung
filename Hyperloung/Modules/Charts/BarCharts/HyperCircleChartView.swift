@@ -18,8 +18,25 @@ protocol HyperCircleDataSource: AnyObject {
     var dataSet: [HyperCircleData] {get}
     func description(of data: HyperCircleData) -> String
     var lineWidth: CGFloat {get}
-    var centerText: NSAttributedString? {get}
     var tooltip: NSAttributedString? {get}
+    var centerTextAppearnce: HyperCircleCenterTextAppearance? {get}
+    var isShowLegend: Bool {get}
+}
+
+struct HyperCircleCenterTextAppearance {
+    var textAttributedString: NSAttributedString!
+    var prefix: String! //for custom
+    var suffix: String!//for custom
+    var prefixColor: UIColor! = UIColor.black//for custom
+    var suffixColor: UIColor! = UIColor.gray//for custom
+    var prefixFont: UIFont! = FontFamily.customFont.displayFontWithSize(24)//for custom
+    var suffixFont: UIFont! = FontFamily.customFont.displayFontWithSize(16)//for custom
+}
+
+extension HyperCircleDataSource {
+    var isShowLegend: Bool {
+        return false
+    }
 }
 
 class HyperCircleChartView: UIView {
@@ -50,8 +67,19 @@ class HyperCircleChartView: UIView {
         let data = PieChartData(dataSet: set)
         chart.data = data
  
-        if let centerText = datasource.centerText {
-            chart.centerAttributedText = centerText
+        if let centerTextAppearance = datasource.centerTextAppearnce {
+            if let textAttributedString = centerTextAppearance.textAttributedString {
+                chart.centerAttributedText = textAttributedString
+            } else {
+                chart.centerAttributedText = NSMutableAttributedString()
+                    .addAtributes(for: centerTextAppearance.prefix, attribute: [
+                        NSAttributedString.Key.font : centerTextAppearance.prefixFont!,
+                        NSAttributedString.Key.foregroundColor : centerTextAppearance.prefixColor!,
+                    ]).addAtributes(for: centerTextAppearance.suffix, attribute: [
+                        NSAttributedString.Key.font : centerTextAppearance.suffixFont!,
+                        NSAttributedString.Key.foregroundColor : centerTextAppearance.suffixColor!,
+                    ])
+            }
         }
         
         chart.holeRadiusPercent = 0.65

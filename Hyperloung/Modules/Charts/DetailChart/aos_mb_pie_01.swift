@@ -56,12 +56,15 @@ extension aos_mb_pie_01: HyperCircleDataSource {
         10
     }
     
-    var centerText: NSAttributedString? {
-        NSAttributedString(string: "346억", attributes: [.foregroundColor: UIColor.black, .font: UIFont.systemFont(ofSize: 12)])
-    }
-    
     var tooltip: NSAttributedString? {
         nil
     }
     
+    var centerTextAppearnce: HyperCircleCenterTextAppearance? {
+        HyperCircleCenterTextAppearance(prefix: "346", suffix: "억")
+    }
+    
+    var isShowLegend: Bool {
+        true
+    }
 }

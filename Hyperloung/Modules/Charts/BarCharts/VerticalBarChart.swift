@@ -251,6 +251,7 @@ class VerticalBarXAxisLabelFormatter: NSObject, IAxisValueFormatter {
         if index < barItems.count {
             return barItems[index].title
         }
+
         return ""
     }
 
