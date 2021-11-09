@@ -90,6 +90,8 @@
 		94E5F403273202FF0081FD86 /* aos_mb_pie_02.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */; };
 		94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */; };
 		94E5F407273207200081FD86 /* CircleDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */; };
+		94E85ABA273A5CE1001CACA8 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E85AB9273A5CE1001CACA8 /* DemoViewController.swift */; };
+		94E85ABE273A841D001CACA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E85ABD273A841D001CACA8 /* Font.swift */; };
 		94FA5C3D2736B20E00AEF0AC /* aos_d_bar_08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */; };
 		FD00F5582734637600181CC3 /* aos_d_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F5572734637600181CC3 /* aos_d_line_02.swift */; };
 		FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F55927348BD400181CC3 /* aos_d_line_01.swift */; };
@@ -213,6 +215,8 @@
 		94E5F402273202FF0081FD86 /* aos_mb_pie_02.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aos_mb_pie_02.xib; sourceTree = "<group>"; };
 		94E5F404273207200081FD86 /* CircleDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		94E5F405273207200081FD86 /* CircleDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		94E85AB9273A5CE1001CACA8 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		94E85ABD273A841D001CACA8 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_bar_08.swift; sourceTree = "<group>"; };
 		A8D3466DC7CA7BB0E1A0203A /* Pods_Hyperloung_HyperloungUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung_HyperloungUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE54D3A6ED270F8A166304B6 /* Pods-HyperloungTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperloungTests.release.xcconfig"; path = "Target Support Files/Pods-HyperloungTests/Pods-HyperloungTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 				9464C2102727F8460048CB98 /* Views */,
 				94BC75FE2726BAAD00018C26 /* BaseNavigationViewController.swift */,
 				94BC76032726BCE400018C26 /* BaseViewController.swift */,
+				94E85ABD273A841D001CACA8 /* Font.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 			children = (
 				9464C1F22726EFB30048CB98 /* Subivews */,
 				94BC76052726BD0200018C26 /* HomeViewController.swift */,
+				94E85AB9273A5CE1001CACA8 /* DemoViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -859,12 +865,14 @@
 				94BC75FC2726B76800018C26 /* UIStoryboard_Ext.swift in Sources */,
 				94BC76042726BCE400018C26 /* BaseViewController.swift in Sources */,
 				94BC75C02726A07B00018C26 /* SceneDelegate.swift in Sources */,
+				94E85ABE273A841D001CACA8 /* Font.swift in Sources */,
 				944CC8EE27284BF20016398D /* HyperBarChartView.swift in Sources */,
 				9464C2052727B33E0048CB98 /* MainReportViewController.swift in Sources */,
 				855E1A56273968E000B3C03D /* aos_d_bar_02.swift in Sources */,
 				94BC76062726BD0200018C26 /* HomeViewController.swift in Sources */,
 				855E1AA12739B57200B3C03D /* aos_mb_bar_01_.swift in Sources */,
 				9464C219272803A00048CB98 /* ReportPanelView.swift in Sources */,
+				94E85ABA273A5CE1001CACA8 /* DemoViewController.swift in Sources */,
 				94E5F406273207200081FD86 /* CircleDescriptionCollectionViewCell.swift in Sources */,
 				94E5F3FD27316E090081FD86 /* aos_mb_bar_01.swift in Sources */,
 				944CC8F02728F9170016398D /* HyperCircleChartView.swift in Sources */,

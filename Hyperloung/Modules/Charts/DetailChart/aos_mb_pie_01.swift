@@ -55,9 +55,11 @@ extension aos_mb_pie_01: HyperCircleDataSource {
         10
     }
     
-    var centerText: (String, UIColor)? {
-        ("346억", .black)
+    var centerText: (String, String, UIColor)? {
+        ("346", "억", .black)
     }
     
-    
+    var isShowLegend: Bool {
+        true
+    }
 }

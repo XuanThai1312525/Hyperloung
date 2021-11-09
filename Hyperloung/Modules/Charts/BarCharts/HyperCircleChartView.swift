@@ -18,7 +18,14 @@ protocol HyperCircleDataSource: AnyObject {
     var dataSet: [HyperCircleData] {get}
     func description(of data: HyperCircleData) -> String
     var lineWidth: CGFloat {get}
-    var centerText: (String, UIColor)? {get}
+    var centerText: (String, String, UIColor)? {get}
+    var isShowLegend: Bool {get}
+}
+
+extension HyperCircleDataSource {
+    var isShowLegend: Bool {
+        return false
+    }
 }
 
 class HyperCircleChartView: UIView {
@@ -50,7 +57,16 @@ class HyperCircleChartView: UIView {
         chart.data = data
  
         if let centerText = datasource.centerText {
-            chart.centerText = centerText.0
+            let myAttribute = NSMutableAttributedString()
+                .addAtributes(for: centerText.0, attribute: [
+                    NSAttributedString.Key.font : FontFamily.customFont.displayFontWithSize(24),
+                    NSAttributedString.Key.foregroundColor : UIColor.black,
+                ]).addAtributes(for: centerText.1, attribute: [
+                    NSAttributedString.Key.font : FontFamily.customFont.displayFontWithSize(16),
+                    NSAttributedString.Key.foregroundColor : UIColor.gray,
+                ])
+
+            chart.centerAttributedText = myAttribute
         }
         chart.holeRadiusPercent = 0.65
         chart.transparentCircleColor = UIColor.clear

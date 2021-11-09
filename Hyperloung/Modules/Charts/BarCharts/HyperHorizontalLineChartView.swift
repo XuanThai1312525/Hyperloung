@@ -28,7 +28,7 @@ class HyperHorizontalLineChartView: UIView {
     func bindingUI() {
     
         ucRowView.data = HyperHorizontalData(total: 5, current: 3, unit: "명")
-        ucRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0.9333333333, green: 0.1960784314, blue: 0.1411764706, alpha: 1), backgroundColor: #colorLiteral(red: 0.9333333333, green: 0.1960784314, blue: 0.1411764706, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 50, trailingDescription: "3명", leadingSpace: 40, leadingDescription: "ABC")
+        ucRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0, green: 0.4588235294, blue: 0.8901960784, alpha: 1), backgroundColor: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 50, trailingDescription: "3명", leadingSpace: 40, leadingDescription: "ABC")
         ucRowView.drawChart()
         firstRowView.data = HyperHorizontalData(total: 5, current: 3, unit: "명")
         firstRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), backgroundColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 50, trailingDescription: "3명", leadingSpace: 40, leadingDescription: "ABC")
