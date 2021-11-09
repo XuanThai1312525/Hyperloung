@@ -345,11 +345,20 @@ class HyperLineMarker: IMarker {
             let index: Int = dataSets?.firstIndex{$0.entryIndex(entry: selectedEntry) >= 0} ?? 0
             let selectedDataSet = config.dataSets[index]
             let selectedDataSetAppearance = selectedDataSet.appearance
+            let selectedChartViewDataSet = dataSets?[index] as! LineChartDataSet
+            
+            
+            var valOffset = Int(selectedChartViewDataSet.circleRadius * 1.75)
+            
+            if !selectedChartViewDataSet.isDrawCirclesEnabled
+            {
+                valOffset = valOffset / 2
+            }
             
             let selectedStringWidth = label.widthOfString(usingFont: appearance.font)
             let spacing: CGFloat = 10
             let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-            let y: CGFloat = point.y - appearance.font.lineHeight*1.5 - selectedDataSetAppearance.bottomValueToCircle - spacing/4 //5 is horizontal spacing
+            let y: CGFloat = point.y - appearance.font.lineHeight - CGFloat(valOffset) -  selectedDataSetAppearance.bottomValueToCircle - spacing/4 //5 is horizontal spacing
             let roundWidth: CGFloat = selectedStringWidth + spacing*2
             let roundHeight: CGFloat = appearance.font.lineHeight + spacing/2
             let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
