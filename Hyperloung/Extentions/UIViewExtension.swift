@@ -297,3 +297,97 @@ extension UIView {
         else {}
     }
 }
+
+extension NSMutableAttributedString {
+    var fontSize:CGFloat { return 14 }
+    var boldFont:UIFont { return UIFont(name: "AvenirNext-Bold", size: fontSize) ?? UIFont.boldSystemFont(ofSize: fontSize) }
+    var normalFont:UIFont { return UIFont(name: "AvenirNext-Regular", size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)}
+
+    func bold(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font : boldFont
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+
+    func normal(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font : normalFont,
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+    /* Other styling methods */
+    func orangeHighlight(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font :  normalFont,
+            .foregroundColor : UIColor.white,
+            .backgroundColor : UIColor.orange
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+
+    func blackHighlight(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font :  normalFont,
+            .foregroundColor : UIColor.white,
+            .backgroundColor : UIColor.black
+
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+
+    func underlined(_ value:String) -> NSMutableAttributedString {
+
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font :  normalFont,
+            .underlineStyle : NSUnderlineStyle.single.rawValue
+
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+    
+    func addText(text: String) -> NSMutableAttributedString {
+        addAtributes(for: text, attribute: nil)
+    }
+    
+    func addLineBreak(times: UInt = 1) -> NSMutableAttributedString {
+        var numberLine = ""
+        (0..<times).forEach({ (_) in
+            numberLine.append("\n")
+        })
+        return addAtributes(for: numberLine, attribute: nil)
+    }
+    
+    func addFont(text: String, font: UIFont) -> NSMutableAttributedString {
+        addAtributes(for: text, attribute: [NSAttributedString.Key.font: font])
+    }
+    
+    func textColor(text: String, color: UIColor) -> NSMutableAttributedString {
+        addAtributes(for: text, attribute: [NSAttributedString.Key.foregroundColor : color])
+    }
+    
+    func addAtributes(for text: String, attribute: [NSAttributedString.Key : Any]?) -> NSMutableAttributedString {
+        self.append(NSAttributedString(string: text, attributes: attribute))
+        return self
+    }
+    
+    func insertAttribute(for text: String, attribute: [NSAttributedString.Key : Any]?, at index: Int) -> NSMutableAttributedString {
+        self.insert(NSAttributedString(string: text, attributes: attribute), at: index)
+        return self
+    }
+    
+}

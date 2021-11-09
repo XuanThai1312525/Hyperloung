@@ -21,34 +21,34 @@ class aos_d_line_01: UIView {
         self.addSubview(chartView)
         chartView.fullscreen()
         
-        let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 5)
+        let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10)
         
         
         //fake data
         let dataSets = [
             HyperLineChartDataSet(data: [
                 HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
-                HyperLineData(value: 72, label: "A", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color,isShowCircle: true)),
-                HyperLineData(value: 65, label: "B", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
-                HyperLineData(value: 70, label: "C", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
-                HyperLineData(value: 66, label: "D", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
+                HyperLineData(value: 72, label: "억", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color,isShowCircle: true)),
+                HyperLineData(value: 65, label: "억", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
+                HyperLineData(value: 70, label: "억", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
+                HyperLineData(value: 66, label: "억", appearance: HyperLineDataAppearance(textColor:  "#EEEEEE".color, circleColor:  "#EEEEEE".color, lineColor: "#EEEEEE".color, isShowCircle: true)),
                 HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
             ], appearance: defaultHyperLineDataSetAppearance),
             HyperLineChartDataSet(data: [
                 HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
-                HyperLineData(value: 82, label: "A", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color,isShowCircle: true, isShowValue: true, isShowMark: false)),
-                HyperLineData(value: 70, label: "B", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
-                HyperLineData(value: 75, label: "C", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
-                HyperLineData(value: 69, label: "D", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
+                HyperLineData(value: 82, label: "억", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color,isShowCircle: true, isShowValue: true, isShowMark: false)),
+                HyperLineData(value: 70, label: "억", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
+                HyperLineData(value: 75, label: "억", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
+                HyperLineData(value: 69, label: "억", appearance: HyperLineDataAppearance(textColor:  "#000000".color, circleColor:  "#000000".color, lineColor: "#000000".color, isShowCircle: true, isShowValue: true, isShowMark: false)),
                 HyperLineData(value: 0, label: "", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false)),
             ], appearance: defaultHyperLineDataSetAppearance)]
         
         let descriptions =  [
-            CircleInfoData(color: "#000000".color, description: "A"),
-            CircleInfoData(color: "#EEEEEE".color, description: "B")
+            CircleInfoData(color: "#000000".color, description: "범례1"),
+            CircleInfoData(color: "#EEEEEE".color, description: "범례2")
         ]
         
-        let xAxisData = ["","1A","2B","3C","4D",""]
+        let xAxisData =  ["","4월","5월","6월","7월",""]
         let defaultFont = UIFont.systemFont(ofSize: 13)
         let highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
         let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig(labelCount: 3, minValue: 0, maxValue: 82, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color, entries: [0,42,82]))

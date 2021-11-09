@@ -16,14 +16,14 @@ class CircleDescriptionCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         DispatchQueue.main.async {
-            self.descriptionView.round(5)
+            self.descriptionView.round(3)
         }
     }
     
-    func bindingUI(data: HyperCircleData) {
+    func bindingUI(data: HyperCircleData, showPercentage: Bool = true ) {
         descriptionView.backgroundColor = data.color
         titleLabel.text = data.description
-        percentLabel.text = "\(data.percent * 100)%"
+        percentLabel.text = showPercentage ? "\(data.percent * 100)%" : ""
     }
 
 }

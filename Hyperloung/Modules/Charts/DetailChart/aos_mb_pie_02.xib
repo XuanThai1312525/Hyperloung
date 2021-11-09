@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,18 +21,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hse-oM-kAk" customClass="HyperCircleChartView" customModule="Hyperloung" customModuleProvider="target">
-                    <rect key="frame" x="20" y="146.5" width="140" height="140"/>
+                    <rect key="frame" x="20" y="131.5" width="170" height="170"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="140" id="BGx-aH-Q6p"/>
+                        <constraint firstAttribute="width" constant="170" id="BGx-aH-Q6p"/>
                         <constraint firstAttribute="width" secondItem="hse-oM-kAk" secondAttribute="height" id="UuD-jq-DGe"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UdJ-Rk-edL">
-                    <rect key="frame" x="190" y="146.5" width="276" height="140"/>
+                    <rect key="frame" x="220" y="156.5" width="246" height="120"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="140" id="NKi-uq-T2N"/>
+                        <constraint firstAttribute="height" constant="120" id="NKi-uq-T2N"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eDl-l4-WTp">
                         <size key="itemSize" width="128" height="128"/>

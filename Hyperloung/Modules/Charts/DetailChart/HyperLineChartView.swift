@@ -186,7 +186,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         chartView.legend.enabled = false
         chartView.clipDataToContentEnabled = false
         chartView.clipValuesToContentEnabled = false
-        chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
+        chartView.setExtraOffsets(left: 30, top: 50, right: 30, bottom: 0)
 
         
         chartView.xAxis.valueFormatter = appearance.xAxisFormatter
