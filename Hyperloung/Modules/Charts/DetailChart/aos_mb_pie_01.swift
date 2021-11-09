@@ -43,6 +43,7 @@ class aos_mb_pie_01: UIView {
 }
 
 extension aos_mb_pie_01: HyperCircleDataSource {
+    
     var dataSet: [HyperCircleData] {
         data
     }
@@ -55,9 +56,12 @@ extension aos_mb_pie_01: HyperCircleDataSource {
         10
     }
     
-    var centerText: (String, UIColor)? {
-        ("346억", .black)
+    var centerText: NSAttributedString? {
+        NSAttributedString(string: "346억", attributes: [.foregroundColor: UIColor.black, .font: UIFont.systemFont(ofSize: 12)])
     }
     
+    var tooltip: NSAttributedString? {
+        nil
+    }
     
 }

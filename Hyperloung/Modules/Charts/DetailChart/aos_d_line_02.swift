@@ -21,7 +21,7 @@ class aos_d_line_02: UIView {
         self.addSubview(chartView)
         chartView.fullscreen()
         
-        let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15 )
+        let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color ,circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10 )
         
         //fake data
         let lineData = [
@@ -59,12 +59,12 @@ class aos_d_line_02: UIView {
         ]
         
         let descriptions =  [
-            CircleInfoData(color: "#3557C9".color, description: "A"),
-            CircleInfoData(color: "#1F92E4".color, description: "B"),
-            CircleInfoData(color: "#61D0F0".color, description: "C")
+            CircleInfoData(color: "#3557C9".color, description: "범례1"),
+            CircleInfoData(color: "#1F92E4".color, description: "범례2"),
+            CircleInfoData(color: "#61D0F0".color, description: "범례3")
         ]
         
-        let xAxisData = ["","1A","2B","3C","4D",""]
+        let xAxisData =  ["","4월","5월","6월","7월",""]
         let defaultFont = UIFont.systemFont(ofSize: 13)
         let highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
         let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color,  lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig( labelCount: 3, minValue: 0, maxValue: 100, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color))

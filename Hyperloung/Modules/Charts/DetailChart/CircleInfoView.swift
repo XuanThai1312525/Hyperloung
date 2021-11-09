@@ -9,6 +9,7 @@ import UIKit
 struct CircleInfoData {
     var color: UIColor
     var description: String
+    var descriptionColor: UIColor? = "#888888".color
 }
 
 class CircleInfoView: UIView {
@@ -21,6 +22,7 @@ class CircleInfoView: UIView {
     func bindingUI(data: CircleInfoData) {
         descriptionView.backgroundColor = data.color
         descriptionLabel.text = data.description
+        descriptionLabel.textColor = data.descriptionColor
     }
 
 }

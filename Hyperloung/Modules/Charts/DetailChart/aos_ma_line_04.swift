@@ -20,19 +20,19 @@ class aos_ma_line_04: UIView {
         self.addSubview(chartView)
         chartView.fullscreen()
         
-        let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15)
+        let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10)
         
-        let lineDashHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 15, lineDashAppearance: HyperLineDataDashAppearance(lineDashLengths: [2,3]))
+        let lineDashHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10, lineDashAppearance: HyperLineDataDashAppearance(lineDashLengths: [2,3]))
         
         
         
         //fake data
         let lineData = [
             HyperLineChartDataSet(data: [
-                HyperLineData(value: 8, label: "A", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color,isShowCircle: false, isShowValue: false)),
-                HyperLineData(value: 24, label: "B", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false, isShowValue: false)),
-                HyperLineData(value: 18, label: "D", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true, isShowMark: true, isHightLight: true)),
-                HyperLineData(value: 0, label: "C", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false, isShowMark: false)),
+                HyperLineData(value: 8, label: "억", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color,isShowCircle: false, isShowValue: false)),
+                HyperLineData(value: 24, label: "억", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false, isShowValue: false)),
+                HyperLineData(value: 18, label: "억", appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true, isShowMark: true, isHightLight: true)),
+                HyperLineData(value: 0, label: "억", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false, isShowMark: false)),
                 
                 ], appearance: defaultHyperLineDataSetAppearance),
             HyperLineChartDataSet(data: [
@@ -44,8 +44,8 @@ class aos_ma_line_04: UIView {
         
         
         let descriptions =  [
-            CircleInfoData(color: "#3557C9".color, description: "A"),
-            CircleInfoData(color: "#1F92E4".color, description: "B")
+            CircleInfoData(color: "#3557C9".color, description: "범례1"),
+            CircleInfoData(color: "#1F92E4".color, description: "범례2")
         ]
         
         let xAxisData = ["1","10","20","30"]

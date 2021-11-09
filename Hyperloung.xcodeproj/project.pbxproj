@@ -93,6 +93,8 @@
 		94FA5C3D2736B20E00AEF0AC /* aos_d_bar_08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */; };
 		FD00F5582734637600181CC3 /* aos_d_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F5572734637600181CC3 /* aos_d_line_02.swift */; };
 		FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F55927348BD400181CC3 /* aos_d_line_01.swift */; };
+		FD49EDC7273AB3F30021AFAC /* aos_mb_pie_03.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD49EDC5273AB3F20021AFAC /* aos_mb_pie_03.xib */; };
+		FD49EDC8273AB3F30021AFAC /* aos_mb_pie_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49EDC6273AB3F30021AFAC /* aos_mb_pie_03.swift */; };
 		FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460332732B00B00084D14 /* aos_ma_line_03.swift */; };
 		FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460352732B00B00084D14 /* aos_ma_line_04.swift */; };
 		FDB1410B2733076D00E5CF74 /* CircleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB141092733076C00E5CF74 /* CircleInfoView.xib */; };
@@ -220,6 +222,8 @@
 		F1134F5868672CE3EEF85559 /* Pods_Hyperloung.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD00F5572734637600181CC3 /* aos_d_line_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_line_02.swift; sourceTree = "<group>"; };
 		FD00F55927348BD400181CC3 /* aos_d_line_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_line_01.swift; sourceTree = "<group>"; };
+		FD49EDC5273AB3F20021AFAC /* aos_mb_pie_03.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_mb_pie_03.xib; sourceTree = "<group>"; };
+		FD49EDC6273AB3F30021AFAC /* aos_mb_pie_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_mb_pie_03.swift; sourceTree = "<group>"; };
 		FD7460332732B00B00084D14 /* aos_ma_line_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_03.swift; sourceTree = "<group>"; };
 		FD7460352732B00B00084D14 /* aos_ma_line_04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_04.swift; sourceTree = "<group>"; };
 		FDB141092733076C00E5CF74 /* CircleInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleInfoView.xib; sourceTree = "<group>"; };
@@ -548,6 +552,8 @@
 		94E5F3FB27316DD90081FD86 /* DetailChart */ = {
 			isa = PBXGroup;
 			children = (
+				FD49EDC6273AB3F30021AFAC /* aos_mb_pie_03.swift */,
+				FD49EDC5273AB3F20021AFAC /* aos_mb_pie_03.xib */,
 				FDBDDB592736ABE800406543 /* aos_ma_line_02.swift */,
 				FD7460332732B00B00084D14 /* aos_ma_line_03.swift */,
 				FD7460352732B00B00084D14 /* aos_ma_line_04.swift */,
@@ -692,6 +698,7 @@
 				94BC76102726C27A00018C26 /* Spoqa Han Sans Neo Regular.otf in Resources */,
 				FDB1411027331A4500E5CF74 /* HyperLineChartView.xib in Resources */,
 				94E5F403273202FF0081FD86 /* aos_mb_pie_02.xib in Resources */,
+				FD49EDC7273AB3F30021AFAC /* aos_mb_pie_03.xib in Resources */,
 				94BC760F2726C27A00018C26 /* Spoqa Han Sans Neo Light.otf in Resources */,
 				94BC75C72726A07E00018C26 /* Assets.xcassets in Resources */,
 				855E1ABF2739B89F00B3C03D /* aos_mb_bar_04_.xib in Resources */,
@@ -872,6 +879,7 @@
 				944CC8F627291CB60016398D /* HyperHorizontalLineChartView.swift in Sources */,
 				944CC8F22729125E0016398D /* HyperRowView.swift in Sources */,
 				94BC75FF2726BAAD00018C26 /* BaseNavigationViewController.swift in Sources */,
+				FD49EDC8273AB3F30021AFAC /* aos_mb_pie_03.swift in Sources */,
 				FDBDDB5A2736ABE900406543 /* aos_ma_line_02.swift in Sources */,
 				9464C1F82727A1900048CB98 /* UIViewExtension.swift in Sources */,
 				9464C20F2727F1B00048CB98 /* ReportCollectionViewCell.swift in Sources */,

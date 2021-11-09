@@ -864,7 +864,7 @@
                                         <state key="normal" image="ic_back_black"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점검사항 상세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUB-g6-2Ge">
-                                        <rect key="frame" x="155.5" y="12" width="103.5" height="22"/>
+                                        <rect key="frame" x="158" y="12.5" width="98.5" height="21"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="18"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -884,10 +884,10 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Id-hvz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3558"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="4026.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-e1-K8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3558"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="4026.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iS4-lT-2CH" customClass="aos_d_bar_05" customModule="Hyperloung" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -1274,7 +1274,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40E-5g-UgI">
-                                                        <rect key="frame" x="0.0" y="2222" width="414" height="208"/>
+                                                        <rect key="frame" x="0.0" y="2396" width="414" height="208"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cC-Ga-POW" customClass="aos_ma_line_03" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="200"/>
@@ -1293,7 +1293,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEB-HU-2EI">
-                                                        <rect key="frame" x="0.0" y="2454" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2628" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAd-Lu-Gt6" customClass="aos_ma_line_04" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1312,7 +1312,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-h5-FYc">
-                                                        <rect key="frame" x="0.0" y="2678" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2910" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vF0-Xd-xI3" customClass="aos_d_line_02" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1331,7 +1331,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwa-nT-Q2C">
-                                                        <rect key="frame" x="0.0" y="3018" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="3192" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdf-gf-kpM" customClass="aos_d_line_01" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1350,7 +1350,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QA-3J-059">
-                                                        <rect key="frame" x="0.0" y="3300" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="3474" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uda-ZA-mm1" customClass="aos_ma_line_01" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1366,6 +1366,34 @@ Cg
                                                             <constraint firstAttribute="bottom" secondItem="Uda-ZA-mm1" secondAttribute="bottom" constant="8" id="7LW-3y-RG3"/>
                                                             <constraint firstAttribute="trailing" secondItem="Uda-ZA-mm1" secondAttribute="trailing" constant="30" id="WqY-6f-8Lv"/>
                                                             <constraint firstItem="Uda-ZA-mm1" firstAttribute="top" secondItem="0QA-3J-059" secondAttribute="top" id="eJq-cR-maw"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-Us-jdd">
+                                                        <rect key="frame" x="0.0" y="3756" width="414" height="270.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52m-KJ-wgj" customClass="aos_mb_pie_03" customModule="Hyperloung" customModuleProvider="target">
+                                                                <rect key="frame" x="30" y="0.0" width="354" height="250"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="250" id="SRB-xI-FDv"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aos_mb_pie_03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoS-m4-WSK">
+                                                                <rect key="frame" x="0.0" y="250" width="414" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="52m-KJ-wgj" firstAttribute="leading" secondItem="CDk-Us-jdd" secondAttribute="leading" constant="30" id="COb-Y2-Oyg"/>
+                                                            <constraint firstItem="YoS-m4-WSK" firstAttribute="leading" secondItem="CDk-Us-jdd" secondAttribute="leading" id="aIB-4L-bvb"/>
+                                                            <constraint firstAttribute="bottom" secondItem="YoS-m4-WSK" secondAttribute="bottom" id="fuL-HG-5gO"/>
+                                                            <constraint firstItem="52m-KJ-wgj" firstAttribute="top" secondItem="CDk-Us-jdd" secondAttribute="top" id="qsC-bR-rxZ"/>
+                                                            <constraint firstItem="YoS-m4-WSK" firstAttribute="top" secondItem="52m-KJ-wgj" secondAttribute="bottom" id="sra-tE-sfy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YoS-m4-WSK" secondAttribute="trailing" id="wqy-DF-83n"/>
+                                                            <constraint firstAttribute="trailing" secondItem="52m-KJ-wgj" secondAttribute="trailing" constant="30" id="yW5-7I-sVD"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
