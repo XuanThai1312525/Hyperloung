@@ -43,8 +43,7 @@ class aos_mb_bar_03_: UIView {
         leftAxis.labelAlignment = .left
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_03_()
 
-        
-        
+        barChartView.isHaveLeftAxis = true
         let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)
         barChartView.setChartVisual(chartVisual)
 

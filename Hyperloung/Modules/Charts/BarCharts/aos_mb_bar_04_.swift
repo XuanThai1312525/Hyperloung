@@ -29,7 +29,7 @@ class aos_mb_bar_04_: UIView {
         barChartView.setHeight(190)
 
 
-        
+        barChartView.isHaveLeftAxis = true
         barChartView.chartView.leftAxis.enabled = false
         let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)
         barChartView.setChartVisual(chartVisual)

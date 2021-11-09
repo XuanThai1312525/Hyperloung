@@ -49,6 +49,7 @@ class VeritalBarChartView: UIView {
     private var numOfBar: Int = 3
     var chartItems: [BarChartItemData] = []
     var leftAxisUnit: String = ""
+    var isHaveLeftAxis: Bool = false
     
     // MARK: LifeCycle
     required init?(coder: NSCoder) {
@@ -76,7 +77,7 @@ class VeritalBarChartView: UIView {
     }
     
     func updateChartViewSize() {
-        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1)) + 50 // 30 is additonal padding for xaxis label
+        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1)) + 50 + (isHaveLeftAxis ? 50 : 0) // 30 is additonal padding for xaxis label
         var frame = chartView.frame
         frame.size.width = width
         chartView.setWidth(width)
