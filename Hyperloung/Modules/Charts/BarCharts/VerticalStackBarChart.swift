@@ -156,7 +156,7 @@ class VerticalStackBarChart: UIView {
         chartView.xAxis.valueFormatter = VerticalStackBarValueFormatter(barItems: items) as! IAxisValueFormatter
         chartView.xAxis.setLabelCount(numOfBar, force: false)
 
-        let set: HyperStackChartBaseDataSet = HyperStackChartBaseDataSet(entries: yVals, label: "Hi Legend ")
+        let set: HyperStackChartBaseDataSet = HyperStackChartBaseDataSet(entries: yVals, label: "")
         set.colors = [#colorLiteral(red: 0.3803921569, green: 0.8156862745, blue: 0.9411764706, alpha: 1),  #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1)] // array always have more than 1 item so "color(atIndex index: Int)" to be called
         set.drawValuesEnabled = false
         set.isDrawTopBarValue = true
@@ -165,12 +165,12 @@ class VerticalStackBarChart: UIView {
         set.valueFormatter = VerticalStackBarValueFormatter(barItems: items)
         set.stackLabels = ["범례1", "범례2", "범례3"]
 
-
         let data = BarChartData(dataSet: set)
-        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
+        data.setValueFont(UIFont.normal(size: 10))
         data.setValueTextColor( .black)
 
         data.barWidth = calculateBarWidth()
+        chartView.extraBottomOffset = 16
 
         chartView.data = data
     }
@@ -209,6 +209,7 @@ class VerticalStackBarChart: UIView {
         l.form = .circle
         l.formToTextSpace = 4
         l.xEntrySpace = 6
+
     }
         
     func calculateBarWidth() -> Double {

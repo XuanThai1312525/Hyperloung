@@ -34,7 +34,7 @@ class VeriticalBarGroupChartView: UIView {
     }
     
     private func customInit() {
-        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1))
+        let width = CGFloat(visual.width * numOfBar + visual.space * (numOfBar - 1)) + 50
         chartView = BarChartView(frame: CGRect(x: 0, y: 0, width: width, height: 200))
         addSubview(chartView)
         chartView.centralize()
@@ -62,27 +62,13 @@ class VeriticalBarGroupChartView: UIView {
         
         chartView.drawBarShadowEnabled = false
         chartView.drawValueAboveBarEnabled = true
-        
-        chartView.maxVisibleCount = 8
+        chartView.extraBottomOffset = 16
 
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-//        xAxis.labelFont = .systemFont(ofSize: 10)
-        xAxis.granularity = 1
-//        xAxis.labelCount = 7
-//        xAxis.valueFormatter = DayAxisValueFormatter(chart: chartView)
+        xAxis.axisLineColor = .clear
+        xAxis.granularityEnabled = true
         xAxis.drawGridLinesEnabled = false
-        xAxis.avoidFirstLastClippingEnabled = true
-        
-                
-        let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = .systemFont(ofSize: 10)
-        leftAxis.labelCount = 8
-        leftAxis.valueFormatter = VerticalBarLeftAxisValueFormatter(unit: "억")
-        leftAxis.labelPosition = .outsideChart
-        leftAxis.spaceTop = 0.15
-        leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
-        leftAxis.axisLineColor = .clear
         
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
@@ -94,7 +80,7 @@ class VeriticalBarGroupChartView: UIView {
         l.drawInside = false
         l.form = .circle
         l.formSize = 9
-        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
+        l.font = UIFont.normal(size: 10)
         l.xEntrySpace = 4
     }
 
@@ -119,6 +105,7 @@ class VeriticalBarGroupChartView: UIView {
             let chartDataSet = BarChartDataSet(entries: listDataEntries[i], label: labels[i])
             chartDataSet.barCornerRadius = 4
             chartDataSet.colors = [colors[i]]
+            chartDataSet.valueFont = UIFont.bold(size: 14)
             let valueTitles = valueTitleList[i]
             if valueTitles.isEmpty {
                 chartDataSet.drawValuesEnabled = false
@@ -133,14 +120,15 @@ class VeriticalBarGroupChartView: UIView {
         let chartData = BarChartData(dataSets: dataSets)
 
 
-        let groupSpace = 0.4
-        let barSpace = 0.1
+        let groupSpace = 0.55
+        let barSpace = 0.05
         let barWidth = 0.1
         
         let barSize = 8.0
         let spaceSize = 4.0
         let spaceGroup = 20.0
         
+//        (0.1 + 0.05) * 3 + 0.45
         
         // (0.3 + 0.05) * 2 + 0.3 = 1.00 -> interval per "group"
 //        let groupSpace = 24.0
@@ -150,20 +138,20 @@ class VeriticalBarGroupChartView: UIView {
 
 //        let width = (barSpace + barWidth) * Double(items.count) + groupSpace
         var frame = chartView.frame
-        frame.size.width = CGFloat(((barSize + barSpace) * Double(titles.count) + spaceGroup) * Double(listDataEntries.count)) * 2
-        chartView.frame = frame
+        frame.size.width = CGFloat(((barSize + barSpace) * Double(titles.count) + spaceGroup) * Double(listDataEntries.count)) * 2 + 40
+        
+        chartView.frame = bounds
         
         let groupCount = titles.count
         let startYear = 0
 
         chartData.barWidth = Double(barWidth);
-        chartView.xAxis.axisMinimum = Double(startYear)
+        chartView.xAxis.axisMinimum = Double(0)
         let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
         chartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
 
         chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
         //chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        chartView.notifyDataSetChanged()
 
         chartView.data = chartData
     }
@@ -179,8 +167,7 @@ class GroupBarXAxisLabelFormatter: NSObject, IAxisValueFormatter {
  
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let index = Int(value)
-        
-        if index < labels.count {
+        if index >= 0,  index < labels.count {
             return labels[index]
         }
         return ""
@@ -196,3 +183,4 @@ class GroupBarValueFormatter: NSObject, IValueFormatter {
         return ""
     }
 }
+

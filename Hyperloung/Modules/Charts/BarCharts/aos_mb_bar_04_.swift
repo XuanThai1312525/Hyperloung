@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import Charts
 
 class aos_mb_bar_04_: UIView {
     @IBOutlet weak var chartContainerView: UIView!
@@ -27,12 +28,24 @@ class aos_mb_bar_04_: UIView {
         barChartView.centralize()
         barChartView.setHeight(190)
 
+
         
         barChartView.chartView.leftAxis.enabled = false
         let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)
         barChartView.setChartVisual(chartVisual)
         
-        barChartView.addLimitLine(value: 41, title: "")
+        let leftAxis = barChartView.chartView.leftAxis
+        leftAxis.enabled = true
+        leftAxis.entries = [35]
+        leftAxis.granularityEnabled = true
+        leftAxis.gridColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
+        leftAxis.gridLineWidth = 2
+        leftAxis.gridLineDashLengths = [0,3]
+        leftAxis.labelTextColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        leftAxis.setLabelCount(1, force: true)
+        leftAxis.isForceEntriesEnable = true
+        leftAxis.labelAlignment = .left
+        leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_04_()
 
         var chartItems: [BarChartItemData] = []
         let barVisual: BarVisual = BarVisual(radius: 4, barNormalColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), barHighlightColor: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1), valueNormalTextColor: #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1), valueHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), titleNormalTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), titleHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
@@ -41,5 +54,13 @@ class aos_mb_bar_04_: UIView {
         chartItems.append(BarChartItemData(title: "9월",  valueTitle: "365억", value: 46.0, isHighlight: true, barVisual: barVisual))
         barChartView.setChartItems(items: chartItems, isNeedToHighLight: true)
 
+    }
+}
+
+
+class LeftAxisValueFormat_aos_mb_bar_04_: IAxisValueFormatter {
+    func stringForValue(_ value: Double,
+                        axis: AxisBase?) -> String {
+        return "사업계획\n 300억"
     }
 }
