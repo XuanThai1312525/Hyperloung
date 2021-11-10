@@ -10,7 +10,7 @@ struct ChartVisual {
     var space: Int
     var width: Int
     var bottomTitleSpace: CGFloat = 0
-    var fontForValueLabel: UIFont = UIFont.bold(size: 12)
+    var fontForValueLabel: UIFont = UIFont.normal(size: 12)
     var fontForXaxisLabel: UIFont = UIFont.normal(size: 12)
     static var defaultVisual: ChartVisual {
         return ChartVisual(space: 24, width: 32)
@@ -136,7 +136,8 @@ class VeritalBarChartView: UIView {
         dataSet.barCornerRadius = 4
         dataSet.valueFormatter = VerticalBarValueFormatter(barItems: items)
         dataSet.stackLabels = ["Births", "Divorces", "Marriages"]
-
+        dataSet.highlightColor = UIColor.clear
+        dataSet.highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
                 
         let data = BarChartData(dataSet: dataSet)
         data.setValueFont(visual.fontForValueLabel)
@@ -144,13 +145,22 @@ class VeritalBarChartView: UIView {
         data.barWidth = calculateBarWidth()
         
         chartView.data = data
-        
         if isNeedToHighLight, let highLight = highLight{
             //5 is value for display above or bellow
             chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
             chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: UIFont.boldSystemFont(ofSize: 13), bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color))
             dataSet.valueSpacing = 15
             chartView.highlightValue(highLight)
+        }
+    }
+    
+    
+    func setChartLines(lines: [Double]) {
+        if let dataSet = chartView.data?.dataSets.first as? IBarChartDataSet {
+            dataSet.lines = lines
+            dataSet.lineWidth = 1
+            dataSet.lineColor = "#eeeeee".color
+            dataSet.lineAdditionWithBar = 6
         }
     }
         
@@ -349,9 +359,9 @@ class HyperMarker: IMarker {
         let selectedStringWidth = config.label.widthOfString(usingFont: UIFont.boldSystemFont(ofSize: 13))
         let spacing: CGFloat = 10
         let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-        let y: CGFloat = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/4
+        let y: CGFloat = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/2
         let roundWidth: CGFloat = selectedStringWidth + spacing*2
-        let roundHeight: CGFloat = config.selectedLabelFont.lineHeight + spacing/2
+        let roundHeight: CGFloat = config.selectedLabelFont.lineHeight + spacing
         let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
         
         //Dash line

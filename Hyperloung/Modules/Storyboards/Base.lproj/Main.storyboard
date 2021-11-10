@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4EK-Ww-B8K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4EK-Ww-B8K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,7 +283,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailReportTableViewCell" rowHeight="120" id="yDY-Jg-mbB" customClass="DetailReportTableViewCell" customModule="Hyperloung" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="120"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDY-Jg-mbB" id="sb6-bH-XP2">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
@@ -864,7 +864,7 @@
                                         <state key="normal" image="ic_back_black"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점검사항 상세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUB-g6-2Ge">
-                                        <rect key="frame" x="158" y="12.5" width="98.5" height="21"/>
+                                        <rect key="frame" x="155.5" y="12" width="103.5" height="22"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="18"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -884,29 +884,29 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Id-hvz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3772"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="4066.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-e1-K8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3772"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="4066.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rD6-8P-49Z">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-T0-j0D">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iS4-lT-2CH" customClass="aos_d_bar_05" customModule="Hyperloung" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-Lb-rk0" customClass="aos_d_bar_05" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="87" y="40" width="240" height="150"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="240" id="1wD-fY-ggx"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="IlM-md-ZDu"/>
-                                                                    <constraint firstAttribute="height" constant="150" id="Ynq-NU-p7z"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="0Yz-dt-lms"/>
+                                                                    <constraint firstAttribute="width" constant="240" id="3hL-x1-fU7"/>
+                                                                    <constraint firstAttribute="height" constant="150" id="TjC-WZ-f1v"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="iS4-lT-2CH" secondAttribute="bottom" id="McU-FO-8bp"/>
-                                                            <constraint firstAttribute="height" constant="190" id="PjK-Vi-Wpt"/>
-                                                            <constraint firstItem="iS4-lT-2CH" firstAttribute="centerX" secondItem="rD6-8P-49Z" secondAttribute="centerX" id="SzZ-oi-3eX"/>
+                                                            <constraint firstItem="Tan-Lb-rk0" firstAttribute="centerX" secondItem="bGb-T0-j0D" secondAttribute="centerX" id="TNE-qU-lFI"/>
+                                                            <constraint firstAttribute="height" constant="190" id="WeV-ac-vUX"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Tan-Lb-rk0" secondAttribute="bottom" id="hpS-ET-azI"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-Cm-Vop" customClass="aos_mb_pie_02" customModule="Hyperloung" customModuleProvider="target">
@@ -1382,7 +1382,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-Us-jdd">
-                                                        <rect key="frame" x="0.0" y="3756" width="414" height="270.5"/>
+                                                        <rect key="frame" x="0.0" y="3796" width="414" height="270.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52m-KJ-wgj" customClass="aos_mb_pie_03" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>

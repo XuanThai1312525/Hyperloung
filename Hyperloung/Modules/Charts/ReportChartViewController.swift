@@ -63,6 +63,14 @@ class ReportChartViewController: BaseViewController {
         chartContainerStackView.insertArrangedSubview(mb_bar_04, at: 9)
         mb_bar_04.setHeight(292)
         
+        let aos_mb_bar_05: aos_mb_bar_05 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(aos_mb_bar_05, at: 10)
+        aos_mb_bar_05.setHeight(292)
+        
+        let aos_mb_bar_06: aos_mb_bar_06 = .fromNib()
+        chartContainerStackView.insertArrangedSubview(aos_mb_bar_06, at: 11)
+        aos_mb_bar_06.setHeight(292)
+        
     }
     
     private func setupView() {

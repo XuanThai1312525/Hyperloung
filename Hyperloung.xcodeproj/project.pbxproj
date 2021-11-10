@@ -95,6 +95,10 @@
 		94FA5C3D2736B20E00AEF0AC /* aos_d_bar_08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */; };
 		FD00F5582734637600181CC3 /* aos_d_line_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F5572734637600181CC3 /* aos_d_line_02.swift */; };
 		FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00F55927348BD400181CC3 /* aos_d_line_01.swift */; };
+		FD190633273C49BB00057C31 /* aos_mb_bar_05.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD190631273C49BB00057C31 /* aos_mb_bar_05.swift */; };
+		FD190634273C49BB00057C31 /* aos_mb_bar_05.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD190632273C49BB00057C31 /* aos_mb_bar_05.xib */; };
+		FD190639273C6E3D00057C31 /* aos_mb_bar_06.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD190637273C6E3C00057C31 /* aos_mb_bar_06.xib */; };
+		FD19063A273C6E3D00057C31 /* aos_mb_bar_06.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD190638273C6E3C00057C31 /* aos_mb_bar_06.swift */; };
 		FD49EDC7273AB3F30021AFAC /* aos_mb_pie_03.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD49EDC5273AB3F20021AFAC /* aos_mb_pie_03.xib */; };
 		FD49EDC8273AB3F30021AFAC /* aos_mb_pie_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49EDC6273AB3F30021AFAC /* aos_mb_pie_03.swift */; };
 		FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460332732B00B00084D14 /* aos_ma_line_03.swift */; };
@@ -226,6 +230,10 @@
 		F1134F5868672CE3EEF85559 /* Pods_Hyperloung.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloung.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD00F5572734637600181CC3 /* aos_d_line_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_line_02.swift; sourceTree = "<group>"; };
 		FD00F55927348BD400181CC3 /* aos_d_line_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_line_01.swift; sourceTree = "<group>"; };
+		FD190631273C49BB00057C31 /* aos_mb_bar_05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_mb_bar_05.swift; sourceTree = "<group>"; };
+		FD190632273C49BB00057C31 /* aos_mb_bar_05.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_mb_bar_05.xib; sourceTree = "<group>"; };
+		FD190637273C6E3C00057C31 /* aos_mb_bar_06.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_mb_bar_06.xib; sourceTree = "<group>"; };
+		FD190638273C6E3C00057C31 /* aos_mb_bar_06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_mb_bar_06.swift; sourceTree = "<group>"; };
 		FD49EDC5273AB3F20021AFAC /* aos_mb_pie_03.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_mb_pie_03.xib; sourceTree = "<group>"; };
 		FD49EDC6273AB3F30021AFAC /* aos_mb_pie_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_mb_pie_03.swift; sourceTree = "<group>"; };
 		FD7460332732B00B00084D14 /* aos_ma_line_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_03.swift; sourceTree = "<group>"; };
@@ -312,6 +320,10 @@
 		944CC8EC27284BC90016398D /* BarCharts */ = {
 			isa = PBXGroup;
 			children = (
+				FD190638273C6E3C00057C31 /* aos_mb_bar_06.swift */,
+				FD190637273C6E3C00057C31 /* aos_mb_bar_06.xib */,
+				FD190631273C49BB00057C31 /* aos_mb_bar_05.swift */,
+				FD190632273C49BB00057C31 /* aos_mb_bar_05.xib */,
 				8533956D273838B2008470E6 /* VeriticalBarGroupChartView.swift */,
 				8533956E273838B2008470E6 /* VerticalBarChart.swift */,
 				8533956C273838B2008470E6 /* VerticalStackBarChart.swift */,
@@ -704,6 +716,7 @@
 				94BC76102726C27A00018C26 /* Spoqa Han Sans Neo Regular.otf in Resources */,
 				FDB1411027331A4500E5CF74 /* HyperLineChartView.xib in Resources */,
 				94E5F403273202FF0081FD86 /* aos_mb_pie_02.xib in Resources */,
+				FD190639273C6E3D00057C31 /* aos_mb_bar_06.xib in Resources */,
 				FD49EDC7273AB3F30021AFAC /* aos_mb_pie_03.xib in Resources */,
 				94BC760F2726C27A00018C26 /* Spoqa Han Sans Neo Light.otf in Resources */,
 				94BC75C72726A07E00018C26 /* Assets.xcassets in Resources */,
@@ -722,6 +735,7 @@
 				855E1A9B2739A91900B3C03D /* aos_d_bar_07.xib in Resources */,
 				9464C2172728003D0048CB98 /* ReportPanelView.xib in Resources */,
 				855E1AA22739B57200B3C03D /* aos_mb_bar_01_.xib in Resources */,
+				FD190634273C49BB00057C31 /* aos_mb_bar_05.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,6 +877,7 @@
 				FDBDDB5C27370AC800406543 /* aos_mb_line_02.swift in Sources */,
 				94BC75C22726A07B00018C26 /* LoginViewController.swift in Sources */,
 				9464C21B27280A3F0048CB98 /* DetailReportTableViewCell.swift in Sources */,
+				FD190633273C49BB00057C31 /* aos_mb_bar_05.swift in Sources */,
 				9464C1FF2727AAE50048CB98 /* LayoutExtension.swift in Sources */,
 				94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */,
 				9464C1FD2727A8850048CB98 /* BottomBar.swift in Sources */,
@@ -912,6 +927,7 @@
 				855E1A942739A4C800B3C03D /* aos_d_bar_06.swift in Sources */,
 				8533956F273838B2008470E6 /* VerticalStackBarChart.swift in Sources */,
 				FD00F55A27348BD400181CC3 /* aos_d_line_01.swift in Sources */,
+				FD19063A273C6E3D00057C31 /* aos_mb_bar_06.swift in Sources */,
 				855E1A7B2739989E00B3C03D /* aos_d_bar_03.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
