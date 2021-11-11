@@ -69,7 +69,8 @@ class VeriticalBarGroupChartView: UIView {
         xAxis.axisLineColor = .clear
         xAxis.granularityEnabled = true
         xAxis.drawGridLinesEnabled = false
-        
+        xAxis.centerAxisLabelsEnabled = true
+
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
         
@@ -105,7 +106,7 @@ class VeriticalBarGroupChartView: UIView {
             let chartDataSet = BarChartDataSet(entries: listDataEntries[i], label: labels[i])
             chartDataSet.barCornerRadius = 4
             chartDataSet.colors = [colors[i]]
-            chartDataSet.valueFont = UIFont.bold(size: 14)
+            chartDataSet.valueFont = UIFont.bold(size: 12)
             let valueTitles = valueTitleList[i]
             if valueTitles.isEmpty {
                 chartDataSet.drawValuesEnabled = false
@@ -120,13 +121,13 @@ class VeriticalBarGroupChartView: UIView {
         let chartData = BarChartData(dataSets: dataSets)
 
 
-        let groupSpace = 0.55
+        let groupSpace = 0.7
         let barSpace = 0.05
         let barWidth = 0.1
         
-        let barSize = 8.0
-        let spaceSize = 4.0
-        let spaceGroup = 20.0
+//        let barSize = 8.0
+//        let spaceSize = 4.0
+//        let spaceGroup = 20.0
         
 //        (0.1 + 0.05) * 3 + 0.45
         
@@ -137,22 +138,30 @@ class VeriticalBarGroupChartView: UIView {
 //        // (0.3 + 0.05) * 2 + 0.3 = 1.00 -> interval per "group"
 
 //        let width = (barSpace + barWidth) * Double(items.count) + groupSpace
-        var frame = chartView.frame
-        frame.size.width = CGFloat(((barSize + barSpace) * Double(titles.count) + spaceGroup) * Double(listDataEntries.count)) * 2 + 40
+//        var frame = chartView.frame
+//        frame.size.width = CGFloat(((barSize + barSpace) * Double(titles.count) + spaceGroup) * Double(listDataEntries.count)) * 2
         
         chartView.frame = bounds
         
         let groupCount = titles.count
         let startYear = 0
 
-        chartData.barWidth = Double(barWidth);
-        chartView.xAxis.axisMinimum = Double(0)
-        let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        chartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
-
-        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
+//        chartData.barWidth = Double(barWidth);
+//        chartView.xAxis.axisMinimum = Double(0)
+//        let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
+//        chartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
+//
+//        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
         //chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
 
+        
+        chartData.barWidth = barWidth
+        // restrict the x-axis range
+        chartView.xAxis.axisMinimum = Double(startYear)
+        // groupWidthWithGroupSpace(...) is a helper that calculates the width each group needs based on the provided parameters
+        chartView.xAxis.axisMaximum = Double(startYear) + chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace) * Double(groupCount)
+        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
+        
         chartView.data = chartData
     }
 }

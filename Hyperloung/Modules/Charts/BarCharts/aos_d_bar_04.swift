@@ -28,6 +28,7 @@ class aos_d_bar_04: UIView {
         barChartView.setHeight(250)
 
 
+        
 
 //        let barChartView = VerticalStackBarChart(frame: CGRect(x: 50, y: 60, width: 400, height: 300))
 //        barChartView.clipsToBounds = false

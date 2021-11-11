@@ -166,7 +166,7 @@ class VerticalStackBarChart: UIView {
         set.stackLabels = ["범례1", "범례2", "범례3"]
 
         let data = BarChartData(dataSet: set)
-        data.setValueFont(UIFont.normal(size: 10))
+        data.setValueFont(UIFont.bold(size: 12))
         data.setValueTextColor( .black)
 
         data.barWidth = calculateBarWidth()

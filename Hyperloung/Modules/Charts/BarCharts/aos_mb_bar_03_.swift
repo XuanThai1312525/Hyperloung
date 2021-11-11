@@ -43,7 +43,6 @@ class aos_mb_bar_03_: UIView {
         leftAxis.labelAlignment = .left
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_03_()
 
-        barChartView.barHightlighColor = #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)
         barChartView.isHaveLeftAxis = true
         let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)
         barChartView.setChartVisual(chartVisual)

@@ -29,7 +29,7 @@ class aos_d_bar_07: UIView {
 
         let leftAxis = barChartView.chartView.leftAxis
         leftAxis.enabled = true
-        leftAxis.gridColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
+        leftAxis.gridColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         leftAxis.gridLineWidth = 1
         leftAxis.labelTextColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         leftAxis.axisLineColor = .clear
@@ -52,6 +52,6 @@ class aos_d_bar_07: UIView {
 class LeftAxisValueFormat_aos_d_bar_07: IAxisValueFormatter {
     func stringForValue(_ value: Double,
                         axis: AxisBase?) -> String {
-        return String(format: "%g", value) + (value == 0 ? "" : "억")
+        return (String(format: "%g", value).thousandString ?? "") + (value == 0 ? "" : "억")
     }
 }

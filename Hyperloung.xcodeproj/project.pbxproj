@@ -34,6 +34,7 @@
 		855E1AB62739B7BC00B3C03D /* aos_mb_bar_03_.xib in Resources */ = {isa = PBXBuildFile; fileRef = 855E1AB42739B7BC00B3C03D /* aos_mb_bar_03_.xib */; };
 		855E1ABF2739B89F00B3C03D /* aos_mb_bar_04_.xib in Resources */ = {isa = PBXBuildFile; fileRef = 855E1ABD2739B89F00B3C03D /* aos_mb_bar_04_.xib */; };
 		855E1AC02739B89F00B3C03D /* aos_mb_bar_04_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E1ABE2739B89F00B3C03D /* aos_mb_bar_04_.swift */; };
+		8573BA55273D7F8500823C4F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573BA54273D7F8500823C4F /* StringExtension.swift */; };
 		86A7661BDC01330726EC2F6C /* Pods_HyperloungTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2DFE860281DB660B3CBA53 /* Pods_HyperloungTests.framework */; };
 		944CC8E8272835740016398D /* UserInfoBasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944CC8E7272835740016398D /* UserInfoBasViewController.swift */; };
 		944CC8EB2728471D0016398D /* ReportChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944CC8EA2728471D0016398D /* ReportChartViewController.swift */; };
@@ -159,6 +160,7 @@
 		855E1AB42739B7BC00B3C03D /* aos_mb_bar_03_.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_mb_bar_03_.xib; sourceTree = "<group>"; };
 		855E1ABD2739B89F00B3C03D /* aos_mb_bar_04_.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = aos_mb_bar_04_.xib; sourceTree = "<group>"; };
 		855E1ABE2739B89F00B3C03D /* aos_mb_bar_04_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_mb_bar_04_.swift; sourceTree = "<group>"; };
+		8573BA54273D7F8500823C4F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		944CC8E7272835740016398D /* UserInfoBasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBasViewController.swift; sourceTree = "<group>"; };
 		944CC8EA2728471D0016398D /* ReportChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportChartViewController.swift; sourceTree = "<group>"; };
 		944CC8ED27284BF20016398D /* HyperBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperBarChartView.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				9464C1F72727A1900048CB98 /* UIViewExtension.swift */,
 				94BC75F92726B76800018C26 /* UIStoryboard_Ext.swift */,
 				94BC75F72726B76800018C26 /* UIViewController_Ext.swift */,
+				8573BA54273D7F8500823C4F /* StringExtension.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				9464C20D2727C31D0048CB98 /* ReportCardView.swift in Sources */,
 				944CC8F627291CB60016398D /* HyperHorizontalLineChartView.swift in Sources */,
 				944CC8F22729125E0016398D /* HyperRowView.swift in Sources */,
+				8573BA55273D7F8500823C4F /* StringExtension.swift in Sources */,
 				94BC75FF2726BAAD00018C26 /* BaseNavigationViewController.swift in Sources */,
 				FD49EDC8273AB3F30021AFAC /* aos_mb_pie_03.swift in Sources */,
 				FDBDDB5A2736ABE900406543 /* aos_ma_line_02.swift in Sources */,

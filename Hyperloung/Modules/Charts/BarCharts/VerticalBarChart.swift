@@ -138,7 +138,7 @@ class VeritalBarChartView: UIView {
         dataSet.valueFormatter = VerticalBarValueFormatter(barItems: items)
         dataSet.stackLabels = ["Births", "Divorces", "Marriages"]
         dataSet.highlightColor = UIColor.clear
-        dataSet.highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
+        dataSet.highLightValueFont = UIFont.bold(size: 12)
         if let barHightlighColor = barHightlighColor {
             dataSet.highlightColor = barHightlighColor
         }
@@ -213,8 +213,6 @@ class VeritalBarChartView: UIView {
         
         // set bottom item titles
         chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
-//        chartView.xAxis.valueFormatter = VerticalBarValueFormatter(barItems: chartItems)
-//        chartView.highlightValues([Highlight(x: 2, dataSetIndex: 1, stackIndex: 0)])
         
     }
         
