@@ -358,9 +358,9 @@ class HyperLineMarker: IMarker {
             let selectedStringWidth = label.widthOfString(usingFont: appearance.font)
             let spacing: CGFloat = 10
             let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-            let y: CGFloat = point.y - appearance.font.lineHeight - CGFloat(valOffset) -  selectedDataSetAppearance.bottomValueToCircle - spacing/4 //5 is horizontal spacing
+            let y: CGFloat = point.y - appearance.font.lineHeight - CGFloat(valOffset) -  selectedDataSetAppearance.bottomValueToCircle - spacing/2 //5 is horizontal spacing
             let roundWidth: CGFloat = selectedStringWidth + spacing*2
-            let roundHeight: CGFloat = appearance.font.lineHeight + spacing/2
+            let roundHeight: CGFloat = appearance.font.lineHeight + spacing
             let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
             
             context.setShadow(offset: CGSize(width: 1, height: 0.5), blur: 1,color:#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor)

@@ -31,7 +31,6 @@ class aos_d_bar_07: UIView {
         leftAxis.enabled = true
         leftAxis.gridColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
         leftAxis.gridLineWidth = 1
-        leftAxis.gridLineDashLengths = [0,3]
         leftAxis.labelTextColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         leftAxis.axisLineColor = .clear
         leftAxis.axisMinimum = 0

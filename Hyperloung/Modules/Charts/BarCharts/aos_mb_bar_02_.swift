@@ -17,7 +17,7 @@ class aos_mb_bar_02_: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupUI()
-        chartNameLabel.text = "aos_d_bar_02"
+        chartNameLabel.text = "mb_bar_02"
     }
     
     func setupUI() {
@@ -27,7 +27,7 @@ class aos_mb_bar_02_: UIView {
         barChartView.centralize()
         barChartView.setHeight(190)
 
-        
+        barChartView.barHightlighColor = #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)
         barChartView.chartView.leftAxis.enabled = false
         let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)
         barChartView.setChartVisual(chartVisual)
