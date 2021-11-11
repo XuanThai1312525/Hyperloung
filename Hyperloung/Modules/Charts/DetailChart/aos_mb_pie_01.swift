@@ -16,8 +16,8 @@ class aos_mb_pie_01: UIView {
     var descriptionStackView = UIStackView()
     
     var data = [
-        HyperCircleData(value: 134, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), percent: 45, description: "상품"),
-        HyperCircleData(value: 212, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), percent: 55, description: "용역")
+        HyperCircleData(value: 134, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), percent: 45, description: "매출이익"),
+        HyperCircleData(value: 212, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), percent: 55, description: "영업이익")
     ]
 
     override init(frame: CGRect) {
@@ -74,7 +74,7 @@ extension aos_mb_pie_01: HyperCircleDataSource {
     }
     
     var centerTextAppearnce: HyperCircleCenterTextAppearance? {
-        HyperCircleCenterTextAppearance(prefix: "346", suffix: "억")
+        HyperCircleCenterTextAppearance(prefix: "346", suffix: "억", prefixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), suffixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), prefixFont: FontFamily.customFont.displayFontWithSize(24, attributeType: .bold), suffixFont: FontFamily.customFont.displayFontWithSize(16, attributeType: .light))
     }
     
     var isShowLegend: Bool {
@@ -112,9 +112,9 @@ class HyperDescriptionCard: UIView {
             .addAtributes(for: "\(data.value)", attribute: [
                 NSAttributedString.Key.font: FontFamily.customFont.displayFontWithSize(20, attributeType: .bold),
                 NSAttributedString.Key.foregroundColor: UIColor.black
-            ]).addAtributes(for: "억\(data.percent ?? 0)%)", attribute: [
+            ]).addAtributes(for: "억(\(Int(data.percent ?? 0))%)", attribute: [
                 NSAttributedString.Key.font: FontFamily.customFont.displayFontWithSize(12, attributeType: .light),
-                NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
             ])
         descriptionLabel.attributedText = mutableAttributeString
         
