@@ -24,6 +24,7 @@ class CircleDescriptionCollectionViewCell: UICollectionViewCell {
         descriptionView.backgroundColor = data.color
         titleLabel.text = data.description
         percentLabel.text = showPercentage ? "\(data.percent ?? 0 * 100)%" : ""
+        percentLabel.isHidden = !showPercentage
     }
 
 }
