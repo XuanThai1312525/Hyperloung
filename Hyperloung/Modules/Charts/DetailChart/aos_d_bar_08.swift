@@ -10,8 +10,8 @@ import Charts
 
 class aos_d_bar_08: UIView, ChartViewDelegate {
     private var chart: HorizontalBarChartView!
-    var values: [Double] = [543, 234, 168, 421, 302.0]
-    var moods = ["영업1", "영업2", "영업3", "AI", "보안"]
+    var values: [Double] = [543, 234, 168, 421, 302]
+    var moods = ["최대 6자", "최대 6자", "최대 6자", "6자 초과시..", "최대 6자"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +34,7 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         let chartDataSet = BarChartDataSet(entries: chartDataEntry, label: nil)
         chartDataSet.drawValuesEnabled = true
         chartDataSet.colors = [NSUIColor.black]
+        chartDataSet.valueFont = FontFamily.customFont.displayFontWithSize(9, attributeType: .regular)
         chartDataSet.valueFormatter = YAxisValueFormatter()
         let chartMain = BarChartData()
         chartMain.barWidth = 0.3
@@ -63,7 +64,7 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         chart.rightAxis.axisMaximum = 0.0
         chart.rightAxis.enabled = true
 //        chart.xAxis.yOffset = 100
-        chart.xAxis.xOffset = 14
+        chart.xAxis.xOffset = 4
         chart.rightAxis.enabled = false
         chart.legend.enabled = false
         chart.leftAxis.drawAxisLineEnabled = false
