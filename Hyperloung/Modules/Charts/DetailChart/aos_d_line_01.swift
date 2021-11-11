@@ -49,9 +49,9 @@ class aos_d_line_01: UIView {
         ]
         
         let xAxisData =  ["","4월","5월","6월","7월",""]
-        let defaultFont = UIFont.systemFont(ofSize: 13)
-        let highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
-        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig(labelCount: 3, minValue: 0, maxValue: 82, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color, entries: [0,42,82]))
+        let defaultFont = UIFont.normal(size: 13)
+        let highLightValueFont = UIFont.bold(size: 13)
+        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisLabelColor: "#222222".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData), leftAxisConfig: HyperLineLeftAxisConfig(labelCount: 3, minValue: 0, maxValue: 82, xOffset: 25, valueFormatter: getIAxisValueFormatter(),labelColor: "#AAAAAA".color, entries: [0,42,82]))
         
         let defaultConfig = HyperLineChartConfig(
             title: String(describing: type(of: self)),
@@ -82,7 +82,7 @@ class aos_d_line_01DataSetIAxisValueFormatter: IAxisValueFormatter {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let convertedValue = Int(value)
-        return convertedValue == 0 ? String(convertedValue) : "\(convertedValue)%"
+        return convertedValue == 0 ? String(convertedValue) : "\(convertedValue)억"
     }
 }
 

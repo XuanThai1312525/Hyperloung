@@ -14,9 +14,9 @@ enum FontFamily {
     func displayFontWithSize(_ size: CGFloat, attributeType: FontAttribute = .regular) -> UIFont {
         switch self {
         case .customFont:
-            return UIFont(name: fontNameFrom(attribute: attributeType), size: size) ?? UIFont.systemFont(ofSize: size)
+            return UIFont(name: fontNameFrom(attribute: attributeType), size: size) ?? UIFont.normal(size: size)
         default:
-            return UIFont.systemFont(ofSize: size)
+            return UIFont.normal(size: size)
         }
     }
     

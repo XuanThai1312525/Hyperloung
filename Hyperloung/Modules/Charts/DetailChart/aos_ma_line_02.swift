@@ -40,9 +40,9 @@ class aos_ma_line_02: UIView {
         ]
         
         let xAxisData = ["4월","5월","6월","7월"]
-        let defaultFont = UIFont.systemFont(ofSize: 13)
-        let highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
-        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,xAxisValueColor: "#DDDDDD".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
+        let defaultFont = UIFont.normal(size: 13)
+        let highLightValueFont = UIFont.bold(size: 13)
+        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,xAxisLabelColor: "#DDDDDD".color , lineMode: .linear, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
         
         let defaultConfig = HyperLineChartConfig(
             title: String(describing: type(of: self)),

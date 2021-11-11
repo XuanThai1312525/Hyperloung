@@ -25,13 +25,13 @@ class aos_mb_bar_06: UIView {
         let barChartView = VeritalBarChartView()
         barChartView.clipsToBounds = false
         chartContainerView.addSubview(barChartView)
-        barChartView.setHeight(200)
+        barChartView.setHeight(175)
         barChartView.fullscreen()
 
 
         barChartView.isHaveLeftAxis = true
         barChartView.chartView.leftAxis.enabled = false
-        let chartVisual: ChartVisual = ChartVisual(space: 24, width: 42, bottomTitleSpace: 5)
+        let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)
         barChartView.setChartVisual(chartVisual)
         
         let leftAxis = barChartView.chartView.leftAxis
@@ -53,7 +53,7 @@ class aos_mb_bar_06: UIView {
         chartItems.append(BarChartItemData(title: "7월",  valueTitle: "9월",  value: 7, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "최대글자", valueTitle: "15월", value: 9, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9월",  valueTitle: "21억", value: 21, isHighlight: true, barVisual: barVisual))
-        barChartView.setChartItems(items: chartItems, isNeedToHighLight: true)
+        barChartView.setChartItems(items: chartItems)
         
         barChartView.setChartLines(lines: [11,16,19])
 

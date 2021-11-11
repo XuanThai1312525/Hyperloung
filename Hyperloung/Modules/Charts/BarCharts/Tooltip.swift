@@ -52,7 +52,7 @@ class ToolTip {
         }
         
         let roundRectBez = UIBezierPath(roundedRect: roundRect, cornerRadius: appearance.cornerRadius)
-        let attributeString = NSAttributedString(string: text, attributes: [.foregroundColor: appearance.textColor, .font: UIFont.systemFont(ofSize: 12)])
+        let attributeString = NSAttributedString(string: text, attributes: [.foregroundColor: appearance.textColor, .font: UIFont.normal(size: 12)])
         let textSize = attributeString.size()
         let textLayer = CATextLayer()
         textLayer.string = attributeString

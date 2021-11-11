@@ -49,9 +49,9 @@ class aos_ma_line_04: UIView {
         ]
         
         let xAxisData = ["1","10","20","30"]
-        let defaultFont = UIFont.systemFont(ofSize: 13)
-        let highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
-        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisValueColor: "#222222".color ,lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
+        let defaultFont = UIFont.normal(size: 13)
+        let highLightValueFont = UIFont.bold(size: 13)
+        let appearence = HyperLineAppearance(font: defaultFont, highLightValueFont: highLightValueFont,  xAxisLabelColor: "#222222".color ,lineMode: .cubicBezier, getValueFormatter: getValueFormatter, xAxisFormatter: IndexAxisValueFormatter(values: xAxisData))
         
         let defaultConfig = HyperLineChartConfig(
             title: String(describing: type(of: self)),

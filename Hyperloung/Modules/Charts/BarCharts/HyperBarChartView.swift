@@ -94,7 +94,7 @@ class HyperBarChartView: UIView {
                 subLayer.path = path.cgPath
                 
                 if let tooltipText = data.tooltipText {
-                    let attributeString = NSAttributedString(string: tooltipText, attributes: [.foregroundColor: UIColor.red, .font: UIFont.systemFont(ofSize: 12)])
+                    let attributeString = NSAttributedString(string: tooltipText, attributes: [.foregroundColor: UIColor.red, .font: UIFont.normal(size: 12)])
                     let textSize = attributeString.size()
                     let tooltipWidth = textSize.width + 20
                     let tooltip = ToolTip(text: tooltipText, position: .top)
@@ -109,7 +109,7 @@ class HyperBarChartView: UIView {
                 subLayer.path = path.cgPath
                 
                 if let tooltipText = data.tooltipText {
-                    let attributeString = NSAttributedString(string: tooltipText, attributes: [.foregroundColor: UIColor.red, .font: UIFont.systemFont(ofSize: 12)])
+                    let attributeString = NSAttributedString(string: tooltipText, attributes: [.foregroundColor: UIColor.red, .font: UIFont.normal(size: 12)])
                     let textSize = attributeString.size()
                     let tooltipWidth = textSize.width + 20
                     let tooltip = ToolTip(text: tooltipText, position: .bottom)
@@ -121,12 +121,12 @@ class HyperBarChartView: UIView {
 //            if data.shouldSeparateHighlightRow {
                 let color: UIColor = data.focus ? appearance.highlightColor : appearance.normalColor
                 subLayer.fillColor = color.cgColor
-                descriptionText = NSAttributedString(string: "\(datasource.description(of: data))", attributes: [.foregroundColor: color, .font: UIFont.systemFont(ofSize: 12)])
+                descriptionText = NSAttributedString(string: "\(datasource.description(of: data))", attributes: [.foregroundColor: color, .font: UIFont.normal(size: 12)])
                 
 //            } else {
 //                let color = appearance.normalColor.cgColor
 //                subLayer.fillColor = color
-//                descriptionText = NSAttributedString(string: "\(datasource.description(of: data))", attributes: [.foregroundColor: color, .font: UIFont.systemFont(ofSize: 12)])
+//                descriptionText = NSAttributedString(string: "\(datasource.description(of: data))", attributes: [.foregroundColor: color, .font: UIFont.normal(size: 12)])
 //            }
             
             let numberSize = descriptionText.size()
@@ -141,7 +141,7 @@ class HyperBarChartView: UIView {
     
     func drawHighlightText(for data: HyperBarChartData, originPoint: CGPoint, itemWidth: CGFloat) {
         guard let tooltipText = data.tooltipText else {return}
-        let attributeString = NSAttributedString(string: tooltipText, attributes: [.foregroundColor: appearance.highlightTextColor, .font: UIFont.systemFont(ofSize: 12)])
+        let attributeString = NSAttributedString(string: tooltipText, attributes: [.foregroundColor: appearance.highlightTextColor, .font: UIFont.normal(size: 12)])
         let textSize = attributeString.size()
         let tooltipWidth = textSize.width + 20
         

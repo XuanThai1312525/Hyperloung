@@ -42,6 +42,7 @@ class aos_mb_bar_03_: UIView {
         leftAxis.isForceEntriesEnable = true
         leftAxis.labelAlignment = .left
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_03_()
+        leftAxis.axisMinimum = 0
 
         barChartView.isHaveLeftAxis = true
         let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)
@@ -52,7 +53,7 @@ class aos_mb_bar_03_: UIView {
         chartItems.append(BarChartItemData(title: "7월", valueTitle: "", value: 30.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "최대글자", valueTitle: "", value: 40.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9월", valueTitle: "365억", value: 46.0, isHighlight: true,barVisual: barVisual))
-        barChartView.setChartItems(items: chartItems, isNeedToHighLight: true)
+        barChartView.setChartItems(items: chartItems)
 
     }
 }

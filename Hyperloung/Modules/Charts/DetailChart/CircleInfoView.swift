@@ -9,7 +9,7 @@ import UIKit
 struct CircleInfoData {
     var color: UIColor
     var description: String
-    var descriptionColor: UIColor? = "#888888".color
+    var descriptionColor: UIColor? = "#222222".color
 }
 
 class CircleInfoView: UIView {
@@ -17,6 +17,8 @@ class CircleInfoView: UIView {
     @IBOutlet weak var descriptionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        descriptionLabel.font = UIFont.normal(size: 14)
     }
     
     func bindingUI(data: CircleInfoData) {
