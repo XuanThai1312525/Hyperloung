@@ -81,6 +81,6 @@ extension aos_mb_pie_03: HyperCircleDataSource {
     }
     
     var tooltip: NSAttributedString? {
-        NSAttributedString(string: "56%", attributes: [.foregroundColor: "#246FEE".color, .font: UIFont.bold(size: 14)])
+        NSAttributedString(string: "56%", attributes: [.foregroundColor: "#246FEE".color, .font: UIFont.bold(size: 12)])
     }
 }
