@@ -14,11 +14,11 @@ class aos_mb_pie_02: UIView {
     @IBOutlet weak var circleChartView: HyperCircleChartView!
     
     var data = [
-        HyperCircleData(percent: 0.38, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), description: "솔루션"),
-        HyperCircleData(percent: 0.22, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), description: "솔루션"),
-        HyperCircleData(percent: 0.18, color: #colorLiteral(red: 0.3803921569, green: 0.8156862745, blue: 0.9411764706, alpha: 1), description: "솔루션"),
-        HyperCircleData(percent: 0.10, color: #colorLiteral(red: 0.2941176471, green: 0.7725490196, blue: 0.7647058824, alpha: 1), description: "솔루션"),
-        HyperCircleData(percent: 0.12, color: #colorLiteral(red: 0.4941176471, green: 0.8745098039, blue: 0.6431372549, alpha: 1), description: "솔루션")
+        HyperCircleData(value: 0.38, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), percent: 0.38, description: "솔루션"),
+        HyperCircleData(value: 0.22, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), percent: 0.22, description: "솔루션"),
+        HyperCircleData(value: 0.18, color: #colorLiteral(red: 0.3803921569, green: 0.8156862745, blue: 0.9411764706, alpha: 1), percent: 0.18, description: "솔루션"),
+        HyperCircleData(value: 0.10, color: #colorLiteral(red: 0.2941176471, green: 0.7725490196, blue: 0.7647058824, alpha: 1), percent: 0.10, description: "솔루션"),
+        HyperCircleData(value: 0.12, color: #colorLiteral(red: 0.4941176471, green: 0.8745098039, blue: 0.6431372549, alpha: 1), percent: 0.12, description: "솔루션")
     ]
     
     required init?(coder: NSCoder) {

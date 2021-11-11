@@ -10,8 +10,9 @@ import UIKit
 import Charts
 
 struct HyperCircleData {
-    var percent: Double
+    var value: Double
     var color: UIColor
+    var percent: Double?
     var description: String?
 }
 protocol HyperCircleDataSource: AnyObject {
@@ -53,7 +54,7 @@ class HyperCircleChartView: UIView {
         var entries = [PieChartDataEntry]()
         datasource.dataSet.forEach({ data in
             let entry = PieChartDataEntry()
-            entry.y = Double(data.percent)
+            entry.y = Double(data.value)
             entries.append( entry)
             colors.append(data.color)
         })

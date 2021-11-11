@@ -14,10 +14,10 @@ class aos_mb_pie_03: UIView {
     @IBOutlet weak var circleChartView: HyperCircleChartView!
     
     var data = [
-        HyperCircleData(percent: 0.56, color: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1), description: "범례최대글자"),
-        HyperCircleData(percent: 0.22, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1),  description: "범례"),
-        HyperCircleData(percent: 0.12, color: #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1), description: "범례영역"),
-        HyperCircleData(percent: 0.10, color: #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1), description: "기타"),
+        HyperCircleData(value: 0.56, color: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1), description: "범례최대글자"),
+        HyperCircleData(value: 0.22, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1),  description: "범례"),
+        HyperCircleData(value: 0.12, color: #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1), description: "범례영역"),
+        HyperCircleData(value: 0.10, color: #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1), description: "기타"),
     ]
     
     required init?(coder: NSCoder) {

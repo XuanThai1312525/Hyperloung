@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4EK-Ww-B8K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gT4-bj-Syj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -864,7 +864,7 @@
                                         <state key="normal" image="ic_back_black"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점검사항 상세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUB-g6-2Ge">
-                                        <rect key="frame" x="158" y="12.5" width="98.5" height="21"/>
+                                        <rect key="frame" x="155.5" y="12" width="103.5" height="22"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="18"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -884,10 +884,10 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Id-hvz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3772"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3770.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-e1-K8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3772"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3770.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rD6-8P-49Z">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
@@ -972,8 +972,8 @@
                                                             <constraint firstAttribute="bottom" secondItem="W77-cL-9bN" secondAttribute="bottom" constant="16" id="veq-cn-GnV"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTz-Qu-Qjm">
-                                                        <rect key="frame" x="0.0" y="764" width="414" height="272"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTz-Qu-Qjm">
+                                                        <rect key="frame" x="0.0" y="752" width="414" height="272"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5U-Fd-2gd">
                                                                 <rect key="frame" x="20" y="0.0" width="151.5" height="38.5"/>
@@ -1029,10 +1029,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRC-Jf-1rF">
-                                                        <rect key="frame" x="0.0" y="1060" width="414" height="478.5"/>
+                                                        <rect key="frame" x="0.0" y="764" width="414" height="478.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOh-yV-EQR">
-                                                                <rect key="frame" x="20" y="0.0" width="87.5" height="439"/>
+                                                                <rect key="frame" x="20" y="0.0" width="87.5" height="339"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="위험재고">
                                                                         <attributes>
@@ -1054,7 +1054,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGE-tS-0Jb">
-                                                                <rect key="frame" x="344" y="196.5" width="46" height="46"/>
+                                                                <rect key="frame" x="344" y="146.5" width="46" height="46"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="46" id="g66-W0-JlZ"/>
                                                                     <constraint firstAttribute="width" secondItem="uGE-tS-0Jb" secondAttribute="height" id="nkV-G1-bbe"/>
@@ -1062,10 +1062,10 @@
                                                                 <state key="normal" image="ic_add_more"/>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRd-NO-Bbs" customClass="aos_mb_pie_01" customModule="Hyperloung" customModuleProvider="target">
-                                                                <rect key="frame" x="107" y="262.5" width="200" height="200"/>
+                                                                <rect key="frame" x="82" y="212.5" width="250" height="250"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="200" id="TLB-w6-YaX"/>
+                                                                    <constraint firstAttribute="width" constant="250" id="TLB-w6-YaX"/>
                                                                     <constraint firstAttribute="width" secondItem="dRd-NO-Bbs" secondAttribute="height" id="maa-DX-AFO"/>
                                                                 </constraints>
                                                             </view>
@@ -1083,10 +1083,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nu2-3j-yvE">
-                                                        <rect key="frame" x="0.0" y="1562.5" width="414" height="176.5"/>
+                                                        <rect key="frame" x="0.0" y="1266.5" width="414" height="176.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFo-Wl-9ah">
-                                                                <rect key="frame" x="20" y="0.0" width="148.5" height="38.5"/>
+                                                                <rect key="frame" x="20" y="0.0" width="148.5" height="58.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="OFM 부서 인력 이탈이 ">
                                                                         <attributes>
@@ -1115,7 +1115,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4a-VB-t6c">
-                                                                <rect key="frame" x="344" y="-3.5" width="46" height="46"/>
+                                                                <rect key="frame" x="344" y="6.5" width="46" height="46"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="46" id="9gn-nU-By2"/>
                                                                     <constraint firstAttribute="width" secondItem="G4a-VB-t6c" secondAttribute="height" id="SOb-u0-HcH"/>
@@ -1123,10 +1123,10 @@
                                                                 <state key="normal" image="ic_add_more"/>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dij-r4-kNK" customClass="HyperHorizontalLineChartView" customModule="Hyperloung" customModuleProvider="target">
-                                                                <rect key="frame" x="30" y="48.5" width="354" height="120"/>
+                                                                <rect key="frame" x="30" y="68.5" width="354" height="100"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="120" id="cqj-cD-Xqg"/>
+                                                                    <constraint firstAttribute="height" constant="100" id="cqj-cD-Xqg"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -1144,7 +1144,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXF-ZM-9pR">
-                                                        <rect key="frame" x="0.0" y="1763" width="414" height="196.5"/>
+                                                        <rect key="frame" x="0.0" y="1467" width="414" height="196.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhB-kD-UeH">
                                                                 <rect key="frame" x="20" y="0.0" width="205.5" height="38.5"/>
@@ -1206,7 +1206,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giX-oc-9pn">
-                                                        <rect key="frame" x="0.0" y="1983.5" width="414" height="196.5"/>
+                                                        <rect key="frame" x="0.0" y="1687.5" width="414" height="196.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiZ-Xg-HPB">
                                                                 <rect key="frame" x="20" y="0.0" width="205.5" height="38.5"/>
@@ -1268,7 +1268,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et8-mi-Sp1">
-                                                        <rect key="frame" x="0.0" y="2204" width="414" height="208"/>
+                                                        <rect key="frame" x="0.0" y="1908" width="414" height="208"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqg-bS-Y2b" customClass="aos_ma_line_02" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="200"/>
@@ -1287,7 +1287,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40E-5g-UgI">
-                                                        <rect key="frame" x="0.0" y="2436" width="414" height="208"/>
+                                                        <rect key="frame" x="0.0" y="2140" width="414" height="208"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cC-Ga-POW" customClass="aos_ma_line_03" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="200"/>
@@ -1306,7 +1306,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEB-HU-2EI">
-                                                        <rect key="frame" x="0.0" y="2668" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2372" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAd-Lu-Gt6" customClass="aos_ma_line_04" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1325,7 +1325,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-h5-FYc">
-                                                        <rect key="frame" x="0.0" y="2950" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2654" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vF0-Xd-xI3" customClass="aos_d_line_02" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1344,7 +1344,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwa-nT-Q2C">
-                                                        <rect key="frame" x="0.0" y="3232" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2936" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdf-gf-kpM" customClass="aos_d_line_01" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1363,7 +1363,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QA-3J-059">
-                                                        <rect key="frame" x="0.0" y="3514" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="3218" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uda-ZA-mm1" customClass="aos_ma_line_01" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1382,7 +1382,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-Us-jdd">
-                                                        <rect key="frame" x="0.0" y="3756" width="414" height="270.5"/>
+                                                        <rect key="frame" x="0.0" y="3500" width="414" height="270.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52m-KJ-wgj" customClass="aos_mb_pie_03" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1463,7 +1463,7 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-yJ-cc0" customClass="aos_d_bar_05" customModule="Hyperloung" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-yJ-cc0" customClass="aos_d_bar_08" customModule="Hyperloung" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

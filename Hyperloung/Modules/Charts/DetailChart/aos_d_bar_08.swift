@@ -48,6 +48,8 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         chart.xAxis.drawAxisLineEnabled = false
         chart.xAxis.labelPosition = .bottom
         chart.xAxis.valueFormatter = IndexAxisValueFormatter(values: moods)
+        chart.xAxis.labelFont = FontFamily.customFont.displayFontWithSize(12, attributeType: .regular)
+//        chart.xAxis.labelPosition
         chart.xAxis.drawGridLinesEnabled = false
         chart.xAxis.granularity = 1.0
         chart.leftAxis.drawGridLinesEnabled = false
@@ -57,12 +59,11 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         chart.rightAxis.axisMinimum = 0.0
         chart.leftAxis.axisMinimum = 0.0    //here's the missing line
 //        chart.extraBottomOffset = 50
-//        chart.leftAxis.yOffset = 100
 //        chart.leftAxis.xOffset = 100
         chart.rightAxis.axisMaximum = 0.0
         chart.rightAxis.enabled = true
 //        chart.xAxis.yOffset = 100
-//        chart.xAxis.xOffset = 100
+        chart.xAxis.xOffset = 14
         chart.rightAxis.enabled = false
         chart.legend.enabled = false
         chart.leftAxis.drawAxisLineEnabled = false

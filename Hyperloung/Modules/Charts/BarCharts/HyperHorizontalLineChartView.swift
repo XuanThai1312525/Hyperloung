@@ -28,14 +28,14 @@ class HyperHorizontalLineChartView: UIView {
     func bindingUI() {
     
         ucRowView.data = HyperHorizontalData(total: 5, current: 3, unit: "명")
-        ucRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0, green: 0.4588235294, blue: 0.8901960784, alpha: 1), backgroundColor: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 50, trailingDescription: "3명", leadingSpace: 40, leadingDescription: "ABC")
+        ucRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0, green: 0.4588235294, blue: 0.8901960784, alpha: 1), backgroundColor: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 70, trailingDescription: "100%", leadingSpace: 40, leadingDescription: "UC", highlightDescription: "32명")
         ucRowView.drawChart()
         firstRowView.data = HyperHorizontalData(total: 5, current: 3, unit: "명")
-        firstRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), backgroundColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 50, trailingDescription: "3명", leadingSpace: 40, leadingDescription: "ABC")
+        firstRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), backgroundColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 70, trailingDescription: "", leadingSpace: 40, leadingDescription: "최대글자", leadingTextColor: #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1))
         firstRowView.drawChart()
  
         secondRowView.data = HyperHorizontalData(total: 5, current: 3, unit: "명")
-        secondRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), backgroundColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 50, trailingDescription: "3명", leadingSpace: 40, leadingDescription: "ABC")
+        secondRowView.appearance = HyperRowView.Appearance(highlightColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), backgroundColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 0.7204294773), showHighlightText: true, trailingSpace: 8, descriptionWidth: 70, trailingDescription: "", leadingSpace: 40, leadingDescription: "경관", leadingTextColor: #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1))
         secondRowView.drawChart()
     }
 }

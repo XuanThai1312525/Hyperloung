@@ -9,11 +9,15 @@ import UIKit
 import Charts
 
 class aos_mb_pie_01: UIView {
-    var circleChartView: HyperCircleChartView!
+    @IBOutlet var circleChartView: HyperCircleChartView!
+    @IBOutlet weak var descriptionView: UIView!
     @IBOutlet var view: UIView!
+    
+    var descriptionStackView = UIStackView()
+    
     var data = [
-        HyperCircleData(percent: 0.5, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), description: "솔루션"),
-        HyperCircleData(percent: 0.5, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), description: "솔루션"),
+        HyperCircleData(value: 134, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), percent: 45, description: "상품"),
+        HyperCircleData(value: 212, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), percent: 55, description: "용역")
     ]
 
     override init(frame: CGRect) {
@@ -34,11 +38,20 @@ class aos_mb_pie_01: UIView {
     }
     
     private func setupView() {
-        circleChartView = HyperCircleChartView(frame: bounds)
-        addSubview(circleChartView)
-        circleChartView.fullscreen()
         circleChartView.datasource = self
         circleChartView.drawChart()
+        let cardWidth = frame.size.width / 2 - 50
+        data.forEach { data in
+            let cardView = HyperDescriptionCard(frame: .zero)
+            descriptionView.setWidth(cardWidth)
+            descriptionStackView.addArrangedSubview(cardView)
+            cardView.data = data
+        }
+        descriptionStackView.spacing = 30
+        descriptionView.addSubview(descriptionStackView)
+        descriptionStackView
+            .setCenterX(0, relativeToView: descriptionView)
+            .setTop(0, relativeToView: descriptionView)
     }
 }
 
@@ -66,5 +79,66 @@ extension aos_mb_pie_01: HyperCircleDataSource {
     
     var isShowLegend: Bool {
         true
+    }
+}
+
+class HyperDescriptionCard: UIView {
+    private let stackView = UIStackView()
+    private let legendView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    private let descriptionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+    private let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+    
+    var data: HyperCircleData! {
+        didSet {
+            reloadData()
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    private func reloadData() {
+        legendView.backgroundColor = data.color
+        titleLabel.text = data.description
+        titleLabel.font = FontFamily.customFont.displayFontWithSize(12)
+        let mutableAttributeString = NSMutableAttributedString()
+            .addAtributes(for: "\(data.value)", attribute: [
+                NSAttributedString.Key.font: FontFamily.customFont.displayFontWithSize(20, attributeType: .bold),
+                NSAttributedString.Key.foregroundColor: UIColor.black
+            ]).addAtributes(for: "억\(data.percent ?? 0)%)", attribute: [
+                NSAttributedString.Key.font: FontFamily.customFont.displayFontWithSize(12, attributeType: .light),
+                NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            ])
+        descriptionLabel.attributedText = mutableAttributeString
+        
+    }
+    
+    private func setupView() {
+        addSubview(stackView)
+        stackView.setTop(0, relativeToView: self).setLeft(0, relativeToView: self).setRight(0, relativeToView: self)
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 8
+        let firstHorizontalStackView = UIStackView()
+        firstHorizontalStackView.axis = .horizontal
+        firstHorizontalStackView.distribution = .fill
+        firstHorizontalStackView.alignment = .center
+        firstHorizontalStackView.spacing = 4
+        legendView.round(3.5)
+        legendView.setWidth(7).setHeight(7)
+        descriptionLabel.font = FontFamily.customFont.displayFontWithSize(12)
+        firstHorizontalStackView.addArrangedSubview(legendView)
+        firstHorizontalStackView.addArrangedSubview(titleLabel)
+        
+        stackView.addArrangedSubview(firstHorizontalStackView)
+        stackView.addArrangedSubview(descriptionLabel)
     }
 }

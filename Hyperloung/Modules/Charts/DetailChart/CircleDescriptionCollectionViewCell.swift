@@ -23,7 +23,7 @@ class CircleDescriptionCollectionViewCell: UICollectionViewCell {
     func bindingUI(data: HyperCircleData, showPercentage: Bool = true ) {
         descriptionView.backgroundColor = data.color
         titleLabel.text = data.description
-        percentLabel.text = showPercentage ? "\(data.percent * 100)%" : ""
+        percentLabel.text = showPercentage ? "\(data.percent ?? 0 * 100)%" : ""
     }
 
 }
