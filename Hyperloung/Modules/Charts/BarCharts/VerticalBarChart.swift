@@ -50,6 +50,7 @@ class VeritalBarChartView: UIView {
     var chartItems: [BarChartItemData] = []
     var leftAxisUnit: String = ""
     var isHaveLeftAxis: Bool = false
+    var barHightlighColor: UIColor?
     
     // MARK: LifeCycle
     required init?(coder: NSCoder) {
@@ -138,6 +139,10 @@ class VeritalBarChartView: UIView {
         dataSet.stackLabels = ["Births", "Divorces", "Marriages"]
         dataSet.highlightColor = UIColor.clear
         dataSet.highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
+        if let barHightlighColor = barHightlighColor {
+            dataSet.highlightColor = barHightlighColor
+        }
+        dataSet.highlightAlpha = 1.0
                 
         let data = BarChartData(dataSet: dataSet)
         data.setValueFont(visual.fontForValueLabel)

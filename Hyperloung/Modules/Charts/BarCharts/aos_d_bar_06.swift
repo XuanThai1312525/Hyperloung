@@ -36,9 +36,8 @@ class aos_d_bar_06: UIView {
         let leftAxis = barChartView.chartView.leftAxis
         leftAxis.entries = [0, 617, 1234]
         leftAxis.granularityEnabled = true
-        leftAxis.gridColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
+        leftAxis.gridColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         leftAxis.gridLineWidth = 1
-        leftAxis.gridLineDashLengths = [0,3]
         leftAxis.labelTextColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         leftAxis.setLabelCount(1, force: true)
         leftAxis.isForceEntriesEnable = true
@@ -62,6 +61,6 @@ class aos_d_bar_06: UIView {
 class LeftAxisValueFormat_aos_d_bar_06: IAxisValueFormatter {
     func stringForValue(_ value: Double,
                         axis: AxisBase?) -> String {
-        return "\(value)" + (value == 0 ? "" : "억")
+        return String(format: "%g", value) + (value == 0 ? "" : "억")
     }
 }
