@@ -60,7 +60,7 @@ extension aos_mb_pie_03: UICollectionViewDelegate, UICollectionViewDataSource, U
 
 extension aos_mb_pie_03: HyperCircleDataSource {
     var centerTextAppearnce: HyperCircleCenterTextAppearance? {
-        HyperCircleCenterTextAppearance(textAttributedString: NSAttributedString(string: "180억", attributes: [.foregroundColor: UIColor.black, .font: UIFont.boldSystemFont(ofSize: 22)]))
+        HyperCircleCenterTextAppearance(textAttributedString: NSAttributedString(string: "180억", attributes: [.foregroundColor: UIColor.black, .font: UIFont.bold(size: 22)]))
     }
     
     var centerText: (String, String, UIColor)? {
@@ -81,6 +81,6 @@ extension aos_mb_pie_03: HyperCircleDataSource {
     }
     
     var tooltip: NSAttributedString? {
-        NSAttributedString(string: "56%", attributes: [.foregroundColor: "#246FEE".color, .font: UIFont.boldSystemFont(ofSize: 14)])
+        NSAttributedString(string: "56%", attributes: [.foregroundColor: "#246FEE".color, .font: UIFont.bold(size: 14)])
     }
 }

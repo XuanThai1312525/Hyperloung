@@ -62,11 +62,12 @@ struct HyperLineLeftAxisConfig {
     var valueFormatter: IAxisValueFormatter
     var labelColor: UIColor
     var entries: [Double]?
+    var lineColor: UIColor? = "#EEEEEE".color
 }
 struct HyperLineAppearance {
     var font: UIFont
     var highLightValueFont: UIFont
-    var xAxisValueColor: UIColor
+    var xAxisLabelColor: UIColor
    
     var lineMode: LineChartDataSet.Mode
     var getValueFormatter: ([HyperLineData]) -> IValueFormatter
@@ -196,7 +197,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         chartView.xAxis.drawGridLinesBehindDataEnabled = false
         chartView.xAxis.gridAntialiasEnabled = false
         chartView.xAxis.drawAxisLineEnabled = false
-        chartView.xAxis.labelTextColor = appearance.xAxisValueColor
+        chartView.xAxis.labelTextColor = appearance.xAxisLabelColor
         chartView.xAxis.setLabelCount(xAxisData.count, force: true)
         chartView.rightAxis.drawAxisLineEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
@@ -211,6 +212,7 @@ class HyperLineChartView: UIView , ChartViewDelegate{
             chartView.leftAxis.setLabelCount(leftAxisConfig.labelCount, force: true)
             chartView.leftAxis.axisMinimum = leftAxisConfig.minValue
             chartView.leftAxis.axisMaximum = leftAxisConfig.maxValue
+            chartView.leftAxis.axisLineColor = leftAxisConfig.lineColor ??  UIColor.gray
 
             chartView.leftAxis.enabled = true
             if let entries = leftAxisConfig.entries {
@@ -356,7 +358,7 @@ class HyperLineMarker: IMarker {
             }
             
             let selectedStringWidth = label.widthOfString(usingFont: appearance.font)
-            let spacing: CGFloat = 10
+            let spacing: CGFloat = 5
             let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
             let y: CGFloat = point.y - appearance.font.lineHeight - CGFloat(valOffset) -  selectedDataSetAppearance.bottomValueToCircle - spacing/2 //5 is horizontal spacing
             let roundWidth: CGFloat = selectedStringWidth + spacing*2

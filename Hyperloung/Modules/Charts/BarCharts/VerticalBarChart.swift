@@ -34,8 +34,6 @@ struct BarVisual {
     var valueHighlightTextColor: UIColor
     var titleNormalTextColor: UIColor
     var titleHighlightTextColor: UIColor
-
-    var isHighlight: Bool = false
     
     static func defaultVisual() -> BarVisual {
         return BarVisual(radius: 4.0, barNormalColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), barHighlightColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), valueNormalTextColor: #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1), valueHighlightTextColor: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), titleNormalTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), titleHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
@@ -111,7 +109,7 @@ class VeritalBarChartView: UIView {
 
     }
     
-    func setChartItems(items: [BarChartItemData], isNeedToHighLight: Bool = false) {
+    func setChartItems(items: [BarChartItemData]) {
         numOfBar = items.count
         updateChartViewSize()
         var yVals: [BarChartDataEntry] = []
@@ -138,7 +136,7 @@ class VeritalBarChartView: UIView {
         dataSet.valueFormatter = VerticalBarValueFormatter(barItems: items)
         dataSet.stackLabels = ["Births", "Divorces", "Marriages"]
         dataSet.highlightColor = UIColor.clear
-        dataSet.highLightValueFont = UIFont.boldSystemFont(ofSize: 13)
+        dataSet.highLightValueFont = UIFont.bold(size: 13)
         if let barHightlighColor = barHightlighColor {
             dataSet.highlightColor = barHightlighColor
         }
@@ -150,10 +148,10 @@ class VeritalBarChartView: UIView {
         data.barWidth = calculateBarWidth()
         
         chartView.data = data
-        if isNeedToHighLight, let highLight = highLight{
+        if let highLight = highLight{
             //5 is value for display above or bellow
             chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
-            chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: UIFont.boldSystemFont(ofSize: 13), bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color))
+            chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: UIFont.bold(size: 13), bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color))
             dataSet.valueSpacing = 15
             chartView.highlightValue(highLight)
         }
@@ -361,7 +359,7 @@ class HyperMarker: IMarker {
     
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
-        let selectedStringWidth = config.label.widthOfString(usingFont: UIFont.boldSystemFont(ofSize: 13))
+        let selectedStringWidth = config.label.widthOfString(usingFont: UIFont.bold(size: 13))
         let spacing: CGFloat = 10
         let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
         let y: CGFloat = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/2

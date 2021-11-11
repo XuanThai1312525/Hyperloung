@@ -193,7 +193,7 @@ extension ReportChartViewController {
         chartItems.append(BarChartItemData(title: "8울산", valueTitle: "", value: 30.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "6울산", valueTitle: "", value: 40.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9울산", valueTitle: "75공식", value: 46.0, isHighlight: true,barVisual: barVisual))
-        barChartView.setChartItems(items: chartItems, isNeedToHighLight: true)
+        barChartView.setChartItems(items: chartItems)
     }
     
     func insertBarChart_aos_mb_bar_02() {
@@ -207,6 +207,7 @@ extension ReportChartViewController {
         chartContainerStackView.insertArrangedSubview(titleLabel, at: 0)
         titleLabel.setHeight(30)
 
+        
         chartContainerStackView.layoutIfNeeded()
         
         
@@ -219,7 +220,7 @@ extension ReportChartViewController {
         chartItems.append(BarChartItemData(title: "8울산", valueTitle: "A공식", value: 30.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "6울산", valueTitle: "B공식", value: 40.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9울산", valueTitle: "C공식", value: 46.0, isHighlight: true, barVisual: barVisual))
-        barChartView.setChartItems(items: chartItems, isNeedToHighLight: true)
+        barChartView.setChartItems(items: chartItems)
     }
     
     func insertBarChart_aos_mb_bar_03() {
@@ -246,7 +247,7 @@ extension ReportChartViewController {
         chartItems.append(BarChartItemData(title: "8울산", valueTitle: "", value: 30.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "6울산", valueTitle: "", value: 40.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9울산", valueTitle: "75공식", value: 46.0, isHighlight: true,barVisual: barVisual))
-        barChartView.setChartItems(items: chartItems, isNeedToHighLight: true)
+        barChartView.setChartItems(items: chartItems)
     }
     
     func insertBarChart_aos_mb_bar_04() {
@@ -274,7 +275,7 @@ extension ReportChartViewController {
         chartItems.append(BarChartItemData(title: "8울산", valueTitle: "A공식", value: 30.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "6울산", valueTitle: "B공식", value: 40.0, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9울산", valueTitle: "C공식", value: 46.0, isHighlight: true, barVisual: barVisual))
-        barChartView.setChartItems(items: chartItems, isNeedToHighLight: true)
+        barChartView.setChartItems(items: chartItems)
     }
 }
 

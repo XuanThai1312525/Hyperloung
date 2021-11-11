@@ -77,7 +77,7 @@ class HyperRowView: UIView {
         }
        
         if let textDescription = appearance.trailingDescription {
-            let textAttributeString = NSAttributedString(string: textDescription, attributes: [.foregroundColor: appearance.trailingTextColor, .font: UIFont.systemFont(ofSize: 12)])
+            let textAttributeString = NSAttributedString(string: textDescription, attributes: [.foregroundColor: appearance.trailingTextColor, .font: UIFont.normal(size: 12)])
             let totalTextSize = textAttributeString.size()
             totalLabel.frame = CGRect(x: availableWidth + appearance.trailingSpace + appearance.leadingSpace + 10 , y: frame.height / 2 - totalTextSize.height / 2, width: totalTextSize.width, height: totalTextSize.height)
             totalLabel.attributedText = textAttributeString
