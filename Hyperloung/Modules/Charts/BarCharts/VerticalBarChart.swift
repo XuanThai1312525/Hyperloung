@@ -160,10 +160,10 @@ class VeritalBarChartView: UIView {
     
     func setChartLines(lines: [Double]) {
         if let dataSet = chartView.data?.dataSets.first as? IBarChartDataSet {
-//            dataSet.lines = lines
-//            dataSet.lineWidth = 1
-//            dataSet.lineColor = "#eeeeee".color
-//            dataSet.lineAdditionWithBar = 6
+            dataSet.lines = lines
+            dataSet.lineWidth = 1
+            dataSet.lineColor = "#eeeeee".color
+            dataSet.lineAdditionWithBar = 6
         }
     }
         

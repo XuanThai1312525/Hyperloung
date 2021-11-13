@@ -35,9 +35,9 @@ class aos_d_bar_05: UIView, ChartViewDelegate {
         let barVisual: BarVisual = BarVisual(radius: 4, barNormalColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), barHighlightColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), valueNormalTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), valueHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), titleNormalTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), titleHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
 
         data = [
-            BarChartItemData(title: "Text", valueTitle: "68%", value: 90, barVisual: barVisual),
-            BarChartItemData(title: "Text", valueTitle: "70%", value: 90, barVisual: barVisual),
-            BarChartItemData(title: "Text", valueTitle: "75%", value: 90, barVisual: barVisual),
+            BarChartItemData(title: "Text", valueTitle: "68%", value: 68, barVisual: barVisual),
+            BarChartItemData(title: "Text", valueTitle: "70%", value: 70, barVisual: barVisual),
+            BarChartItemData(title: "Text", valueTitle: "75%", value: 75, barVisual: barVisual),
             BarChartItemData(title: "Text", valueTitle: "95%", value: 95, barVisual: barVisual)
         ]
         
@@ -56,6 +56,7 @@ class aos_d_bar_05: UIView, ChartViewDelegate {
         chartDataSet.barShadowColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         chartDataSet.valueFont = FontFamily.customFont.displayFontWithSize(10, attributeType: .bold)
         chartDataSet.drawValuesEnabled = true
+        chartDataSet.valueFormatter = Chartd_05ValueFormater()
         let chartData = BarChartData(dataSet: chartDataSet)
         chartData.barWidth = 0.17
         chartView.data = chartData
@@ -64,9 +65,10 @@ class aos_d_bar_05: UIView, ChartViewDelegate {
         chartView.xAxis.enabled = true
         chartView.xAxis.labelPosition = .bottom
         chartView.xAxis.yOffset = 10
+        chartView.leftAxis.axisMinimum = 0
+//        chartView.leftAxis.axisMaximum = 100
         
         chartView.xAxis.drawGridLinesEnabled = false
-        chartView.xAxis.avoidFirstLastClippingEnabled = true
         chartView.xAxis.drawGridLinesBehindDataEnabled = false
         chartView.xAxis.gridAntialiasEnabled = false
         chartView.xAxis.drawAxisLineEnabled = false
@@ -75,5 +77,12 @@ class aos_d_bar_05: UIView, ChartViewDelegate {
         chartView.leftAxis.drawLabelsEnabled = false
         chartView.rightAxis.enabled = false
 
+    }
+}
+
+
+class Chartd_05ValueFormater: NSObject, IValueFormatter  {
+    func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
+        return "\(Int(value))%"
     }
 }

@@ -7,11 +7,27 @@
 
 import UIKit
 import Charts
+struct ChartBar08 {
+    var title: String
+    var value: Double
+    var description: String
+    
+    static var `default`: [ChartBar08] {
+        return [
+            ChartBar08(title: "최대 6자", value: 543, description: "543억"),
+            ChartBar08(title: "최대 6자", value: 234, description: "543억"),
+            ChartBar08(title: "최대 6자", value: 168, description: "12%"),
+            ChartBar08(title: "6자 초과시", value: 421, description: "34%"),
+            ChartBar08(title: "최대 6자", value: 302, description: "22%")
+        ]
+    }
+}
 
 class aos_d_bar_08: UIView, ChartViewDelegate {
     private var chart: HorizontalBarChartView!
-    var values: [Double] = [543, 234, 168, 421, 302]
-    var moods = ["최대 6자", "최대 6자", "최대 6자", "6자 초과시..", "최대 6자"]
+ 
+    
+    let values: [ChartBar08] = ChartBar08.default.reversed()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +43,7 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         var chartDataEntry = [BarChartDataEntry]()
 
         for i in 0..<values.count {
-            let value = BarChartDataEntry(x: Double(i), y: values[i])
+            let value = BarChartDataEntry(x: Double(i), y: values[i].value)
             chartDataEntry.append(value)
         }
 
@@ -35,7 +51,7 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         chartDataSet.drawValuesEnabled = true
         chartDataSet.colors = [NSUIColor.black]
         chartDataSet.valueFont = FontFamily.customFont.displayFontWithSize(9, attributeType: .regular)
-        chartDataSet.valueFormatter = YAxisValueFormatter()
+        chartDataSet.valueFormatter = YAxisValueFormatter(values: values)
         let chartMain = BarChartData()
         chartMain.barWidth = 0.3
 
@@ -48,7 +64,7 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
 
         chart.xAxis.drawAxisLineEnabled = false
         chart.xAxis.labelPosition = .bottom
-        chart.xAxis.valueFormatter = IndexAxisValueFormatter(values: moods)
+        chart.xAxis.valueFormatter = IndexAxisValueFormatter(values: values.map({$0.title}))
         chart.xAxis.labelFont = FontFamily.customFont.displayFontWithSize(12, attributeType: .regular)
 //        chart.xAxis.labelPosition
         chart.xAxis.drawGridLinesEnabled = false
@@ -73,7 +89,16 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
 }
 
 class YAxisValueFormatter: NSObject, IValueFormatter {
+    var values: [ChartBar08]
+    
+    init(values: [ChartBar08]) {
+        self.values = values
+    }
+    
     func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
-        return "\(value)억"
+        if let v = values.first(where: {$0.value == value}) {
+            return v.description
+        }
+        return ""
     }
 }

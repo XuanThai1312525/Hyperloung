@@ -1463,7 +1463,7 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-yJ-cc0" customClass="aos_d_bar_08" customModule="Hyperloung" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-yJ-cc0" customClass="aos_d_bar_05" customModule="Hyperloung" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
