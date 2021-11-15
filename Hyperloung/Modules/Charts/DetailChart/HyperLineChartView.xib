@@ -25,7 +25,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlA-td-w6E">
                             <rect key="frame" x="0.0" y="782" width="414" height="50"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-cZ-iq8">
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-cZ-iq8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                 </stackView>
                             </subviews>

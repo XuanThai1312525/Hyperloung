@@ -11,6 +11,7 @@ struct ChartVisual {
     var width: Int
     var bottomTitleSpace: CGFloat = 0
     var fontForValueLabel: UIFont = UIFont.normal(size: 12)
+    var fontForHighlightValueLabel: UIFont = UIFont.bold(size: 13)
     var fontForXaxisLabel: UIFont = UIFont.normal(size: 12)
     static var defaultVisual: ChartVisual {
         return ChartVisual(space: 24, width: 32)
@@ -151,7 +152,7 @@ class VeritalBarChartView: UIView {
         if let highLight = highLight{
             //5 is value for display above or bellow
             chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
-            chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: UIFont.bold(size: 13), bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color))
+            chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: visual.fontForHighlightValueLabel, bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color))
             dataSet.valueSpacing = 15
             chartView.highlightValue(highLight)
         }
@@ -357,7 +358,7 @@ class HyperMarker: IMarker {
     
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
-        let selectedStringWidth = config.label.widthOfString(usingFont: UIFont.bold(size: 13))
+        let selectedStringWidth = config.label.widthOfString(usingFont: config.selectedLabelFont)
         let spacing: CGFloat = 10
         let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
         let y: CGFloat = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/2
