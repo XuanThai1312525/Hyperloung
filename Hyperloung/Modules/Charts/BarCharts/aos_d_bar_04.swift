@@ -25,7 +25,7 @@ class aos_d_bar_04: UIView {
         barChartView.clipsToBounds = false
         chartContainerView.addSubview(barChartView)
         barChartView.centralize()
-        barChartView.setHeight(250)
+        barChartView.setHeight(290)
 
 
         
