@@ -13,7 +13,7 @@ class ReportChartViewController: BaseViewController {
     @IBOutlet weak var monthChartView: aos_mb_bar_01!
     @IBOutlet weak var planChartView: HyperBarChartView!
     @IBOutlet weak var circleChartView: aos_mb_pie_01!
-    @IBOutlet weak var linkedChartView: LinkedChartView!
+    @IBOutlet weak var circleChartView2: HyperCircleChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,10 +78,35 @@ class ReportChartViewController: BaseViewController {
         planChartView.datasource = dataSource
         planChartView.internalDraw()
 
-        let linkedChartDataSourceHandler = LinkedChartDataSourceHandler()
-        linkedChartView.datasource = linkedChartDataSourceHandler
-        linkedChartView.drawChart()
+        circleChartView2.datasource = self
+        
+        circleChartView2.drawChart()
     }
+}
+
+extension ReportChartViewController: HyperCircleDataSource {
+    var dataSet: [HyperCircleData] {
+            [HyperCircleData(value: 68, color: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)),
+            HyperCircleData(value: 32, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1))]
+    }
+    
+    func description(of data: HyperCircleData) -> String {
+        ""
+    }
+    
+    var lineWidth: CGFloat {
+        return 10
+    }
+    
+    var tooltip: NSAttributedString? {
+        nil
+    }
+    
+    var centerTextAppearnce: HyperCircleCenterTextAppearance? {
+        return  HyperCircleCenterTextAppearance(prefix: "68%", suffix: "", prefixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), suffixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), prefixFont: FontFamily.customFont.displayFontWithSize(24, attributeType: .bold), suffixFont: FontFamily.customFont.displayFontWithSize(16, attributeType: .light))
+    }
+    
+    
 }
 
 class HyperHandleBarChartData {}
