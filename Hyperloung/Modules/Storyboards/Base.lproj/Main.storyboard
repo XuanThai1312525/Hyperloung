@@ -884,10 +884,10 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Id-hvz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3474.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3554.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-e1-K8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3474.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="3554.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-T0-j0D">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
@@ -1206,7 +1206,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giX-oc-9pn">
-                                                        <rect key="frame" x="0.0" y="1391.5" width="414" height="196.5"/>
+                                                        <rect key="frame" x="0.0" y="1391.5" width="414" height="276.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiZ-Xg-HPB">
                                                                 <rect key="frame" x="20" y="0.0" width="205.5" height="38.5"/>
@@ -1246,29 +1246,29 @@ Cg
                                                                 </constraints>
                                                                 <state key="normal" image="ic_add_more"/>
                                                             </button>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-S6-jFB" customClass="LinkedChartView" customModule="Hyperloung" customModuleProvider="target">
-                                                                <rect key="frame" x="30" y="68.5" width="354" height="120"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HH-S6-jFB" customClass="HyperCircleChartView" customModule="Hyperloung" customModuleProvider="target">
+                                                                <rect key="frame" x="107" y="68.5" width="200" height="200"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="120" id="UBp-UC-gmE"/>
+                                                                    <constraint firstAttribute="height" constant="200" id="UBp-UC-gmE"/>
+                                                                    <constraint firstAttribute="width" secondItem="2HH-S6-jFB" secondAttribute="height" id="V9q-WI-hPr"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="2HH-S6-jFB" firstAttribute="leading" secondItem="giX-oc-9pn" secondAttribute="leading" constant="30" id="0Ax-G4-86w"/>
                                                             <constraint firstItem="AiZ-Xg-HPB" firstAttribute="top" secondItem="giX-oc-9pn" secondAttribute="top" id="3hH-yU-nuv"/>
                                                             <constraint firstAttribute="bottom" secondItem="2HH-S6-jFB" secondAttribute="bottom" constant="8" id="7jn-Uo-u1q"/>
-                                                            <constraint firstAttribute="trailing" secondItem="2HH-S6-jFB" secondAttribute="trailing" constant="30" id="Djj-mw-tKI"/>
                                                             <constraint firstAttribute="trailing" secondItem="VCl-gv-xNM" secondAttribute="trailing" constant="24" id="GNh-Ja-xYh"/>
                                                             <constraint firstItem="VCl-gv-xNM" firstAttribute="centerY" secondItem="AiZ-Xg-HPB" secondAttribute="centerY" id="HEZ-rb-a4B"/>
+                                                            <constraint firstItem="2HH-S6-jFB" firstAttribute="centerX" secondItem="giX-oc-9pn" secondAttribute="centerX" id="dWU-tp-kka"/>
                                                             <constraint firstItem="VCl-gv-xNM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AiZ-Xg-HPB" secondAttribute="trailing" constant="8" symbolic="YES" id="qhy-hy-4rd"/>
                                                             <constraint firstItem="AiZ-Xg-HPB" firstAttribute="leading" secondItem="giX-oc-9pn" secondAttribute="leading" constant="20" id="tah-Pe-ZBT"/>
                                                             <constraint firstItem="2HH-S6-jFB" firstAttribute="top" secondItem="AiZ-Xg-HPB" secondAttribute="bottom" constant="30" id="xCL-5v-Pz8"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et8-mi-Sp1">
-                                                        <rect key="frame" x="0.0" y="1612" width="414" height="208"/>
+                                                        <rect key="frame" x="0.0" y="1692" width="414" height="208"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqg-bS-Y2b" customClass="aos_ma_line_02" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="200"/>
@@ -1287,7 +1287,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40E-5g-UgI">
-                                                        <rect key="frame" x="0.0" y="1844" width="414" height="208"/>
+                                                        <rect key="frame" x="0.0" y="1924" width="414" height="208"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cC-Ga-POW" customClass="aos_ma_line_03" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="200"/>
@@ -1306,7 +1306,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEB-HU-2EI">
-                                                        <rect key="frame" x="0.0" y="2076" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2156" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAd-Lu-Gt6" customClass="aos_ma_line_04" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1325,7 +1325,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-h5-FYc">
-                                                        <rect key="frame" x="0.0" y="2358" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2438" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vF0-Xd-xI3" customClass="aos_d_line_02" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1344,7 +1344,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwa-nT-Q2C">
-                                                        <rect key="frame" x="0.0" y="2640" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="2720" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdf-gf-kpM" customClass="aos_d_line_01" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1363,7 +1363,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QA-3J-059">
-                                                        <rect key="frame" x="0.0" y="2922" width="414" height="258"/>
+                                                        <rect key="frame" x="0.0" y="3002" width="414" height="258"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uda-ZA-mm1" customClass="aos_ma_line_01" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1382,7 +1382,7 @@ Cg
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-Us-jdd">
-                                                        <rect key="frame" x="0.0" y="3204" width="414" height="270.5"/>
+                                                        <rect key="frame" x="0.0" y="3284" width="414" height="270.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52m-KJ-wgj" customClass="aos_mb_pie_03" customModule="Hyperloung" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="0.0" width="354" height="250"/>
@@ -1446,7 +1446,7 @@ Cg
                     <connections>
                         <outlet property="chartContainerStackView" destination="TrI-e1-K8M" id="H19-sy-vB5"/>
                         <outlet property="circleChartView" destination="dRd-NO-Bbs" id="dvX-7q-tg5"/>
-                        <outlet property="linkedChartView" destination="2HH-S6-jFB" id="pNE-aV-4fC"/>
+                        <outlet property="circleChartView2" destination="2HH-S6-jFB" id="icy-nc-mxu"/>
                         <outlet property="monthChartView" destination="W77-cL-9bN" id="ORE-0a-Ii6"/>
                         <outlet property="planChartView" destination="3iI-HV-yFa" id="9X7-ue-jc4"/>
                     </connections>
@@ -1463,7 +1463,7 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-yJ-cc0" customClass="aos_d_bar_05" customModule="Hyperloung" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-yJ-cc0">
                                 <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1479,6 +1479,9 @@ Cg
                             <constraint firstItem="q9C-yJ-cc0" firstAttribute="leading" secondItem="M3U-f6-kWu" secondAttribute="leading" id="u9D-fd-OLA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="q9C-yJ-cc0" id="aVE-eS-J6o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxN-Sz-xsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
