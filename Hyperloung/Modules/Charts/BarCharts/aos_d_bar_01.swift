@@ -14,6 +14,11 @@ class aos_d_bar_01: UIView {
         
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupUI()

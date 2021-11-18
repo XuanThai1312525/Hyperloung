@@ -11,6 +11,12 @@ import Charts // You need this line to be able to use Charts Library
 
 
 class aos_ma_line_03: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         

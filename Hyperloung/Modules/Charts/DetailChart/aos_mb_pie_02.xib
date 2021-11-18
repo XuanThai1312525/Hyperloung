@@ -8,15 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="aos_mb_pie_02" customModule="Hyperloung" customModuleProvider="target">
-            <connections>
-                <outlet property="chartDescriptionCollectionview" destination="UdJ-Rk-edL" id="K5R-T2-Qvi"/>
-                <outlet property="circleChartView" destination="hse-oM-kAk" id="9ga-yM-MEo"/>
-                <outlet property="view" destination="iN0-l3-epB" id="pM1-jh-yDY"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="aos_mb_pie_02" customModule="Hyperloung" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="466" height="433"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -107,6 +101,10 @@ Cg
                 <constraint firstItem="3zn-Ej-NI5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yDw-12-yo3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="chartDescriptionCollectionview" destination="UdJ-Rk-edL" id="NoS-s6-Y46"/>
+                <outlet property="circleChartView" destination="hse-oM-kAk" id="YRj-dm-7JT"/>
+            </connections>
             <point key="canvasLocation" x="-46.376811594202906" y="-53.236607142857139"/>
         </view>
     </objects>

@@ -9,7 +9,6 @@ import UIKit
 import Charts
 
 class aos_mb_pie_03: UIView {
-    @IBOutlet var view: UIView!
     @IBOutlet weak var chartDescriptionCollectionview: UICollectionView!
     @IBOutlet weak var circleChartView: HyperCircleChartView!
     
@@ -20,16 +19,21 @@ class aos_mb_pie_03: UIView {
         HyperCircleData(value: 0.10, color: #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1), description: "기타"),
     ]
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        Bundle.main.loadNibNamed("aos_mb_pie_03", owner: self, options: nil)
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.fullscreen()
-        layoutIfNeeded()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setupView()
-        }
+//        Bundle.main.loadNibNamed("aos_mb_pie_03", owner: self, options: nil)
+//        addSubview(view)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.fullscreen()
+//        layoutIfNeeded()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.setupView()
+//        }
     }
     
     func setupView() {

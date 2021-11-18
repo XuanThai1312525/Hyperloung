@@ -6,32 +6,172 @@
 //
 
 import UIKit
-
+enum ChartType {
+    case dataType(Int), messageTypeB(Int)
+}
 class DemoViewController: UIViewController {
     @IBOutlet var containerView: UIView!
+    var chartType: ChartType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        insertChartView_aos_d_bar_04()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showView()
     }
 
-
-    func insertChartView_aos_d_bar_04() {
-        let barChartView = VerticalStackBarChart(frame: CGRect(x: 50, y: 60, width: 400, height: 300))
-        barChartView.clipsToBounds = false
-        containerView.addSubview(barChartView)
-        barChartView.fullscreen()
-        
-        let chartVisual: StackBarChartVisual = StackBarChartVisual(space: 50, width: 8, bottomTitleSpace: 0)
-        barChartView.setStackBarChartVisual(chartVisual)
-        
-        var chartItems: [StackBarChartItemData] = []
-        let barVisual: StackBarVisual = StackBarVisual(radius: 4, normalColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), highlightColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), normalTextColor: #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1), highlightTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1))
-        chartItems.append(StackBarChartItemData(stackItems: [StactBarItem(color: #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1), value: 25.0), StactBarItem(color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), value: 6.0), StactBarItem(color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), value: 7.0)], title: "10울산", valueTitle: "5공식", value: 2.3, barVisual: barVisual))
-        chartItems.append(StackBarChartItemData(stackItems: [StactBarItem(color: #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1), value: 8.0), StactBarItem(color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), value: 9.0), StactBarItem(color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), value: 10.0)],title: "8울산", valueTitle: "15공식", value: 30.0, isHighlight: true, barVisual: barVisual))
-        chartItems.append(StackBarChartItemData(stackItems: [StactBarItem(color: #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1), value: 11.0), StactBarItem(color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), value: 12.0), StactBarItem(color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), value: 13.0)], title: "6울산", valueTitle: "45공식", value: 30.0, barVisual: barVisual))
-        chartItems.append(StackBarChartItemData(stackItems: [StactBarItem(color: #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1), value: 14.0), StactBarItem(color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), value: 5.0), StactBarItem(color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), value: 6.0)], title: "9울산", valueTitle: "75공식", value: 26.0, barVisual: barVisual))
-
-        barChartView.setChartItems(items: chartItems)
+    private func showView() {
+        switch chartType {
+        case let.dataType(number):
+            showDataType(number: number)
+        case let .messageTypeB(number):
+            showMessageTypeB(number: number)
+            
+        case .none:
+            break
+        }
     }
+    
+    private func showDataType(number: Int) {
+        switch number {
+        case 0:
+            let bar_01: aos_d_bar_01 = .fromNib()
+            view.addSubview(bar_01)
+            bar_01.setHeight(292).setWidth(view.frame.width)
+        case 1:
+            let bar_01: aos_d_bar_02 = .fromNib()
+            view.addSubview(bar_01)
+            bar_01.setHeight(292).setWidth(view.frame.width)
+        case 2:
+            let bar_01: aos_d_bar_03 = .fromNib()
+            view.addSubview(bar_01)
+            bar_01.setHeight(292).setWidth(view.frame.width)
+        case 3:
+            let bar_01: aos_d_bar_04 = .fromNib()
+            view.addSubview(bar_01)
+            bar_01.setHeight(292).setWidth(view.frame.width)
+        case 4:
+            let bar_01: aos_d_bar_05 = aos_d_bar_05(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
+            view.addSubview(bar_01)
+            bar_01.setHeight(200).setWidth(view.frame.width)
+        case 5:
+            let bar_01: aos_d_bar_06 = .fromNib()
+            view.addSubview(bar_01)
+            bar_01.setHeight(292).setWidth(view.frame.width)
+        case 6:
+            let bar_01: aos_d_bar_07 = .fromNib()
+            view.addSubview(bar_01)
+            bar_01.setHeight(292).setWidth(view.frame.width)
+        
+        case 7:
+            let bar_01: aos_d_bar_08 = aos_d_bar_08(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
+            view.addSubview(bar_01)
+            bar_01.setHeight(200).setWidth(view.frame.width)
+            
+        case 8:
+            let pie01: aos_mb_pie_02 = .fromNib()
+            view.addSubview(pie01)
+            pie01.setHeight(200).setWidth(view.frame.width)
+            
+        case 9:
+            let pie02: aos_mb_pie_01 = .fromNib()
+            view.addSubview(pie02)
+        case 10:
+            let pie02: aos_d_line_01 = aos_d_line_01(frame:CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
+            view.addSubview(pie02)
+            
+        case 11:
+            let pie02: aos_d_line_02 = aos_d_line_02(frame:CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
+            view.addSubview(pie02)
+            
+        default:
+            break
+        }
+    }
+    
+    private func showMessageTypeB(number: Int) {
+        switch number {
+        case 0:
+            let mb_bar_01: aos_mb_bar_01_ = .fromNib()
+            view.addSubview(mb_bar_01)
+            mb_bar_01.setHeight(292)
+        case 1:
+            let mb_bar_02: aos_mb_bar_02_ = .fromNib()
+            view.addSubview(mb_bar_02)
+            mb_bar_02.setHeight(292)
+        case 2:
+            let mb_bar_03: aos_mb_bar_03_ = .fromNib()
+            view.addSubview(mb_bar_03)
+            mb_bar_03.setHeight(292)
+        case 3:
+            let mb_bar_04: aos_mb_bar_04_ = .fromNib()
+            view.addSubview(mb_bar_04)
+            mb_bar_04.setHeight(292)
+        case 4:
+            let aos_mb_bar_05: aos_mb_bar_05 = .fromNib()
+            view.addSubview(aos_mb_bar_05)
+            aos_mb_bar_05.setHeight(292)
+        case 5:
+            let aos_mb_bar_06: aos_mb_bar_06 = .fromNib()
+            view.addSubview(aos_mb_bar_06)
+            aos_mb_bar_06.setHeight(292)
+        case 6:
+            let horizontalLineView: HyperHorizontalLineChartView = .fromNib()
+            view.addSubview(horizontalLineView)
+            horizontalLineView.setHeight(120).setWidth(view.frame.width)
+        
+        case 7:
+            let hyperCircleChartView = HyperCircleChartView(frame: CGRect(x: 0, y: 10, width: 200, height: 200))
+            view.addSubview(hyperCircleChartView)
+            hyperCircleChartView.datasource = self
+            hyperCircleChartView.drawChart()
+            
+        case 8:
+            let circle: aos_mb_pie_03 = .fromNib()
+            view.addSubview(circle)
+            circle.setWidth(view.frame.size.width).setHeight(200)
+        case 9:
+            let line = aos_d_line_01(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
+            view.addSubview(line)
+        case 10:
+            let line = aos_d_line_02(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
+            view.addSubview(line)
+        case 11:
+            let line = aos_ma_line_03(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
+            view.addSubview(line)
+        case 12:
+            let line = aos_ma_line_04(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
+            view.addSubview(line)
+        default:
+            break
+        }
+        
+    }
+}
+
+extension DemoViewController: HyperCircleDataSource {
+    var dataSet: [HyperCircleData] {
+            [HyperCircleData(value: 68, color: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)),
+            HyperCircleData(value: 32, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1))]
+    }
+    
+    func description(of data: HyperCircleData) -> String {
+        ""
+    }
+    
+    var lineWidth: CGFloat {
+        return 10
+    }
+    
+    var tooltip: NSAttributedString? {
+        nil
+    }
+    
+    var centerTextAppearnce: HyperCircleCenterTextAppearance? {
+        return  HyperCircleCenterTextAppearance(prefix: "68%", suffix: "", prefixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), suffixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), prefixFont: FontFamily.customFont.displayFontWithSize(24, attributeType: .bold), suffixFont: FontFamily.customFont.displayFontWithSize(16, attributeType: .light))
+    }
+    
+    
 }

@@ -16,6 +16,7 @@ extension UIViewController {
              is MainReportViewController.Type,
              is DetailReportViewController.Type,
              is UserInfoBasViewController.Type,
+             is DemoViewController.Type,
              is HomeViewController.Type:
             sb = UIStoryboard.main
             

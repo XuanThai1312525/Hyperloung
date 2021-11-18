@@ -15,6 +15,11 @@ class aos_d_line_01: UIView {
         self.setupUI()
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
     func setupUI() {
         let chartView: HyperLineChartView = .fromNib()
         

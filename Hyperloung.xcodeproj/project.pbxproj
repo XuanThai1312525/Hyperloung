@@ -61,6 +61,7 @@
 		9464C2172728003D0048CB98 /* ReportPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9464C2162728003D0048CB98 /* ReportPanelView.xib */; };
 		9464C219272803A00048CB98 /* ReportPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464C218272803A00048CB98 /* ReportPanelView.swift */; };
 		9464C21B27280A3F0048CB98 /* DetailReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464C21A27280A3F0048CB98 /* DetailReportTableViewCell.swift */; };
+		948AC3632745DE6A00F67A8D /* ChartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AC3622745DE6A00F67A8D /* ChartListViewController.swift */; };
 		949EA6942737E76E009C75EE /* aos_mb_pie_01.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949EA6932737E76E009C75EE /* aos_mb_pie_01.xib */; };
 		949EA69627381ED6009C75EE /* aos_d_bar_05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949EA69527381ED6009C75EE /* aos_d_bar_05.swift */; };
 		94BC75BE2726A07B00018C26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC75BD2726A07B00018C26 /* AppDelegate.swift */; };
@@ -186,6 +187,7 @@
 		9464C2162728003D0048CB98 /* ReportPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportPanelView.xib; sourceTree = "<group>"; };
 		9464C218272803A00048CB98 /* ReportPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPanelView.swift; sourceTree = "<group>"; };
 		9464C21A27280A3F0048CB98 /* DetailReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportTableViewCell.swift; sourceTree = "<group>"; };
+		948AC3622745DE6A00F67A8D /* ChartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListViewController.swift; sourceTree = "<group>"; };
 		949EA6932737E76E009C75EE /* aos_mb_pie_01.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = aos_mb_pie_01.xib; sourceTree = "<group>"; };
 		949EA69527381ED6009C75EE /* aos_d_bar_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aos_d_bar_05.swift; sourceTree = "<group>"; };
 		94AC0B30F095358F710673B6 /* Pods-Hyperloung-HyperloungUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hyperloung-HyperloungUITests/Pods-Hyperloung-HyperloungUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				944CC8EC27284BC90016398D /* BarCharts */,
 				944CC8EA2728471D0016398D /* ReportChartViewController.swift */,
 				85339575273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift */,
+				948AC3622745DE6A00F67A8D /* ChartListViewController.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 				94BC75EF2726B41A00018C26 /* AppManager.swift in Sources */,
 				9464C1F62726FD7C0048CB98 /* SummaryReportView.swift in Sources */,
 				85339576273838F6008470E6 /* ReportChartViewController+AddDemoBarChart.swift in Sources */,
+				948AC3632745DE6A00F67A8D /* ChartListViewController.swift in Sources */,
 				85339570273838B2008470E6 /* VeriticalBarGroupChartView.swift in Sources */,
 				855E1AB52739B7BC00B3C03D /* aos_mb_bar_03_.swift in Sources */,
 				FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */,

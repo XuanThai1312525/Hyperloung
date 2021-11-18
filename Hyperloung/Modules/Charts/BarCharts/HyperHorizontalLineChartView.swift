@@ -8,21 +8,25 @@
 import UIKit
 
 class HyperHorizontalLineChartView: UIView {
-    @IBOutlet var view: UIView!
     @IBOutlet weak var ucRowView: HyperRowView!
     @IBOutlet weak var firstRowView: HyperRowView!
     @IBOutlet weak var secondRowView: HyperRowView!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        Bundle.main.loadNibNamed("HyperHorizontalLineChartView", owner: self, options: nil)
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.fullscreen()
-        layoutIfNeeded()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.bindingUI()
-        }
+//        Bundle.main.loadNibNamed("HyperHorizontalLineChartView", owner: self, options: nil)
+//        addSubview(view)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.fullscreen()
+//        layoutIfNeeded()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.bindingUI()
+//        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        bindingUI()
     }
     
     func bindingUI() {

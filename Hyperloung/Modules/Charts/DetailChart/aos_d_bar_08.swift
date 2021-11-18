@@ -29,6 +29,20 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
     
     let values: [ChartBar08] = ChartBar08.default.reversed()
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        chart = HorizontalBarChartView(frame: bounds)
+        addSubview(chart)
+        chart.fullscreen()
+        updateCharts()
+        configureCharts()
+
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -23,14 +23,25 @@ class aos_mb_pie_02: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        Bundle.main.loadNibNamed("aos_mb_pie_02", owner: self, options: nil)
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.fullscreen()
-        layoutIfNeeded()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setupView()
-        }
+//        Bundle.main.loadNibNamed("aos_mb_pie_02", owner: self, options: nil)
+//        addSubview(view)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.fullscreen()
+//        layoutIfNeeded()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.setupView()
+//        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
     }
     
     func setupView() {

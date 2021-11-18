@@ -11,7 +11,6 @@ import Charts
 class aos_mb_pie_01: UIView {
     @IBOutlet var circleChartView: HyperCircleChartView!
     @IBOutlet weak var descriptionView: UIView!
-    @IBOutlet var view: UIView!
     
     var descriptionStackView = UIStackView()
     
@@ -19,22 +18,26 @@ class aos_mb_pie_01: UIView {
         HyperCircleData(value: 134, color: #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1), percent: 45, description: "매출이익"),
         HyperCircleData(value: 212, color: #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), percent: 55, description: "영업이익")
     ]
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        Bundle.main.loadNibNamed("aos_mb_pie_01", owner: self, options: nil)
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.fullscreen()
-        layoutIfNeeded()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setupView()
-        }
+    }
+    
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//        Bundle.main.loadNibNamed("aos_mb_pie_01", owner: self, options: nil)
+//        addSubview(view)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.fullscreen()
+//        layoutIfNeeded()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.setupView()
+//        }
+//    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
     }
     
     private func setupView() {
