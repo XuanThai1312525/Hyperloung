@@ -57,6 +57,11 @@ class aos_d_bar_05: UIView, ChartViewDelegate {
         chartDataSet.valueFont = FontFamily.customFont.displayFontWithSize(10, attributeType: .bold)
         chartDataSet.drawValuesEnabled = true
         chartDataSet.valueFormatter = Chartd_05ValueFormater()
+        chartDataSet.highlightEnabled = false
+        chartView.doubleTapToZoomEnabled = false
+        chartView.pinchZoomEnabled = false
+        chartView.scaleXEnabled = false
+        chartView.scaleYEnabled = false
         let chartData = BarChartData(dataSet: chartDataSet)
         chartData.barWidth = 0.17
         chartView.data = chartData
