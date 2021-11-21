@@ -104,6 +104,7 @@
 		FD49EDC8273AB3F30021AFAC /* aos_mb_pie_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49EDC6273AB3F30021AFAC /* aos_mb_pie_03.swift */; };
 		FD7460362732B00B00084D14 /* aos_ma_line_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460332732B00B00084D14 /* aos_ma_line_03.swift */; };
 		FD7460382732B00B00084D14 /* aos_ma_line_04.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7460352732B00B00084D14 /* aos_ma_line_04.swift */; };
+		FD7569042747D58900911EF0 /* line04.json in Resources */ = {isa = PBXBuildFile; fileRef = FD7569022747D43900911EF0 /* line04.json */; };
 		FDB1410B2733076D00E5CF74 /* CircleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB141092733076C00E5CF74 /* CircleInfoView.xib */; };
 		FDB1410C2733076D00E5CF74 /* CircleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB1410A2733076D00E5CF74 /* CircleInfoView.swift */; };
 		FDB1410E27330B8A00E5CF74 /* HyperLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB1410D27330B8A00E5CF74 /* HyperLineChartView.swift */; };
@@ -240,6 +241,7 @@
 		FD49EDC6273AB3F30021AFAC /* aos_mb_pie_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_mb_pie_03.swift; sourceTree = "<group>"; };
 		FD7460332732B00B00084D14 /* aos_ma_line_03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_03.swift; sourceTree = "<group>"; };
 		FD7460352732B00B00084D14 /* aos_ma_line_04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aos_ma_line_04.swift; sourceTree = "<group>"; };
+		FD7569022747D43900911EF0 /* line04.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = line04.json; sourceTree = "<group>"; };
 		FDB141092733076C00E5CF74 /* CircleInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleInfoView.xib; sourceTree = "<group>"; };
 		FDB1410A2733076D00E5CF74 /* CircleInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleInfoView.swift; sourceTree = "<group>"; };
 		FDB1410D27330B8A00E5CF74 /* HyperLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperLineChartView.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				FD00F55927348BD400181CC3 /* aos_d_line_01.swift */,
 				FDBDDB5B27370AC800406543 /* aos_mb_line_02.swift */,
 				94FA5C3C2736B20E00AEF0AC /* aos_d_bar_08.swift */,
+				FD7569022747D43900911EF0 /* line04.json */,
 			);
 			path = DetailChart;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				855E1A932739A4C800B3C03D /* aos_d_bar_06.xib in Resources */,
 				94BC76112726C27A00018C26 /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				949EA6942737E76E009C75EE /* aos_mb_pie_01.xib in Resources */,
+				FD7569042747D58900911EF0 /* line04.json in Resources */,
 				855E1AAF2739B70900B3C03D /* aos_mb_bar_02_.xib in Resources */,
 				855E1A8327399AC600B3C03D /* aos_d_bar_04.xib in Resources */,
 				9464C1FB2727A2E70048CB98 /* BottomBar.xib in Resources */,
