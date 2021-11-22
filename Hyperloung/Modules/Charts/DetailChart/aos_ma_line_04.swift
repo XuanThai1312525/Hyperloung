@@ -34,9 +34,9 @@ class aos_ma_line_04: UIView {
         let defaultHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10)
         
         let lineDashHyperLineDataSetAppearance = HyperLineDataSetAppearance(selectedValueColor: "#222222".color, selectedValueRoundColor:  "#DDDDDD".color, circleHoleColor: "#FFFFFF".color, circleRadius: 4, circleHoleRadius: 2, lineWidth: 3, tooltipPadding: 10, bottomValueToCircle: 10, lineDashAppearance: HyperLineDataDashAppearance(lineDashLengths: [2,3]))
-        var aboveData: [HyperLineData] = []
+        var nomalLineData: [HyperLineData] = []
         
-        var belowData: [HyperLineData] = []
+        var dashLineData: [HyperLineData] = []
         
         jsonResult.forEach { dic in
             let x = dic["x"]
@@ -46,21 +46,21 @@ class aos_ma_line_04: UIView {
             
             let aboveValue = Double(values.first!)
             if aboveValue == 0 {
-                aboveData.append(HyperLineData(value: aboveValue, label: "억", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false, isShowMark: false)))
+                nomalLineData.append(HyperLineData(value: aboveValue, label: "억", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false, isShowMark: false)))
             } else if !label.isEmpty {
-                aboveData.append(HyperLineData(value: aboveValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true, isShowMark: true, isHightLight: true)))
+                nomalLineData.append(HyperLineData(value: aboveValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true, isShowMark: true, isHightLight: true)))
             } else {
-                aboveData.append(HyperLineData(value: aboveValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false, isShowValue: false)))
+                nomalLineData.append(HyperLineData(value: aboveValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false, isShowValue: false)))
             }
             
             let belowValue = Double(values.last!)
-            belowData.append(HyperLineData(value: belowValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:   UIColor.clear, lineColor: "#EEEEEE".color,isShowCircle: false)))
+            dashLineData.append(HyperLineData(value: belowValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:   UIColor.clear, lineColor: "#EEEEEE".color,isShowCircle: false)))
             
         }
         
         let lineData = [
-            HyperLineChartDataSet(data: aboveData, appearance: defaultHyperLineDataSetAppearance),
-            HyperLineChartDataSet(data: belowData, appearance: lineDashHyperLineDataSetAppearance)
+            HyperLineChartDataSet(data: dashLineData, appearance: lineDashHyperLineDataSetAppearance),
+            HyperLineChartDataSet(data: nomalLineData, appearance: defaultHyperLineDataSetAppearance)
         ]
         
         
