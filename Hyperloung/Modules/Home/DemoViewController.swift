@@ -133,10 +133,10 @@ class DemoViewController: UIViewController {
             view.addSubview(circle)
             circle.setWidth(view.frame.size.width).setHeight(200)
         case 9:
-            let line = aos_d_line_01(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
+            let line = aos_ma_line_01(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
             view.addSubview(line)
         case 10:
-            let line = aos_d_line_02(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
+            let line = aos_ma_line_02(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
             view.addSubview(line)
         case 11:
             let line = aos_ma_line_03(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
