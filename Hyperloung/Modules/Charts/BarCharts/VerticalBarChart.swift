@@ -87,7 +87,6 @@ class VeritalBarChartView: UIView {
     
     func setChartVisual(_ visual: ChartVisual) {
         self.visual = visual
-        chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
         updateChartViewSize()
     }
     
@@ -116,6 +115,7 @@ class VeritalBarChartView: UIView {
         var yVals: [BarChartDataEntry] = []
         var index:Double = 0
         var highLight: Highlight?
+        
         items.forEach { item in
             let data = BarChartDataEntry(x: index, y: item.value , data: item)
             yVals.append(data)
@@ -125,10 +125,21 @@ class VeritalBarChartView: UIView {
             }
             
             index += 1
+            
+            if chartView.leftAxis.axisMinimum > item.value {
+                chartView.leftAxis.axisMinimum = item.value
+            }
+            
+            if chartView.leftAxis.axisMaximum < item.value {
+                chartView.leftAxis.axisMaximum = item.value
+            }
         }
         
         chartView.xAxis.valueFormatter = VerticalBarXAxisLabelFormatter(barItems: items)
         chartView.xAxis.setLabelCount(numOfBar, force: false)
+        // set bottom item titles
+        chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
+        chartView.setExtraOffsets(left: 0, top: 20, right: 0, bottom: 0)
 
         let dataSet: HyperChartBaseDataSet = HyperChartBaseDataSet(entries: yVals, label: "Hi Legend ")
         dataSet.colors = [.black, .green, .gray] // array always have more than 1 item so "color(atIndex index: Int)" to be called
@@ -152,10 +163,14 @@ class VeritalBarChartView: UIView {
         if let highLight = highLight{
             //5 is value for display above or bellow
             chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
-            chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: visual.fontForHighlightValueLabel, bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color))
+            chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: visual.fontForHighlightValueLabel, bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color), chartView: chartView)
             dataSet.valueSpacing = 15
             chartView.highlightValue(highLight)
+            
+            chartView.xAxis.yOffset = highLight.y < 0 ? visual.bottomTitleSpace + 40 : visual.bottomTitleSpace
         }
+        
+        
     }
     
     
@@ -209,9 +224,7 @@ class VeritalBarChartView: UIView {
         xAxis.labelPosition = .bottom
         xAxis.labelTextColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
         xAxis.labelFont = visual.fontForXaxisLabel
-        
-        // set bottom item titles
-        chartView.xAxis.yOffset = visual.bottomTitleSpace // spacing bottom  bar title - bar rect
+
         
     }
         
@@ -340,9 +353,11 @@ struct IMarkerConfig {
 class HyperMarker: IMarker {
     var selectedEntry: ChartDataEntry?
     var config: IMarkerConfig
+    weak var chartView: ChartViewBase?
     
-    init(config: IMarkerConfig) {
+    init(config: IMarkerConfig, chartView: ChartViewBase) {
         self.config = config
+        self.chartView = chartView
     }
     
     
@@ -353,28 +368,26 @@ class HyperMarker: IMarker {
     }
     
     func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
-        
+        selectedEntry = entry
     }
     
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
+        let isNegativeValue = selectedEntry!.x > 0
         let selectedStringWidth = config.label.widthOfString(usingFont: config.selectedLabelFont)
         let spacing: CGFloat = 10
-        let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-        let y: CGFloat = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/2
         let roundWidth: CGFloat = selectedStringWidth + spacing*2
         let roundHeight: CGFloat = config.selectedLabelFont.lineHeight + spacing
+        
+        let negativeValueY = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/2
+        let positiveValueY = (selectedEntry?.yPos ?? 0) - spacing/2
+        
+        
+        let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
+        let y: CGFloat = isNegativeValue ? negativeValueY :  positiveValueY
+        
         let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
         
-        //Dash line
-//        let lineDashPath = UIBezierPath()
-//        lineDashPath.move(to:  CGPoint(x: x, y: point.y+20))
-//        lineDashPath.addLine(to: CGPoint(x: x + roundWidth, y: point.y+20))
-//        context.addPath(lineDashPath.cgPath)
-//        context.setLineWidth(1)
-//        context.setStrokeColor(config.selectedValueRoundColor.cgColor)
-//        context.setLineDash(phase: 0, lengths: [2,3])
-//        context.strokePath()
         
         //Round
         context.setShadow(offset: CGSize(width: 1, height: 0.5), blur: 1,color:#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor)
@@ -382,15 +395,16 @@ class HyperMarker: IMarker {
         context.addPath(roundPath)
         context.setLineWidth(0.5)
         context.setStrokeColor(config.selectedValueRoundColor.cgColor)
-        
+
         //Rectangle
-        let rectangleRect = CGRect(x: x+roundWidth/3, y: y+roundHeight, width: roundWidth/3, height: roundHeight/4)
-        let rectanglePath = createRectanglePath(roundRect: rectangleRect).cgPath
+        let rectY = isNegativeValue ? y+roundHeight : y
+        let rectangleRect = CGRect(x: x+roundWidth/3, y: rectY, width: roundWidth/3, height: roundHeight/4)
+        let rectanglePath = createRectanglePath(roundRect: rectangleRect, isArrowTop: isNegativeValue).cgPath
         context.addPath(rectanglePath)
         context.setLineWidth(0.5)
         context.setStrokeColor(config.selectedValueRoundColor.cgColor)
         context.strokePath()
-        
+
         //Clear round color
         let path = UIBezierPath()
         path.move(to:  CGPoint(x: rectangleRect.maxX-1, y: rectangleRect.minY))
@@ -400,17 +414,17 @@ class HyperMarker: IMarker {
         context.setShadow(offset: CGSize(width: 1, height: 1), blur: 1,color: UIColor.white.cgColor)
         context.setStrokeColor(UIColor.white.cgColor)
         context.strokePath()
-        
+
         context.closePath()
 
     }
     
     
     
-    func createRectanglePath(roundRect: CGRect) -> UIBezierPath{
+    func createRectanglePath(roundRect: CGRect, isArrowTop: Bool = true) -> UIBezierPath{
         let trianglePath = UIBezierPath()
         trianglePath.move(to: CGPoint(x: roundRect.minX, y: roundRect.minY))
-        trianglePath.addLine(to: CGPoint(x: roundRect.midX, y: roundRect.maxY))
+        trianglePath.addLine(to: CGPoint(x: roundRect.midX, y: isArrowTop ? roundRect.maxY : roundRect.minY-(roundRect.maxY-roundRect.minY)))
         trianglePath.addLine(to: CGPoint(x: roundRect.maxX, y: roundRect.minY))
     
         trianglePath.close()

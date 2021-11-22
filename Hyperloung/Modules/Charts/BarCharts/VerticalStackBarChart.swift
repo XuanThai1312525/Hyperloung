@@ -151,7 +151,12 @@ class VerticalStackBarChart: UIView {
             let data = BarChartDataEntry(x: index, yValues: item.stackItems.map({ $0.value }), data: item)
             yVals.append(data)
             index += 1
+            
+            if chartView.leftAxis.axisMinimum < item.value {
+                chartView.leftAxis.axisMinimum = item.value
+            }
         }
+    
 
         chartView.xAxis.valueFormatter = VerticalStackBarValueFormatter(barItems: items) as! IAxisValueFormatter
         chartView.xAxis.setLabelCount(numOfBar, force: false)
@@ -192,7 +197,6 @@ class VerticalStackBarChart: UIView {
         chartView.drawValueAboveBarEnabled = true
         chartView.highlightFullBarEnabled = false
         chartView.leftAxis.enabled = false
-        chartView.leftAxis.axisMinimum = 0
         chartView.rightAxis.enabled = false
         
         let xAxis = chartView.xAxis

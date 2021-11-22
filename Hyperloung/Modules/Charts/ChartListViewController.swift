@@ -58,12 +58,14 @@ extension ChartListViewController: UITableViewDelegate, UITableViewDataSource {
     private func showDetailMessageOfTypeB(number: Int) {
         let vc = UIViewController.make(DemoViewController.self)
         vc.chartType = .messageTypeB(number)
+        vc.chartTitle = messageTypeB[number]
         self.present(vc, animated: false, completion: nil)
     }
     
     private func showDetailMessageOfDataType(number: Int) {
         let vc = UIViewController.make(DemoViewController.self)
         vc.chartType = .dataType(number)
+        vc.chartTitle = dataTypeData[number]
         self.present(vc, animated: false, completion: nil)
     }
     
