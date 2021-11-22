@@ -10,9 +10,9 @@ import UIKit
 class ChartListViewController: BaseViewController {
     @IBOutlet weak var chartTableView: UITableView!
     var sessionTitles: [String] = ["DataType", "MessageTypeB"]
-    var dataTypeData: [String] = ["d_bar_01", "d_bar_02", "d_bar_03", "d_bar_04", "d_bar_05", "d_bar_06", "d_bar_07", "d_bar_08", "pie_01", "pie_02", "line_01", "line_02"]
+    var dataTypeData: [String] = ["d_bar_01", "d_bar_02", "d_bar_03", "d_bar_04", "d_bar_05", "d_bar_06", "d_bar_07", "d_bar_08", "d_pie_01", "d_pie_02", "d_line_01", "d_line_02"]
     
-    var messageTypeB: [String] = ["aos_d_bar_01", "aos_d_bar_02", "aos_d_bar_03", "aos_d_bar_04", "aos_d_bar_05", "aos_d_bar_06", "aos_d_bar_07", "aos_d_pie_01", "aos_d_pie_02", "aos_d_line_01", "aos_d_line_02", "aos_d_line_03", "aos_d_line_04"]
+    var messageTypeB: [String] = [" mb_bar_01", " mb_bar_02", " mb_bar_03", " mb_bar_04", " mb_bar_05", " mb_bar_06", " mb_bar_07", "mb_pie_01", "mb_pie_02", "mb_line_01", "mb_line_02", "mb_line_03", "mb_line_04"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
