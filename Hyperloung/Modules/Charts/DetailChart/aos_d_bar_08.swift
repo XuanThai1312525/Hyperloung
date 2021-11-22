@@ -70,12 +70,12 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         chartMain.barWidth = 0.3
 
         chartMain.addDataSet(chartDataSet)
-        chart.animate(yAxisDuration: 0.5)
+//        chart.animate(yAxisDuration: 0.5)
+
         chart.data = chartMain
     }
 
     func configureCharts() {
-
         chart.xAxis.drawAxisLineEnabled = false
         chart.xAxis.labelPosition = .bottom
         chart.xAxis.valueFormatter = IndexAxisValueFormatter(values: values.map({$0.title}))
@@ -94,7 +94,7 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         chart.rightAxis.axisMaximum = 0.0
         chart.rightAxis.enabled = true
 //        chart.xAxis.yOffset = 100
-        chart.xAxis.xOffset = 4
+//        chart.leftAxis.offse = 4
         chart.rightAxis.enabled = false
         chart.legend.enabled = false
         chart.leftAxis.drawAxisLineEnabled = false
