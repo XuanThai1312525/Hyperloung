@@ -13,6 +13,10 @@ struct HyperLineData {
     var value: Double
     var label: String
     var appearance: HyperLineDataAppearance
+    
+    mutating func setValue(value: Double) {
+        self.value = value
+    }
 }
 
 struct HyperLineDataAppearance {
@@ -68,6 +72,7 @@ struct HyperLineAppearance {
     var font: UIFont
     var highLightValueFont: UIFont
     var xAxisLabelColor: UIColor
+    var xAxisLabelFont: UIFont! = UIFont.normal(size: 13)
    
     var lineMode: LineChartDataSet.Mode
     var getValueFormatter: ([HyperLineData]) -> IValueFormatter
@@ -191,6 +196,8 @@ class HyperLineChartView: UIView , ChartViewDelegate{
 
         
         chartView.xAxis.valueFormatter = appearance.xAxisFormatter
+        chartView.xAxis.labelFont = appearance.xAxisLabelFont
+        chartView.xAxis.axisMaxLabels = xAxisData.count
         chartView.xAxis.labelPosition = .bottom
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.xAxis.avoidFirstLastClippingEnabled = true
@@ -314,6 +321,7 @@ class HyperLineMarker: IMarker {
     var label: String?
     var isShowMark: Bool = false
     weak var chartView: ChartViewBase?
+    var formatter: IValueFormatter!
     
     init(config: HyperLineChartConfig, chartView: ChartViewBase ) {
         self.config = config
@@ -333,7 +341,8 @@ class HyperLineMarker: IMarker {
         let index: Int = dataSets?.firstIndex{$0.entryIndex(entry: entry) >= 0} ?? 0
         let selectedDataSet = config.dataSets[index]
         if selectedDataSet.data.count > Int(entry.x), let hyperLineData = selectedDataSet.data[Int(entry.x)] as? HyperLineData{
-            label = Formattor.getValueDescription(hyperLineData.value, hyperLineData.label)
+            formatter = config.appearance.getValueFormatter(selectedDataSet.data)
+            label = formatter.stringForValue(hyperLineData.value, entry: entry, dataSetIndex: index, viewPortHandler: nil)
             isShowMark = hyperLineData.appearance.isShowMark ?? hyperLineData.appearance.isShowValue ?? false
         }
         
