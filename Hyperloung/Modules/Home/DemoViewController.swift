@@ -97,6 +97,7 @@ class DemoViewController: UIViewController {
         case 9:
             let pie02: aos_mb_pie_01 = .fromNib()
             containerView.addSubview(pie02)
+            pie02.setHeight(200).setWidth(view.frame.width)
         case 10:
             let pie02: aos_d_line_01 = aos_d_line_01(frame:CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
             containerView.addSubview(pie02)
