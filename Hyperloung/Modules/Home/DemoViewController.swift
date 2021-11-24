@@ -172,7 +172,13 @@ class DemoViewController: UIViewController {
             let line = aos_ma_line_03(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
             containerView.addSubview(line)
         case 12:
+            let line = aos_ma_line_03_negative(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
+            containerView.addSubview(line)
+        case 13:
             let line = aos_ma_line_04(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
+            containerView.addSubview(line)
+        case 14:
+            let line = aos_ma_line_04_negative(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 250))
             containerView.addSubview(line)
         default:
             break
