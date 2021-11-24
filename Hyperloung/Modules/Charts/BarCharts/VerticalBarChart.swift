@@ -171,9 +171,8 @@ class VeritalBarChartView: UIView {
             
             // Add more space for tooltip in case value < 0
             chartView.xAxis.yOffset += highLight.y < 0 ? 20 : 0
-            
         }
-        
+            
     }
     
     
@@ -218,9 +217,14 @@ class VeritalBarChartView: UIView {
         chartView.leftAxis.axisLineColor = .clear
         chartView.leftAxis.drawLabelsEnabled = true // Hide label
         chartView.leftAxis.drawGridLinesEnabled = true
-        chartView.leftAxis.gridColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        chartView.leftAxis.gridColor = .clear
         chartView.leftAxis.valueFormatter = VerticalBarLeftAxisValueFormatter(unit: leftAxisUnit)
-            
+        chartView.leftAxis.labelTextColor = .clear
+        
+        chartView.leftAxis.drawZeroLineEnabled = true
+        chartView.leftAxis.zeroLineColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        chartView.leftAxis.zeroLineWidth = 1
+        
         chartView.legend.enabled = false
 
         let xAxis = chartView.xAxis
