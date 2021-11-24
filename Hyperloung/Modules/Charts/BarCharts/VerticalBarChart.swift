@@ -81,8 +81,6 @@ class VeritalBarChartView: UIView {
         var frame = chartView.frame
         frame.size.width = width
         chartView.setWidth(width)
-//        chartView.barData?.barWidth = Double(numOfBar * visual.width) / Double(width) - 0.3
-//        chartView.frame = frame
     }
     
     func setChartVisual(_ visual: ChartVisual) {
@@ -158,7 +156,11 @@ class VeritalBarChartView: UIView {
         data.setValueFont(visual.fontForValueLabel)
         data.setValueTextColor( .black)
         data.barWidth = calculateBarWidth()
-        
+
+        // Adding space for value title in case value < 0
+        let min = items.map { $0.value }.min() ?? 0
+        chartView.xAxis.yOffset += min < 0 ? visual.bottomTitleSpace + 20 : visual.bottomTitleSpace
+
         chartView.data = data
         if let highLight = highLight{
             //5 is value for display above or bellow
@@ -167,9 +169,10 @@ class VeritalBarChartView: UIView {
             dataSet.valueSpacing = 15
             chartView.highlightValue(highLight)
             
-            chartView.xAxis.yOffset = highLight.y < 0 ? visual.bottomTitleSpace + 40 : visual.bottomTitleSpace
+            // Add more space for tooltip in case value < 0
+            chartView.xAxis.yOffset += highLight.y < 0 ? 20 : 0
+            
         }
-        
         
     }
     
