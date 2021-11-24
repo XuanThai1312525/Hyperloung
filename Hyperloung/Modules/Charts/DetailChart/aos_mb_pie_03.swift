@@ -11,9 +11,20 @@ import Charts
 class aos_mb_pie_03: UIView {
     @IBOutlet weak var chartDescriptionCollectionview: UICollectionView!
     @IBOutlet weak var circleChartView: HyperCircleChartView!
-    
+    var isMinusData: Bool = false {
+        didSet {
+            setupView()
+        }
+    }
     var data = [
         HyperCircleData(value: 0.56, color: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1), description: "범례최대글자"),
+        HyperCircleData(value: 0.22, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1),  description: "범례"),
+        HyperCircleData(value: 0.12, color: #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1), description: "범례영역"),
+        HyperCircleData(value: 0.10, color: #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1), description: "기타"),
+    ]
+    
+    var minusData = [
+        HyperCircleData(value: 0.56, color: #colorLiteral(red: 0.9333333333, green: 0.1960784314, blue: 0.1411764706, alpha: 1), description: "범례최대글자"),
         HyperCircleData(value: 0.22, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1),  description: "범례"),
         HyperCircleData(value: 0.12, color: #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1), description: "범례영역"),
         HyperCircleData(value: 0.10, color: #colorLiteral(red: 0.7333333333, green: 0.7333333333, blue: 0.7333333333, alpha: 1), description: "기타"),
@@ -48,12 +59,13 @@ class aos_mb_pie_03: UIView {
 
 extension aos_mb_pie_03: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        isMinusData ? minusData.count : data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleDescriptionCollectionViewCell.identifier, for: indexPath) as! CircleDescriptionCollectionViewCell
-        cell.bindingUI(data: data[indexPath.row], showPercentage: false)
+        let d = isMinusData ? minusData[indexPath.row] : data[indexPath.row]
+        cell.bindingUI(data: d, showPercentage: false)
         return cell
     }
     
@@ -63,6 +75,14 @@ extension aos_mb_pie_03: UICollectionViewDelegate, UICollectionViewDataSource, U
 }
 
 extension aos_mb_pie_03: HyperCircleDataSource {
+    var borderColor: UIColor? {
+        nil
+    }
+    
+    var shadowColor: UIColor? {
+        nil
+    }
+    
     var centerTextAppearnce: HyperCircleCenterTextAppearance? {
         HyperCircleCenterTextAppearance(textAttributedString: NSAttributedString(string: "180억", attributes: [.foregroundColor: UIColor.black, .font: UIFont.bold(size: 22)]))
     }
@@ -73,7 +93,7 @@ extension aos_mb_pie_03: HyperCircleDataSource {
     
     
     var dataSet: [HyperCircleData] {
-        data
+        isMinusData ? minusData : data
     }
     
     func description(of data: HyperCircleData) -> String {
@@ -85,6 +105,6 @@ extension aos_mb_pie_03: HyperCircleDataSource {
     }
     
     var tooltip: NSAttributedString? {
-        NSAttributedString(string: "56%", attributes: [.foregroundColor: "#246FEE".color, .font: UIFont.bold(size: 12)])
+        NSAttributedString(string: "56%", attributes: [.foregroundColor: isMinusData ? UIColor.red : "#246FEE".color, .font: UIFont.bold(size: 12)])
     }
 }

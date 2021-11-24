@@ -74,20 +74,32 @@ class ReportChartViewController: BaseViewController {
     }
     
     private func setupView() {
-        let dataSource = HyperHandleBarChartData()
-        planChartView.datasource = dataSource
-        planChartView.internalDraw()
-
-        circleChartView2.datasource = self
-        
-        circleChartView2.drawChart()
+      
     }
 }
 
-extension ReportChartViewController: HyperCircleDataSource {
+class HyperCircleHander: HyperCircleDataSource {
+    private var isMinusData: Bool
+    init(isMinusData: Bool) {
+        self.isMinusData = isMinusData
+    }
+    
+    var borderColor: UIColor? {
+        isMinusData ? UIColor.red : #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)
+    }
+    
+    var shadowColor: UIColor? {
+        isMinusData ? UIColor.red : #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)
+    }
+    
     var dataSet: [HyperCircleData] {
-            [HyperCircleData(value: 68, color: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)),
-            HyperCircleData(value: 32, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1))]
+        if isMinusData {
+           return [HyperCircleData(value: 36, color: UIColor.red),
+            HyperCircleData(value: 64, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1))]
+        }
+        
+        return   [HyperCircleData(value: 68, color: #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)),
+                  HyperCircleData(value: 32, color: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1))]
     }
     
     func description(of data: HyperCircleData) -> String {
@@ -103,11 +115,11 @@ extension ReportChartViewController: HyperCircleDataSource {
     }
     
     var centerTextAppearnce: HyperCircleCenterTextAppearance? {
-        return  HyperCircleCenterTextAppearance(prefix: "68%", suffix: "", prefixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), suffixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), prefixFont: FontFamily.customFont.displayFontWithSize(24, attributeType: .bold), suffixFont: FontFamily.customFont.displayFontWithSize(16, attributeType: .light))
+        return  HyperCircleCenterTextAppearance(prefix: isMinusData ? "32%" : "68%", suffix: "", prefixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), suffixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), prefixFont: FontFamily.customFont.displayFontWithSize(24, attributeType: .bold), suffixFont: FontFamily.customFont.displayFontWithSize(16, attributeType: .light))
     }
     
-    
 }
+
 
 class HyperHandleBarChartData {}
 

@@ -22,6 +22,8 @@ protocol HyperCircleDataSource: AnyObject {
     var tooltip: NSAttributedString? {get}
     var centerTextAppearnce: HyperCircleCenterTextAppearance? {get}
     var isShowLegend: Bool {get}
+    var borderColor: UIColor? {get}
+    var shadowColor: UIColor? {get}
 }
 
 struct HyperCircleCenterTextAppearance {
@@ -112,7 +114,7 @@ class HyperCircleChartView: UIView {
         textLayer.alignmentMode = .center
         let shape = createShapeLayer(roundRectBez.cgPath)
         
-        shape.shadowColor = #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)
+        shape.shadowColor = datasource.borderColor?.cgColor ?? #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1).cgColor
         shape.shadowRadius = tooltipHeight/2
         shape.shadowOffset = CGSize(width: 0, height: 0.1)
         shape.shadowOpacity = 0.1
@@ -124,7 +126,7 @@ class HyperCircleChartView: UIView {
         let shape = CAShapeLayer()
         shape.path = path
         shape.fillColor = UIColor.white.cgColor
-        shape.strokeColor = #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1)
+        shape.strokeColor = datasource.borderColor?.cgColor ?? #colorLiteral(red: 0.1411764706, green: 0.4352941176, blue: 0.9333333333, alpha: 1).cgColor
         shape.lineWidth = 0.1
         return shape
     }
