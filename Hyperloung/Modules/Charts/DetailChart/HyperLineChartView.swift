@@ -241,7 +241,11 @@ class HyperLineChartView: UIView , ChartViewDelegate{
         chartView.drawMarkers = true
         chartView.marker = HyperLineMarker(config: config, chartView: chartView)
         
-        chartView.highlightValue(hightLight,callDelegate: true)
+        if let hightLight = hightLight {
+            chartView.highlightValue(hightLight,callDelegate: true)
+            chartView.xAxis.yOffset = hightLight.y > 0 ? 5 : 50
+        }
+        
     }
     
     internal func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
@@ -351,6 +355,8 @@ class HyperLineMarker: IMarker {
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
         if let selectedEntry = selectedEntry, let label = label , isShowMark {
+            let isPosValue = selectedEntry.y > 0
+            
             let appearance = config.appearance;
             let dataSets = chartView?.data!.dataSets
             let index: Int = dataSets?.firstIndex{$0.entryIndex(entry: selectedEntry) >= 0} ?? 0
@@ -368,8 +374,13 @@ class HyperLineMarker: IMarker {
             
             let selectedStringWidth = label.widthOfString(usingFont: appearance.font)
             let spacing: CGFloat = 10
+            
+            let posValueY = selectedEntry.yPos - spacing/2
+            let negValueY = selectedEntry.yPos - spacing/2
+            
+            
             let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-            let y: CGFloat = point.y - appearance.font.lineHeight - CGFloat(valOffset) -  selectedDataSetAppearance.bottomValueToCircle - spacing/2 //5 is horizontal spacing
+            let y: CGFloat = isPosValue ? posValueY :  negValueY
             let roundWidth: CGFloat = selectedStringWidth + spacing*2
             let roundHeight: CGFloat = appearance.font.lineHeight + spacing
             let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
@@ -380,8 +391,9 @@ class HyperLineMarker: IMarker {
             context.setLineWidth(0.5)
             context.setStrokeColor(selectedDataSetAppearance.selectedValueRoundColor.cgColor)
             
-            let rectangleRect = CGRect(x: x+roundWidth/3, y: y+roundHeight, width: roundWidth/3, height: roundHeight/4)
-            let rectanglePath = createRectanglePath(roundRect: rectangleRect).cgPath
+            let rectY = isPosValue ? y+roundHeight : y
+            let rectangleRect = CGRect(x: x+roundWidth/3, y:rectY, width: roundWidth/3, height: roundHeight/4)
+            let rectanglePath = createRectanglePath(roundRect: rectangleRect, isArrowTop: isPosValue).cgPath
             context.addPath(rectanglePath)
             context.setLineWidth(0.5)
             context.setStrokeColor(selectedDataSetAppearance.selectedValueRoundColor.cgColor)
@@ -404,10 +416,10 @@ class HyperLineMarker: IMarker {
         
     }
     
-    func createRectanglePath(roundRect: CGRect) -> UIBezierPath{
+    func createRectanglePath(roundRect: CGRect, isArrowTop: Bool = true) -> UIBezierPath{
         let trianglePath = UIBezierPath()
         trianglePath.move(to: CGPoint(x: roundRect.minX, y: roundRect.minY))
-        trianglePath.addLine(to: CGPoint(x: roundRect.midX, y: roundRect.maxY))
+        trianglePath.addLine(to: CGPoint(x: roundRect.midX, y: isArrowTop ? roundRect.maxY : roundRect.minY-(roundRect.maxY-roundRect.minY)))
         trianglePath.addLine(to: CGPoint(x: roundRect.maxX, y: roundRect.minY))
     
         trianglePath.close()

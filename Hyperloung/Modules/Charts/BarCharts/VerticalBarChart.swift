@@ -380,18 +380,18 @@ class HyperMarker: IMarker {
     
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
-        let isNegativeValue = selectedEntry!.x > 0
+        let isPosValue = selectedEntry!.x > 0
         let selectedStringWidth = config.label.widthOfString(usingFont: config.selectedLabelFont)
         let spacing: CGFloat = 10
         let roundWidth: CGFloat = selectedStringWidth + spacing*2
         let roundHeight: CGFloat = config.selectedLabelFont.lineHeight + spacing
         
-        let negativeValueY = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/2
-        let positiveValueY = (selectedEntry?.yPos ?? 0) - spacing/2
+        let posValueY = point.y - config.selectedLabelFont.lineHeight - config.bottomValueToCircle - spacing/2
+        let negValueY = (selectedEntry?.yPos ?? 0) - spacing/2
         
         
         let x: CGFloat  = point.x - selectedStringWidth/2 - spacing
-        let y: CGFloat = isNegativeValue ? negativeValueY :  positiveValueY
+        let y: CGFloat = isPosValue ? posValueY :  negValueY
         
         let rectFrame = CGRect(x: x, y: y, width: roundWidth, height: roundHeight)
         
@@ -404,9 +404,9 @@ class HyperMarker: IMarker {
         context.setStrokeColor(config.selectedValueRoundColor.cgColor)
 
         //Rectangle
-        let rectY = isNegativeValue ? y+roundHeight : y
+        let rectY = isPosValue ? y+roundHeight : y
         let rectangleRect = CGRect(x: x+roundWidth/3, y: rectY, width: roundWidth/3, height: roundHeight/4)
-        let rectanglePath = createRectanglePath(roundRect: rectangleRect, isArrowTop: isNegativeValue).cgPath
+        let rectanglePath = createRectanglePath(roundRect: rectangleRect, isArrowTop: isPosValue).cgPath
         context.addPath(rectanglePath)
         context.setLineWidth(0.5)
         context.setStrokeColor(config.selectedValueRoundColor.cgColor)

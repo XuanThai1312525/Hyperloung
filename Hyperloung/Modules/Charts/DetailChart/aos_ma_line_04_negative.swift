@@ -7,7 +7,7 @@
 
 import UIKit
 import Charts
-class aos_ma_line_04: UIView {
+class aos_ma_line_04_negative: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -38,24 +38,33 @@ class aos_ma_line_04: UIView {
         
         var dashLineData: [HyperLineData] = []
         
-        jsonResult.forEach { dic in
+        for var i in 0..<jsonResult.count {
+            let dic = jsonResult[i]
             let x = dic["x"]
             let y = dic["y"] as! [String:Any]
             let values = y["values"] as! [Int]
-            let label = y["label"] as! String
+            var label = y["label"] as! String
             
-            let normalValue = Double(values.first!)
+            var normalValue = Double(values.first!)
+            
+            if i > 10 {
+                normalValue = -normalValue
+            }
             if normalValue == 0 {
                 nomalLineData.append(HyperLineData(value: normalValue, label: "억", appearance: HyperLineDataAppearance(textColor:  UIColor.clear, circleColor:  UIColor.clear, lineColor: UIColor.clear,isShowCircle: false, isShowMark: false)))
             } else if !label.isEmpty {
-                nomalLineData.append(HyperLineData(value: normalValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: true, isShowValue: true, isShowMark: true, isHightLight: true)))
+                nomalLineData.append(HyperLineData(value: normalValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#ee3224".color, lineColor: "#ee3224".color, isShowCircle: true, isShowValue: true, isShowMark: true, isHightLight: true)))
             } else {
-                nomalLineData.append(HyperLineData(value: normalValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#246FEE".color, lineColor: "#246FEE".color, isShowCircle: false, isShowValue: false)))
+                nomalLineData.append(HyperLineData(value: normalValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:  "#ee3224".color, lineColor: "#ee3224".color, isShowCircle: false, isShowValue: false)))
             }
             
-            let dashValue = Double(values.last!)
-            dashLineData.append(HyperLineData(value: dashValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:   UIColor.clear, lineColor: "#EEEEEE".color,isShowCircle: false)))
+            var dashValue = Double(values.last!)
             
+            if i > 10 {
+                dashValue = -dashValue
+            }
+            
+            dashLineData.append(HyperLineData(value: dashValue, label: label, appearance: HyperLineDataAppearance(textColor:  "#DDDDDD".color, circleColor:   UIColor.clear, lineColor: "#EEEEEE".color,isShowCircle: false)))
         }
         
         let lineData = [
@@ -65,8 +74,8 @@ class aos_ma_line_04: UIView {
         
         
         let descriptions =  [
-            CircleInfoData(color: "#3557C9".color, description: "범례1"),
-            CircleInfoData(color: "#1F92E4".color, description: "범례2")
+            CircleInfoData(color: "#ee3224".color, description: "범례1"),
+            CircleInfoData(color: "#EEEEEE".color, description: "범례2")
         ]
         
         let xAxisData = (1...30).map{"\($0)"}
@@ -86,15 +95,15 @@ class aos_ma_line_04: UIView {
     }
     
     func getIAxisValueFormatter(_ data: [String]) -> IAxisValueFormatter{
-        return aos_ma_line_04DataSetIAxisValueFormatter(data: data)
+        return aos_ma_line_04_negativeDataSetIAxisValueFormatter(data: data)
     }
     
     func getValueFormatter(_ data: [HyperLineData]) -> IValueFormatter{
-        return aos_ma_line_04DataSetValueFormatter(data: data)
+        return aos_ma_line_04_negativeDataSetValueFormatter(data: data)
     }
 }
 
-class aos_ma_line_04DataSetIAxisValueFormatter: IAxisValueFormatter {
+class aos_ma_line_04_negativeDataSetIAxisValueFormatter: IAxisValueFormatter {
     let data: [String]
     
     init(data: [String]) {
@@ -113,7 +122,7 @@ class aos_ma_line_04DataSetIAxisValueFormatter: IAxisValueFormatter {
 }
 
 
-class aos_ma_line_04DataSetValueFormatter: IValueFormatter {
+class aos_ma_line_04_negativeDataSetValueFormatter: IValueFormatter {
     let data: [HyperLineData]
     
     init(data: [HyperLineData]) {
@@ -128,5 +137,14 @@ class aos_ma_line_04DataSetValueFormatter: IValueFormatter {
             print("Tesrt")
         }
         return isShowValue ? label : ""
+    }
+}
+
+
+
+extension String {
+    func toJSON() -> Any? {
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
     }
 }
