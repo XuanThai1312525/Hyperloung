@@ -59,14 +59,17 @@ class DemoViewController: UIViewController {
             let bar_01: aos_d_bar_01 = .fromNib()
             containerView.addSubview(bar_01)
             bar_01.setHeight(292).setWidth(view.frame.width)
+            bar_01.setDataMinus()
         case 1:
             let bar_01: aos_d_bar_02 = .fromNib()
             containerView.addSubview(bar_01)
             bar_01.setHeight(292).setWidth(view.frame.width)
+            bar_01.setDataMinus()
         case 2:
             let bar_01: aos_d_bar_03 = .fromNib()
             containerView.addSubview(bar_01)
             bar_01.setHeight(292).setWidth(view.frame.width)
+            bar_01.setDataMinus()
         case 3:
             let bar_01: aos_d_bar_04 = .fromNib()
             containerView.addSubview(bar_01)
@@ -79,6 +82,7 @@ class DemoViewController: UIViewController {
             let bar_01: aos_d_bar_06 = .fromNib()
             containerView.addSubview(bar_01)
             bar_01.setHeight(292).setWidth(view.frame.width)
+            bar_01.setDataMinus()
         case 6:
             let bar_01: aos_d_bar_07 = .fromNib()
             containerView.addSubview(bar_01)
@@ -117,26 +121,32 @@ class DemoViewController: UIViewController {
             let mb_bar_01: aos_mb_bar_01_ = .fromNib()
             containerView.addSubview(mb_bar_01)
             mb_bar_01.setHeight(292)
+            mb_bar_01.setDataMinus()
         case 1:
             let mb_bar_02: aos_mb_bar_02_ = .fromNib()
             containerView.addSubview(mb_bar_02)
             mb_bar_02.setHeight(292)
+            mb_bar_02.setDataMinus()
         case 2:
             let mb_bar_03: aos_mb_bar_03_ = .fromNib()
             containerView.addSubview(mb_bar_03)
             mb_bar_03.setHeight(292)
+            mb_bar_03.setDataMinus()
         case 3:
             let mb_bar_04: aos_mb_bar_04_ = .fromNib()
             containerView.addSubview(mb_bar_04)
             mb_bar_04.setHeight(292)
+            mb_bar_04.setDataMinus()
         case 4:
             let aos_mb_bar_05: aos_mb_bar_05 = .fromNib()
             containerView.addSubview(aos_mb_bar_05)
             aos_mb_bar_05.setHeight(292)
+            aos_mb_bar_05.setDataMinus()
         case 5:
             let aos_mb_bar_06: aos_mb_bar_06 = .fromNib()
             containerView.addSubview(aos_mb_bar_06)
             aos_mb_bar_06.setHeight(292)
+            aos_mb_bar_06.setDataMinus()
         case 6:
             let horizontalLineView: HyperHorizontalLineChartView = .fromNib()
             containerView.addSubview(horizontalLineView)

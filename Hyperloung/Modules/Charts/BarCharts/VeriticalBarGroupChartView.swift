@@ -163,6 +163,10 @@ class VeriticalBarGroupChartView: UIView {
         chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
         
         chartView.data = chartData
+        
+//        let min = items.map { $0.value }.min() ?? 0
+        chartView.xAxis.yOffset += visual.bottomTitleSpace + 20 //: visual.bottomTitleSpace
+
     }
 }
 

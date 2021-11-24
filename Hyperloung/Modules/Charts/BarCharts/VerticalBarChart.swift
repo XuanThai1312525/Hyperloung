@@ -350,7 +350,6 @@ public class VerticalBarLeftAxisValueFormatter: NSObject, IAxisValueFormatter {
 }
 
 
-
 struct IMarkerConfig {
     var label: String
     var selectedLabelFont: UIFont
