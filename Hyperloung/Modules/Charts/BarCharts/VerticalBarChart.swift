@@ -404,7 +404,7 @@ class HyperMarker: IMarker {
 
         //Rectangle
         let rectY = isPosValue ? y+roundHeight : y
-        let rectangleRect = CGRect(x: x+roundWidth/3, y: rectY, width: roundWidth/3, height: roundHeight/4)
+        let rectangleRect = CGRect(x: x+roundWidth*3/8, y: rectY, width: roundWidth/4, height: roundHeight/4)
         let rectanglePath = createRectanglePath(roundRect: rectangleRect, isArrowTop: isPosValue).cgPath
         context.addPath(rectanglePath)
         context.setLineWidth(0.5)
