@@ -379,7 +379,7 @@ class HyperMarker: IMarker {
     
     func draw(context: CGContext, point: CGPoint) {
         //Need to be draw arrow later on and config base on Device dimension
-        let isPosValue = selectedEntry!.x > 0
+        let isPosValue = selectedEntry!.y > 0
         let selectedStringWidth = config.label.widthOfString(usingFont: config.selectedLabelFont)
         let spacing: CGFloat = 10
         let roundWidth: CGFloat = selectedStringWidth + spacing*2

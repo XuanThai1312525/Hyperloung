@@ -70,6 +70,14 @@ extension aos_mb_pie_02: UICollectionViewDelegate, UICollectionViewDataSource, U
 }
 
 extension aos_mb_pie_02: HyperCircleDataSource {
+    var borderColor: UIColor? {
+        nil
+    }
+    
+    var shadowColor: UIColor? {
+        nil
+    }
+    
     var centerTextAppearnce: HyperCircleCenterTextAppearance? {
         HyperCircleCenterTextAppearance(prefix: "+9993", suffix: "억", prefixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), suffixColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), prefixFont: FontFamily.customFont.displayFontWithSize(24, attributeType: .bold), suffixFont: FontFamily.customFont.displayFontWithSize(16, attributeType: .light))
     }

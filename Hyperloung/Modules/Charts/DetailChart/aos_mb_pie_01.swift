@@ -59,6 +59,14 @@ class aos_mb_pie_01: UIView {
 }
 
 extension aos_mb_pie_01: HyperCircleDataSource {
+    var borderColor: UIColor? {
+        nil
+    }
+    
+    var shadowColor: UIColor? {
+        nil
+    }
+    
     
     var dataSet: [HyperCircleData] {
         data

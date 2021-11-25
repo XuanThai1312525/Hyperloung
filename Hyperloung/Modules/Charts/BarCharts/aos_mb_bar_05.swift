@@ -67,7 +67,6 @@ class aos_mb_bar_05: UIView {
         barChartView.setChartItems(items: chartItems)
 
         barChartView.setChartLines(lines: [8,18,10])
-
     }
     
     func setDataMinus() {

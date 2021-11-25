@@ -27,9 +27,6 @@ class aos_mb_bar_02_: UIView {
         chartContainerView.addSubview(barChartView)
         barChartView.centralize()
         barChartView.setHeight(190)
-        
-        barChartView.chartView.leftAxis.axisMinimum = 0
-        barChartView.barHightlighColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
 
         barChartView.chartView.leftAxis.enabled = false
         let chartVisual: ChartVisual = ChartVisual(space: 24, width: 32, bottomTitleSpace: 5)

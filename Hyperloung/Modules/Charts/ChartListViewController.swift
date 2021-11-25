@@ -10,9 +10,14 @@ import UIKit
 class ChartListViewController: BaseViewController {
     @IBOutlet weak var chartTableView: UITableView!
     var sessionTitles: [String] = ["DataType", "MessageTypeB"]
-    var dataTypeData: [String] = ["d_bar_01", "d_bar_02", "d_bar_03", "d_bar_04", "d_bar_05", "d_bar_06", "d_bar_07", "d_bar_08", "d_pie_01", "d_pie_02", "d_line_01", "d_line_02"]
+    var dataTypeData: [String] = ["d_bar_01", "d_bar_02", "d_bar_03", "d_bar_04", "d_bar_05", "d_bar_06", "d_bar_07", "d_bar_08", "d_pie_01", "d_pie_02", "d_line_01", "d_line_02", "d_bar_08"]
     
-    var messageTypeB: [String] = ["mb_bar_01", "mb_bar_02", "mb_bar_03", "mb_bar_04", "mb_bar_05", "mb_bar_06", "mb_bar_07", "mb_pie_01", "mb_pie_02", "mb_line_01", "mb_line_02", "mb_line_03","mb_line_03_negative", "mb_line_04","mb_line_04_negative"]
+    var messageTypeB: [String] = ["mb_bar_01", "mb_bar_02", "mb_bar_03", "mb_bar_04", "mb_bar_05", "mb_bar_06", "mb_bar_07", "mb_pie_01", "mb_pie_02", "mb_line_01", "mb_line_02", "mb_line_03", "mb_line_04",
+                                  
+                                  
+                                  
+                                  
+                                  "mb_bar_08", "mb_bar_09", "mb_bar_10", "mb_bar_11", "mb_bar_12", "mb_bar_13", "mb_pie_03", "mb_pie_04", "mb_line_05", "mb_line_06" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,14 +64,14 @@ extension ChartListViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = UIViewController.make(DemoViewController.self)
         vc.chartType = .messageTypeB(number)
         vc.chartTitle = messageTypeB[number]
-        self.present(vc, animated: false, completion: nil)
+        present(vc, animated: false, completion: nil)
     }
     
     private func showDetailMessageOfDataType(number: Int) {
         let vc = UIViewController.make(DemoViewController.self)
         vc.chartType = .dataType(number)
         vc.chartTitle = dataTypeData[number]
-        self.present(vc, animated: false, completion: nil)
+        present(vc, animated: false, completion: nil)
     }
     
 }
