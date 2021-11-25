@@ -49,7 +49,7 @@ class aos_mb_bar_04_: UIView {
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_04_()
         
         leftAxis.axisMinimum = 0
-
+        leftAxis.drawZeroLineEnabled = false
     }
     
     func setData() {

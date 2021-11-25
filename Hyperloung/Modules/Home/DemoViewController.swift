@@ -89,9 +89,9 @@ class DemoViewController: UIViewController {
             bar_01.setHeight(292).setWidth(view.frame.width)
             
         case 7:
-            let bar_01: aos_d_bar_08 = aos_d_bar_08(frame: CGRect(x: 0, y: 10, width: view.frame.width, height: 200))
+            let bar_01: aos_d_bar_08 = aos_d_bar_08(frame: CGRect(x: 25, y: 10, width: view.frame.width - 50, height: 200))
             containerView.addSubview(bar_01)
-            bar_01.setHeight(200).setWidth(view.frame.width)
+            bar_01.setHeight(200).setWidth(view.frame.width - 50)
             
         case 8:
             let pie01: aos_mb_pie_02 = .fromNib()

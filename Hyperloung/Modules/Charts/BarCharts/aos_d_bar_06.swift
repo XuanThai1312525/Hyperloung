@@ -54,8 +54,8 @@ class aos_d_bar_06: UIView {
         let barVisual: BarVisual = BarVisual(radius: 4, barNormalColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), barHighlightColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), valueNormalTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), valueHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), titleNormalTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), titleHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
         var chartItems: [BarChartItemData] = []
-        chartItems.append(BarChartItemData(title: "외상매출", valueTitle: "", value: 30.3, barVisual: barVisual))
-        chartItems.append(BarChartItemData(title: "받을어음", valueTitle: "", value: -717, barVisual: barVisual))
+        chartItems.append(BarChartItemData(title: "외상매출", valueTitle: "", value: 100, barVisual: barVisual))
+        chartItems.append(BarChartItemData(title: "받을어음", valueTitle: "", value: 400, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "기타", valueTitle: "", value: 550.9, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "기타", valueTitle: "89.9억", value: 1234, isHighlight: true, barVisual: barVisual))
 

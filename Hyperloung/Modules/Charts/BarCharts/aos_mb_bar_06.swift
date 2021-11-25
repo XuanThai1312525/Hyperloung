@@ -49,7 +49,7 @@ class aos_mb_bar_06: UIView {
         leftAxis.labelAlignment = .left
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_06()
         leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
-        
+        leftAxis.drawZeroLineEnabled = false
 
     }
     
