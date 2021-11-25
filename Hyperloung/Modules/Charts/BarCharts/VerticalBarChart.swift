@@ -127,10 +127,6 @@ class VeritalBarChartView: UIView {
             if chartView.leftAxis.axisMinimum > item.value {
                 chartView.leftAxis.axisMinimum = item.value
             }
-            
-            if chartView.leftAxis.axisMaximum < item.value {
-                chartView.leftAxis.axisMaximum = item.value
-            }
         }
         
         chartView.xAxis.valueFormatter = VerticalBarXAxisLabelFormatter(barItems: items)
