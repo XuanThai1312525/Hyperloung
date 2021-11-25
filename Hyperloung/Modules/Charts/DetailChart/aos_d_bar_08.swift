@@ -89,12 +89,8 @@ class aos_d_bar_08: UIView, ChartViewDelegate {
         chart.rightAxis.granularity = 1.0
         chart.rightAxis.axisMinimum = 0.0
         chart.leftAxis.axisMinimum = 0.0    //here's the missing line
-//        chart.extraBottomOffset = 50
-//        chart.leftAxis.xOffset = 100
         chart.rightAxis.axisMaximum = 0.0
         chart.rightAxis.enabled = true
-//        chart.xAxis.yOffset = 100
-//        chart.leftAxis.offse = 4
         chart.rightAxis.enabled = false
         chart.legend.enabled = false
         chart.leftAxis.drawAxisLineEnabled = false
