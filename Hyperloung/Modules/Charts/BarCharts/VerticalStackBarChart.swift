@@ -158,12 +158,12 @@ class VerticalStackBarChart: UIView {
         }
     
 
-        chartView.xAxis.valueFormatter = VerticalStackBarValueFormatter(barItems: items) as! IAxisValueFormatter
+        chartView.xAxis.valueFormatter = XAxisVerticalStackBarValueFormatter(barItems: items)
         chartView.xAxis.setLabelCount(numOfBar, force: false)
 
         let set: HyperStackChartBaseDataSet = HyperStackChartBaseDataSet(entries: yVals, label: "")
         set.colors = [#colorLiteral(red: 0.3803921569, green: 0.8156862745, blue: 0.9411764706, alpha: 1),  #colorLiteral(red: 0.1215686275, green: 0.5725490196, blue: 0.8941176471, alpha: 1), #colorLiteral(red: 0.2078431373, green: 0.3411764706, blue: 0.7882352941, alpha: 1)] // array always have more than 1 item so "color(atIndex index: Int)" to be called
-        set.drawValuesEnabled = false
+        set.drawValuesEnabled = true
         set.isDrawTopBarValue = true
         set.barCornerRadius = 4
 
@@ -252,9 +252,8 @@ class HyperStackChartBaseDataSet: BarChartDataSet {
 //    }
 }
 
-public class VerticalStackBarValueFormatter: NSObject, IValueFormatter, IAxisValueFormatter {
+public class XAxisVerticalStackBarValueFormatter: NSObject, IAxisValueFormatter {
     var barItems: [StackBarChartItemData] = []
-
     init(barItems: [StackBarChartItemData]) {
         self.barItems = barItems
     }
@@ -271,18 +270,25 @@ public class VerticalStackBarValueFormatter: NSObject, IValueFormatter, IAxisVal
         return format(value: value)
     }
 
+}
+
+public class VerticalStackBarValueFormatter: NSObject, IValueFormatter {
+    var barItems: [StackBarChartItemData] = []
+    
+    init(barItems: [StackBarChartItemData]) {
+        self.barItems = barItems
+    }
+
     public func stringForValue(
         _ value: Double,
         entry: ChartDataEntry,
         dataSetIndex: Int,
         viewPortHandler: ViewPortHandler?) -> String {
-        if var data = entry.data as? StackBarChartItemData {
-            if !data.isSetTitle {
-                data.setTitle()
+        if let data = entry.data as? StackBarChartItemData {
+            if value == data.stackItems.last?.value {
                 return data.valueTitle
             }
         }
-        
 
         return ""
     }
