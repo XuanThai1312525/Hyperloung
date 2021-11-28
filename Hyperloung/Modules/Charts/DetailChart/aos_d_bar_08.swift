@@ -14,11 +14,11 @@ struct ChartBar08 {
     
     static var `default`: [ChartBar08] {
         return [
-            ChartBar08(title: "최대 6자".truncate(to: 5), value: 543, description: "543억"),
-            ChartBar08(title: "최대 6자".truncate(to: 5), value: 234, description: "543억"),
-            ChartBar08(title: "최대 6자".truncate(to: 5), value: 168, description: "12%"),
-            ChartBar08(title: "6자 초과시".truncate(to: 5), value: 421, description: "34%"),
-            ChartBar08(title: "최대 6자".truncate(to: 5), value: 302, description: "22%")
+            ChartBar08(title: "최대 6자".truncate(to: 6), value: 543, description: "543억"),
+            ChartBar08(title: "최대 6자".truncate(to: 6), value: 234, description: "543억"),
+            ChartBar08(title: "최대 6자".truncate(to: 6), value: 168, description: "12%"),
+            ChartBar08(title: "6자 초과시".truncate(to: 6), value: 421, description: "34%"),
+            ChartBar08(title: "6자 초과시초".truncate(to: 6), value: 302, description: "22%")
         ]
     }
 }
