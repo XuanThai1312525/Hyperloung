@@ -66,7 +66,7 @@ class aos_mb_bar_04_: UIView {
         let barVisual: BarVisual = BarVisual(radius: 4, barNormalColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), barHighlightColor: #colorLiteral(red: 0.9333333333, green: 0.1960784314, blue: 0.1411764706, alpha: 1), valueNormalTextColor: #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1), valueHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), titleNormalTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), titleHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         let leftAxis = barChartView.chartView.leftAxis
         leftAxis.enabled = true
-        leftAxis.entries = [-95]
+        leftAxis.entries = [-85]
         leftAxis.setLabelCount(1, force: true)
         leftAxis.isForceEntriesEnable = true
 
