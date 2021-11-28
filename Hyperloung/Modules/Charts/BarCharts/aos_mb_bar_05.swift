@@ -39,12 +39,12 @@ class aos_mb_bar_05: UIView {
         leftAxis.entries = [35]
         leftAxis.granularityEnabled = true
         leftAxis.gridColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
-        leftAxis.gridLineWidth = 2
+        leftAxis.gridLineWidth = 1
         leftAxis.gridLineDashLengths = [0,3]
         leftAxis.labelTextColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         leftAxis.setLabelCount(1, force: true)
         leftAxis.isForceEntriesEnable = true
-        leftAxis.labelAlignment = .left
+        leftAxis.labelAlignment = .right
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_05()
         
         
@@ -86,6 +86,6 @@ class aos_mb_bar_05: UIView {
 class LeftAxisValueFormat_aos_mb_bar_05: IAxisValueFormatter {
     func stringForValue(_ value: Double,
                         axis: AxisBase?) -> String {
-        return "사업계획\n 300억"
+        return "사업계획\n  300억"
     }
 }

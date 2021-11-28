@@ -63,9 +63,9 @@ class aos_mb_bar_01_: UIView {
         var chartItems: [BarChartItemData] = []
         
         let barVisual: BarVisual = BarVisual(radius: 4, barNormalColor: #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1), barHighlightColor: #colorLiteral(red: 0.9333333333, green: 0.1960784314, blue: 0.1411764706, alpha: 1), valueNormalTextColor: #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1), valueHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), titleNormalTextColor: #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), titleHighlightTextColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-        chartItems.append(BarChartItemData(title: "7월", valueTitle: "-65억", value: -30.0, isHighlight: true, barVisual: barVisual))
-        chartItems.append(BarChartItemData(title: "최대글자", valueTitle: "295억", value: 40.0, barVisual: barVisual))
-        chartItems.append(BarChartItemData(title: "9월", valueTitle: "365억", value: 48.0,barVisual: barVisual))
+        chartItems.append(BarChartItemData(title: "AI", valueTitle: "-4억", value: 30.0, isHighlight: true, barVisual: barVisual))
+        chartItems.append(BarChartItemData(title: "최대글자", valueTitle: "", value: 40.0, barVisual: barVisual))
+        chartItems.append(BarChartItemData(title: "UC", valueTitle: "", value: 48.0,barVisual: barVisual))
         barChartView.setChartItems(items: chartItems)
     }
 }

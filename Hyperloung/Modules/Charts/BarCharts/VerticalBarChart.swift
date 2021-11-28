@@ -13,6 +13,7 @@ struct ChartVisual {
     var fontForValueLabel: UIFont = UIFont.normal(size: 12)
     var fontForHighlightValueLabel: UIFont = UIFont.bold(size: 13)
     var fontForXaxisLabel: UIFont = UIFont.normal(size: 12)
+    var showZeroLine: Bool = false
     static var defaultVisual: ChartVisual {
         return ChartVisual(space: 24, width: 32)
     }
@@ -217,7 +218,7 @@ class VeritalBarChartView: UIView {
         chartView.leftAxis.valueFormatter = VerticalBarLeftAxisValueFormatter(unit: leftAxisUnit)
         chartView.leftAxis.labelTextColor = .clear
         
-        chartView.leftAxis.drawZeroLineEnabled = true
+        chartView.leftAxis.drawZeroLineEnabled = visual.showZeroLine
         chartView.leftAxis.zeroLineColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         chartView.leftAxis.zeroLineWidth = 1
         

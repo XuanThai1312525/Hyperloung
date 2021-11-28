@@ -41,12 +41,12 @@ class aos_mb_bar_06: UIView {
         leftAxis.entries = [35]
         leftAxis.granularityEnabled = true
         leftAxis.gridColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
-        leftAxis.gridLineWidth = 2
+        leftAxis.gridLineWidth = 1
         leftAxis.gridLineDashLengths = [0,3]
         leftAxis.labelTextColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         leftAxis.setLabelCount(1, force: true)
         leftAxis.isForceEntriesEnable = true
-        leftAxis.labelAlignment = .left
+        leftAxis.labelAlignment = .right
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_mb_bar_06()
         leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
         leftAxis.drawZeroLineEnabled = false
@@ -60,9 +60,6 @@ class aos_mb_bar_06: UIView {
         chartItems.append(BarChartItemData(title: "최대글자", valueTitle: "162월", value: 162, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9월",  valueTitle: "365억", value: 365, isHighlight: true, barVisual: barVisual))
         barChartView.setChartItems(items: chartItems)
-        
-        barChartView.setChartLines(lines: [11,16,19])
-
     }
     
     func setDataMinus() {
@@ -72,9 +69,6 @@ class aos_mb_bar_06: UIView {
         chartItems.append(BarChartItemData(title: "최대글자", valueTitle: "162월", value: 162, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "9월",  valueTitle: "365억", value: 365, barVisual: barVisual))
         barChartView.setChartItems(items: chartItems)
-        
-        barChartView.setChartLines(lines: [11,16,19])
-
     }
 }
 
@@ -83,6 +77,6 @@ class aos_mb_bar_06: UIView {
 class LeftAxisValueFormat_aos_mb_bar_06: IAxisValueFormatter {
     func stringForValue(_ value: Double,
                         axis: AxisBase?) -> String {
-        return "사업계획\n 300억"
+        return "사업계획\n  300억"
     }
 }
