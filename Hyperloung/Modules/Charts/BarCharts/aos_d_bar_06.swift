@@ -44,7 +44,7 @@ class aos_d_bar_06: UIView {
         leftAxis.labelAlignment = .right
         leftAxis.valueFormatter  = LeftAxisValueFormat_aos_d_bar_06()
         
-        let chartVisual: ChartVisual = ChartVisual(space: 56, width: 8, bottomTitleSpace: 4)
+        let chartVisual: ChartVisual = ChartVisual(space: 56, width: 8, bottomTitleSpace: 4, enableTooltip: false)
         barChartView.setChartVisual(chartVisual)
     }
     
@@ -57,7 +57,7 @@ class aos_d_bar_06: UIView {
         chartItems.append(BarChartItemData(title: "외상매출", valueTitle: "15.9억", value: 100, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "받을어음", valueTitle: "29.2억", value: 400, barVisual: barVisual))
         chartItems.append(BarChartItemData(title: "기타", valueTitle: "72억", value: 550.9, barVisual: barVisual))
-        chartItems.append(BarChartItemData(title: "기타", valueTitle: "89.9억", value: 1234, isHighlight: false, barVisual: barVisual))
+        chartItems.append(BarChartItemData(title: "기타", valueTitle: "89.9억", value: 1234, isHighlight: true, barVisual: barVisual))
 
         barChartView.setChartItems(items: chartItems)
     }
