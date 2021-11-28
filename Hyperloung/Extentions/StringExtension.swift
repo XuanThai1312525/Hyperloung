@@ -18,5 +18,13 @@ extension String {
         }
         return currencyFormatter.string(from: number)
     }
-
+    
+    func truncate(to index: Int) -> String {
+        if index >= count {
+            return self
+        }
+        
+        let newString = String(prefix(index))
+        return newString.appending("..")
+    }
 }
