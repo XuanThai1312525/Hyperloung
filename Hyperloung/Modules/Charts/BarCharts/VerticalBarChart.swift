@@ -13,6 +13,8 @@ struct ChartVisual {
     var fontForValueLabel: UIFont = UIFont.normal(size: 12)
     var fontForHighlightValueLabel: UIFont = UIFont.bold(size: 13)
     var fontForXaxisLabel: UIFont = UIFont.normal(size: 12)
+    var showZeroLine: Bool = false
+    var enableTooltip: Bool = true
     static var defaultVisual: ChartVisual {
         return ChartVisual(space: 24, width: 32)
     }
@@ -158,7 +160,8 @@ class VeritalBarChartView: UIView {
         chartView.xAxis.yOffset += min < 0 ? visual.bottomTitleSpace + 20 : visual.bottomTitleSpace
 
         chartView.data = data
-        if let highLight = highLight{
+
+        if visual.enableTooltip, let highLight = highLight{
             //5 is value for display above or bellow
             chartView.setExtraOffsets(left: 30, top: 45, right: 30, bottom: 0)
             chartView.marker = HyperMarker(config: IMarkerConfig(label: items[Int(highLight.x)].valueTitle, selectedLabelFont: visual.fontForHighlightValueLabel, bottomValueToCircle: 15, selectedValueRoundColor: "#DDDDDD".color), chartView: chartView)
@@ -217,7 +220,7 @@ class VeritalBarChartView: UIView {
         chartView.leftAxis.valueFormatter = VerticalBarLeftAxisValueFormatter(unit: leftAxisUnit)
         chartView.leftAxis.labelTextColor = .clear
         
-        chartView.leftAxis.drawZeroLineEnabled = true
+        chartView.leftAxis.drawZeroLineEnabled = visual.showZeroLine
         chartView.leftAxis.zeroLineColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         chartView.leftAxis.zeroLineWidth = 1
         
